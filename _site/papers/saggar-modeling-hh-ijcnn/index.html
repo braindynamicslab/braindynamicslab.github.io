@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- _includes/base.html -->
+
+
+
+
+	<meta charset="utf-8"/>
+	<title>System Identification for the Hodgkin-Huxley Model using Artificial Neural Networks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Brain Dynamics Lab" href="../../feed.xml">
+	
+    <!-- Customized Bootstrap + Font Awesome + Solarized -->
+    <link href="../../css/style.css" rel="stylesheet" media="screen">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../../images/favicon.png"/>	
+
+	<!-- Typekit 
+	<script>
+	  (function(d) {
+		var config = {
+		  kitId: 'xeu8jut',
+		  scriptTimeout: 3000
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
+		-->
+    
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    
+	<!-- Google Analytics -->	
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-97026899-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+	
+	<!-- jQuery -->
+	<script src="../../js/jquery.min.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="../../js/transition.js"></script>
+	<script src="../../js/collapse.js"></script>
+
+</head>
+
+<body>
+	
+	<div id="header">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">	 
+			<div class="container">	
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-element" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+										
+					<object class="logo navbar-brand" data="../../images/bdl-logo.svg" type="image/svg+xml"></object>
+					<a class="navbar-brand" href="../../">brain dynamics lab</a>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-element">
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li>
+						
+						<a href="../../blog/">blog</a>
+						</li>
+						
+						<li class="active">
+						
+						<a href="../../papers/">papers</a>
+						</li>
+						
+						<li>
+						
+						<a href="../../projects/">projects</a></li>	  
+						
+						<li>
+						
+						<a href="../../team/">team</a></li>	  	  
+					</ul>
+				</div>
+			</div>
+		</nav>	
+	</div>
+	
+	<div class="container">	
+		
+	<!-- _includes/base.html -->
+
+
+
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="media">
+			
+			<img class="pull-left pad-right media-object" src="../../images/papers/saggar-modeling-hh-ijcnn.png">
+			
+			<div class="media-body titlebox">
+				<div class="title media-heading">
+					System Identification for the Hodgkin-Huxley Model using Artificial Neural Networks
+				</div>
+				<p>
+				<div class="smallhead">
+					Saggar M., Mericli T., Andoni S., Miikkulainen R.
+					2007.
+					Proceedings of the IEEE IJCNN Conference (2007)
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="bigspacer"></div>
+		<div class="glyphbox note">
+			
+			<div class="smallhead">
+				PDF
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-file-text-o fa-fw"></i>
+				<a class="off" href="../../pdfs/papers/saggar-modeling-hh-ijcnn.pdf">saggar-modeling-hh-ijcnn.pdf</a>
+			</div>
+			<div class="bigspacer"></div>
+			
+			
+			
+			<div class="smallhead">
+				DOI
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-external-link fa-fw"></i>
+				<a class="off" href="http://dx.doi.org/10.1109/IJCNN.2007.4371306">10.1109/IJCNN.2007.4371306</a>
+			</div>
+			<div class="bigspacer"></div>
+			
+			
+            
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="post">
+			<h1>Abstract</h1>
+
+<p>A single biological neuron is able to perform complex computations that are highly nonlinear in nature, adaptive, and superior to the perceptron model. A neuron is essentially a nonlinear dynamical system. Its state depends on the interactions among its previous states, its intrinsic properties, and the synaptic input it receives. These factors are included in Hodgkin-Huxley (HH) model, which describes the ionic mechanisms involved in the generation of an action potential. This paper proposes training of an artificial neural network to identify and model the physiological properties of a biological neuron, and mimic its input-output mapping. An HH simulator was implemented to generate the training data. The proposed model was able to mimic and predict the dynamic behavior of the HH simulator under novel stimulation conditions; hence, it can be used to extract the dynamics (in vivo or in vitro) of a neuron without any prior knowledge of its physiology. Such a model can in turn be used as a tool for controlling a neuron in order to study its dynamics for further analysis.</p>
+
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
+	
+	</div>
+	
+	<div id="footer"><span style="display:none">foo</span></div>
+		
+</body>
+</html>
+
