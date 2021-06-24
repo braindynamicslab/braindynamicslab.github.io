@@ -1,0 +1,129 @@
+---
+layout: default
+title: brain dynamics lab / team
+categories:
+ - team
+---
+{% include base.html %}
+<div class="row">
+	<div class="col-md-12">
+		<div class="title">
+			Principal Investigator
+		</div>
+	</div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+	{% if member.pi == true %}
+    {% cycle 'add rows': '<div class="row">', null, null %}
+		<div class="col-md-4 memberbox">
+			<div class="media">
+  				<a class="pull-left" href="{{base}}{{ member.url }}">
+    				<img width=160 class="media-object" src="{{base}}{{ member.image }}">
+  				</a>
+ 			 	<div class="media-body">
+    				<div class="head media-heading"><a href="{{base}}{{ member.url }}" class="off">{{ member.title }}</a></div>
+    				<p class="note">{{ member.position }}</p>
+  				</div>
+			</div>
+			<div class="bigspacer"></div>
+			<div class="bigspacer"></div>
+        </div>
+    {% cycle 'close rows': null, null, '</div>' %}
+    {% endif %}
+{% endfor %}
+{% cycle 'close rows': null, '</div>', '</div>' %}
+
+<div class="row">
+        <div class="col-md-12">
+                <div class="title">
+                        Postdoctoral Scholars
+                </div>
+        </div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+    {% if member.postdoc == true %}
+    {% cycle 'add rows 2': '<div class="row">', null, null %}
+                <div class="col-md-4 memberbox">
+                        <div class="media">
+                                <a class="pull-left" href="{{base}}{{ member.url }}">
+                                <img width=160 class="media-object" src="{{base}}{{ member.image }}">
+                                </a>                                
+                                <div class="media-body">
+                                <div class="head media-heading"><a href="{{base}}{{ member.url }}" class="off">{{ member.title }}</a></div>
+                                <p class="note">{{ member.position }}</p>
+                                </div>
+                        </div>
+                        <div class="bigspacer"></div>
+        </div>
+    {% cycle 'close rows 2': null, null, '</div>' %}
+    {% endif %}
+{% endfor %}
+{% cycle 'close rows 2': null, '</div>', '</div>' %}
+
+<div class="row">
+        <div class="col-md-12">
+                <div class="title">
+                        Students & Staff
+                </div>
+        </div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+    {% if member.grad == true %}
+    {% cycle 'add rows 3': '<div class="row">', null, null %}
+                <div class="col-md-4 memberbox">
+                        <div class="media">
+                                <a class="pull-left" href="{{base}}{{ member.url }}">
+                                <img width=160 class="media-object" src="{{base}}{{ member.image }}">
+                                </a>                                
+                                <div class="media-body">
+                                <div class="head media-heading"><a href="{{base}}{{ member.url }}" class="off">{{ member.title }}</a></div>
+                                <p class="note">{{ member.position }}</p>
+                                </div>
+                        </div>
+                        <div class="bigspacer"></div>
+        </div>
+    {% cycle 'close rows 3': null, null, '</div>' %}
+    {% endif %}
+{% endfor %}
+{% cycle 'close rows 3': null, '</div>', '</div>' %}
+
+
+<div class="row">
+        <div class="col-md-12">
+                <div class="title">
+                        Past members
+                </div>
+        </div>
+</div>
+
+<div class="bigspacer"></div>
+
+{% for member in site.categories.team reversed %}
+    {% if member.alumni == true %}
+    {% cycle 'add rows 4': '<div class="row">', null, null %}
+                <div class="col-md-4 memberbox">
+                        <div class="media">
+                                <!-- <a class="pull-left" href="{{base}}{{ member.url }}">
+                                <img width=160 class="media-object" src="{{base}}{{ member.image }}">
+                                </a>
+                                -->
+                                <div class="media-body">
+                                <div class="head media-heading"><a href="{{base}}{{ member.url }}" class="off">{{ member.title }}</a></div>
+                                <p class="note">{{ member.position }}</p>
+                                </div>
+                        </div>
+                        <div class="bigspacer"></div>
+        </div>
+    {% cycle 'close rows 4': null, null, '</div>' %}
+    {% endif %}
+{% endfor %}
+{% cycle 'close rows 4': null, '</div>', '</div>' %}

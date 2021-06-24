@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+{% include base.html %}
+{% assign project = page %}
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="media">
+			{% if project.image %}
+			<img class="pull-left pad-right media-object" src="{{base}}{{ project.image }}">
+			{% endif %}
+			<div class="media-body titlebox">
+				<div class="title media-heading">
+					{{ project.title }}
+				</div>
+				<p>
+				<div class="smallhead">
+					{{ project.authors }}
+					{{ project.year }}.
+					{{ project.journal }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="bigspacer"></div>
+		<div class="glyphbox note">
+			{% if project.pdf %}
+			<div class="smallhead">
+				PDF
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-file-text-o fa-fw"></i>
+				<a class="off" href="{{base}}{{ project.pdf }}">{{ project.pdf | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if project.supplement %}
+			<div class="smallhead">
+				Supplement
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-paperclip fa-fw"></i>
+				<a class="off" href="{{base}}{{ project.supplement }}">{{ project.supplement | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if project.doi %}
+			<div class="smallhead">
+				DOI
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-external-link fa-fw"></i>
+				<a class="off" href="http://dx.doi.org/{{ project.doi }}">{{ project.doi }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if project.github %}
+			<div class="smallhead">
+				GitHub
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-github-alt fa-fw"></i>
+				<a class="off" href="{{ project.github }}">{{ project.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+            {% if project.movie %}
+			<div class="smallhead">
+				Movie
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-file-text-o fa-fw"></i>
+				<a class="off" href="{{base}}{{ project.movie }}">{{ project.movie | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="post">
+			{{ content }}
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>

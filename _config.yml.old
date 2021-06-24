@@ -1,0 +1,52 @@
+name: Brain Dynamics Lab
+description: Capturing and quantifying transitions in brain activity at the single participant level
+url: "https://web.stanford.edu/group"
+baseurl: "/bdl"
+
+markdown: redcarpet
+permalink: /:categories/:title/
+future: true
+
+redcarpet:
+  extensions:
+   - tables
+   - no_intra_emphasis
+   - autolink
+   - superscript
+   - strikethrough
+
+exclude:
+  - "*.class"
+  - "*.cpp"
+  - "*.h"
+  - "*.hh"
+  - "*.ipynb"
+  - "*.jar"
+  - "*.java"
+  - "*.nb"
+  - "*.py"
+  - "*.R"
+  - "*.rb"
+  - "*.Rmd"
+  - "*.branches"
+  - "*.csv"
+  - "*.fasta"
+  - "*.kml"
+  - "*.log"
+  - "*.mcc"
+  - "*.newick"
+  - "*.nex"
+  - "*.tsv"
+  - "*.tips"
+  - "*.trees"
+  - "*.txt"
+  - "*.zip"
+  - "*.gz"
+  - "*.tiff"
+  - "*.xml"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+
+projects:
+
