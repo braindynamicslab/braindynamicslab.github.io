@@ -3,17 +3,15 @@ description: Capturing and quantifying transitions in brain activity at the sing
 url: "https://web.stanford.edu/group"
 baseurl: "/bdl"
 
-markdown: redcarpet
 permalink: /:categories/:title/
 future: true
 
-redcarpet:
-  extensions:
-   - tables
-   - no_intra_emphasis
-   - autolink
-   - superscript
-   - strikethrough
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 
 exclude:
   - "*.class"
