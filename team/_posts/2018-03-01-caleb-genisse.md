@@ -4,12 +4,12 @@ title: Caleb Geniesse
 position: Graduate Student
 handle: 
 email: geniesse@stanford.edu
-twitter: 
-github: 
-scholar: 
+twitter: calebgeniesse
+github: calebgeniesse
+scholar: S5lu_LAAAAAJ
 image: /images/team/caleb.jpg
 grad: true
 cv: 
 ---
 
-I'm a 2nd year graduate student in the Brain Dynamics Lab. I am working on using Topological Data Analysis for capturing and quantifying fluctuations in brain dynamics.
+I'm a 5th year graduate student in the Brain Dynamics Lab. My research focuses on developing new computational methods for visualizing and quantifying fluctuations in brain dynamics using ideas from machine learning and topological data analysis.
