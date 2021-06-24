@@ -1,7 +1,7 @@
 name: Brain Dynamics Lab
 description: Capturing and quantifying transitions in brain activity at the single participant level
-url: "https://web.stanford.edu/group"
-baseurl: "/bdl"
+url: /
+baseurl: https://braindynamicslab.github.io
 
 permalink: /:categories/:title/
 future: true
