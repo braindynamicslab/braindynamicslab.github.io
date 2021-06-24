@@ -1,7 +1,7 @@
 name: Brain Dynamics Lab
 description: Capturing and quantifying transitions in brain activity at the single participant level
-url: /
-baseurl: https://braindynamicslab.github.io
+url: https://braindynamicslab.github.io
+baseurl: /
 
 permalink: /:categories/:title/
 future: true
