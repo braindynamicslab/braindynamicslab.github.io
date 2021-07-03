@@ -13,38 +13,42 @@ kramdown:
   auto_ids: true
   syntax_highlighter: rouge
 
+sass:
+  sass_dir: css
+
+plugins: ['jekyll-twitter-plugin']
+
 exclude:
+  - "*.branches"
   - "*.class"
   - "*.cpp"
+  - "*.csv"
+  - "*.fasta"
+  - "*.gz"
   - "*.h"
   - "*.hh"
   - "*.ipynb"
   - "*.jar"
   - "*.java"
+  - "*.kml"
+  - "*.log"
+  - "*.mcc"
   - "*.nb"
+  - "*.newick"
+  - "*.nex"
   - "*.py"
   - "*.R"
   - "*.rb"
   - "*.Rmd"
-  - "*.branches"
-  - "*.csv"
-  - "*.fasta"
-  - "*.kml"
-  - "*.log"
-  - "*.mcc"
-  - "*.newick"
-  - "*.nex"
-  - "*.tsv"
+  - "*.tiff"
   - "*.tips"
   - "*.trees"
+  - "*.tsv"
   - "*.txt"
-  - "*.zip"
-  - "*.gz"
-  - "*.tiff"
   - "*.xml"
+  - "*.zip"
   - "Gemfile"
   - "Gemfile.lock"
-
 
 projects:
 
