@@ -8,7 +8,7 @@ categories:
 
 {% for paper in site.categories.papers %}
     {% cycle 'add rows': '<div class="row">', nil, nil %}
-		<div class="col-md-4 paperbox">
+		<div class="col-md-auto paperbox">
 			<div class="media">
   				<a class="pull-right" href="{{base}}{{ paper.url }}">
     				<img width=100 class="media-object" src="{{base}}{{ paper.image }}">
