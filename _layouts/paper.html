@@ -1,24 +1,25 @@
 ---
 layout: default
 ---
+
 {% include base.html %}
 {% assign paper = page %}
 
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-lg-12">
 		<div class="media">
-			{% if paper.image %}
-			<img class="pull-left pad-right media-object" src="{{base}}{{ paper.image }}">
+			{% if page.image %}
+			<img class="pull-left pad-right media-object" src="{{ page.image }}">
 			{% endif %}
 			<div class="media-body titlebox">
 				<div class="title media-heading">
-					{{ paper.title }}
+					{{ page.title }}
 				</div>
 				<p>
 				<div class="smallhead">
-					{{ paper.authors }}
-					{{ paper.year }}.
-					{{ paper.journal }}
+					{{ page.authors }}
+					{{ page.year }}.
+					{{ page.journal }}
 				</div>
 			</div>
 		</div>
@@ -28,70 +29,59 @@ layout: default
 <div class="bigspacer"></div>
 
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-lg-3">
 		<div class="bigspacer"></div>
 		<div class="glyphbox note">
-			{% if paper.pdf %}
+			{% if page.pdf %}
 			<div class="smallhead">
 				PDF
 			</div>
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="{{base}}{{ paper.pdf }}">{{ paper.pdf | split: '/' | last }}</a>
+				<a class="off" href="{{ page.pdf }}">{{ page.pdf | split: '/' | last }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
-			{% if paper.supplement %}
+			{% if page.supplement %}
 			<div class="smallhead">
 				Supplement
 			</div>
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-paperclip fa-fw"></i>
-				<a class="off" href="{{base}}{{ paper.supplement }}">{{ paper.supplement | split: '/' | last }}</a>
+				<a class="off" href="{{ page.supplement }}">{{ page.supplement | split: '/' | last }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
-			{% if paper.doi %}
+			{% if page.doi %}
 			<div class="smallhead">
 				DOI
 			</div>
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-external-link fa-fw"></i>
-				<a class="off" href="http://dx.doi.org/{{ paper.doi }}">{{ paper.doi }}</a>
+				<a class="off" href="https://doi.org/{{ page.doi }}">{{ page.doi }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
-			{% if paper.github %}
+			{% if page.github %}
 			<div class="smallhead">
 				GitHub
 			</div>
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-github-alt fa-fw"></i>
-				<a class="off" href="{{ paper.github }}">{{ paper.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
-			</div>
-			<div class="bigspacer"></div>
-			{% endif %}
-            {% if paper.movie %}
-			<div class="smallhead">
-				Movie
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="{{base}}{{ paper.movie }}">{{ paper.movie | split: '/' | last }}</a>
+				<a class="off" href="{{ page.github }}">{{ page.github | remove: 'http://github.com/' | remove: 'https://github.com/' | replace: "/", "/<wbr>" | replace: "_", "_<wbr>" }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
 		</div>
 	</div>
-	<div class="col-md-8">
+	<div class="col-lg-8">
 		<div class="post">
 			{{ content }}
 		</div>
 	</div>
-	<div class="col-md-1"></div>
+	<div class="col-lg-1"></div>
 </div>
