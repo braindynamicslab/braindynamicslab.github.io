@@ -6,7 +6,7 @@ authors: Pasquini, L., Noohi, F., Veziris, C. R., Kosik, E. L., Holley, S. R., L
 year: 2021
 ref: Pasquini, L., Noohi, F., Veziris, C. R., Kosik, E. L., Holley, S. R., Lee, A., ... & Sturm, V. E. (2021) BioRxiv 
 journal: "BioRxiv"
-doi: 10.1073/pnas.1917407117
+doi: 10.1101/2021.06.14.448456
 github: 
 pdf: /pdfs/papers/lorenzo-ans.pdf
 ---

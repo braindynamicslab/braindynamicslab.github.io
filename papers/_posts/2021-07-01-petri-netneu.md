@@ -1,17 +1,16 @@
 ---
 layout: paper
 title: Finding the neural correlates of collaboration using a three-person fMRI hyperscanning paradigm.
-image: /images/papers/hyperscan.png
-authors: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. 
+image: /images/papers/petri-netneu.png
+authors: Billings, J., Saggar, M., Hlinka, J., Keilholz, S., & Petri, G. (2021).
 year: 2021
-ref: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. (2020) PNAS 
-journal: "PNAS"
-doi: 10.1073/pnas.1917407117
+ref: Billings, J., Saggar, M., Hlinka, J., Keilholz, S., & Petri, G. (2021). Network Neuroscience 
+journal: "Network Neuroscience"
+doi: 10.1162/netn_a_00190
 github: 
-pdf: /pdfs/papers/hyperscan.pdf
+pdf: /pdfs/papers/petri-netneu.pdf
 ---
 
 # Abstract
-Humans have an extraordinary ability to interact and cooperate with others. Despite the social and evolutionary significance of collaboration, research on finding its neural correlates has been limited partly due to restrictions on the simultaneous neuroimaging of more than one participant (also known as hyperscanning). Several studies have used dyadic fMRI hyperscanning to examine the interaction between two participants. However, to our knowledge, no study to date has aimed at revealing the neural correlates of social interactions using a three-person (or triadic) fMRI hyperscanning paradigm. Here, we simultaneously measured the blood-oxygenation level-dependent signal from 12 triads (n = 36 participants), while they engaged in a collaborative drawing task based on the social game of Pictionary. General linear model analysis revealed increased activation in the brain regions previously linked with the theory of mind during the collaborative phase compared to the independent phase of the task. Furthermore, using intersubject correlation analysis, we revealed increased synchronization of the right temporo‐parietal junction (R TPJ) during the collaborative phase. The increased synchrony in the R TPJ was observed to be positively associated with the overall team performance on the task. In sum, our paradigm revealed a vital role of the R TPJ among other theory-of-mind regions during a triadic collaborative drawing task.
-
+While brain imaging tools like functional magnetic resonance imaging (fMRI) afford measurements of whole-brain activity, it remains unclear how best to interpret patterns found amid the data’s apparent self-organization. To clarify how patterns of brain activity support brain function, one might identify metric spaces that optimally distinguish brain states across experimentally defined conditions. Therefore, the present study considers the relative capacities of several metric spaces to disambiguate experimentally defined brain states. One fundamental metric space interprets fMRI data topographically, that is, as the vector of amplitudes of a multivariate signal, changing with time. Another perspective compares the brain’s functional connectivity, that is, the similarity matrix computed between signals from different brain regions. More recently, metric spaces that consider the data’s topology have become available. Such methods treat data as a sample drawn from an abstract geometric object. To recover the structure of that object, topological data analysis detects features that are invariant under continuous deformations (such as coordinate rotation and nodal misalignment). Moreover, the methods explicitly consider features that persist across multiple geometric scales. While, certainly, there are strengths and weaknesses of each brain dynamics metric space, wefind that those that track topological features optimally distinguish experimentally defined brain states.
 

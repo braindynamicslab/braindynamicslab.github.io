@@ -1,17 +1,16 @@
 ---
 layout: paper
-title: Finding the neural correlates of collaboration using a three-person fMRI hyperscanning paradigm.
-image: /images/papers/hyperscan.png
-authors: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. 
+title: Thalamocortical connectivity is associated with autism symptoms in high-functioning adults with autism and typically developing adults.
+image: /images/papers/asd-rsfmri.png
+authors: Ayub, R., Sun, K. L., Flores, R. E., Lam, V. T., Jo, B., Saggar, M., & Fung, L. K. 
 year: 2021
-ref: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. (2020) PNAS 
-journal: "PNAS"
-doi: 10.1073/pnas.1917407117
+ref: Ayub, R., Sun, K. L., Flores, R. E., Lam, V. T., Jo, B., Saggar, M., & Fung, L. K. (2021) Translational Psychiatry
+journal: "Translational Psychiatry"
+doi: 10.1038/s41398-021-01221-0
 github: 
-pdf: /pdfs/papers/hyperscan.pdf
+pdf: /pdfs/papers/asd-rsfmri.pdf
 ---
 
 # Abstract
-Humans have an extraordinary ability to interact and cooperate with others. Despite the social and evolutionary significance of collaboration, research on finding its neural correlates has been limited partly due to restrictions on the simultaneous neuroimaging of more than one participant (also known as hyperscanning). Several studies have used dyadic fMRI hyperscanning to examine the interaction between two participants. However, to our knowledge, no study to date has aimed at revealing the neural correlates of social interactions using a three-person (or triadic) fMRI hyperscanning paradigm. Here, we simultaneously measured the blood-oxygenation level-dependent signal from 12 triads (n = 36 participants), while they engaged in a collaborative drawing task based on the social game of Pictionary. General linear model analysis revealed increased activation in the brain regions previously linked with the theory of mind during the collaborative phase compared to the independent phase of the task. Furthermore, using intersubject correlation analysis, we revealed increased synchronization of the right temporo‐parietal junction (R TPJ) during the collaborative phase. The increased synchrony in the R TPJ was observed to be positively associated with the overall team performance on the task. In sum, our paradigm revealed a vital role of the R TPJ among other theory-of-mind regions during a triadic collaborative drawing task.
-
+Alterations in sensorimotor functions are common in individuals with autism spectrum disorder (ASD). Such aberrations suggest the involvement of the thalamus due to its key role in modulating sensorimotor signaling in the cortex. Although previous research has linked atypical thalamocortical connectivity with ASD, investigations of this association in high-functioning adults with autism spectrum disorder (HFASD) are lacking. Here, for the first time, we investigated the resting-state functional connectivity of the thalamus, medial prefrontal, posterior cingulate, and left dorsolateral prefrontal cortices and its association with symptom severity in two matched cohorts of HFASD. The principal cohort consisted of 23 HFASD (mean[SD] 27.1[8.9] years, 39.1% female) and 20 age- and sex-matched typically developing controls (25.1[7.2] years, 30.0% female). The secondary cohort was a subset of the ABIDE database consisting of 58 HFASD (25.4[7.8] years, 37.9% female) and 51 typically developing controls (24.4[6.7] years, 39.2% female). Using seed-based connectivity analysis, between-group differences were revealed as hyperconnectivity in HFASD in the principal cohort between the right thalamus and bilateral precentral/postcentral gyri and between the right thalamus and the right superior parietal lobule. The former was associated with autism-spectrum quotient in a sex-specific manner, and was further validated in the secondary ABIDE cohort. Altogether, we present converging evidence for thalamocortical hyperconnectivity in HFASD that is associated with symptom severity. Our results fill an important knowledge gap regarding atypical thalamocortical connectivity in HFASD, previously only reported in younger cohorts.
 
