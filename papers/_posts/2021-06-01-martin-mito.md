@@ -1,17 +1,18 @@
 ---
 layout: paper
-title: Finding the neural correlates of collaboration using a three-person fMRI hyperscanning paradigm.
-image: /images/papers/hyperscan.png
-authors: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. 
+title: Mouse brain-wide mitochondrial connectivity anchored in gene, brain and behavior.
+image: /images/papers/martin-mito.png
+authors: Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. (2021)
 year: 2021
-ref: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. (2020) PNAS 
-journal: "PNAS"
-doi: 10.1073/pnas.1917407117
+ref: Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. BioRxiv
+journal: "BioRxiv"
+doi: 10.1101/2021.06.02.446767
 github: 
-pdf: /pdfs/papers/hyperscan.pdf
+pdf: /pdfs/papers/martin-mito.pdf
 ---
 
 # Abstract
-Humans have an extraordinary ability to interact and cooperate with others. Despite the social and evolutionary significance of collaboration, research on finding its neural correlates has been limited partly due to restrictions on the simultaneous neuroimaging of more than one participant (also known as hyperscanning). Several studies have used dyadic fMRI hyperscanning to examine the interaction between two participants. However, to our knowledge, no study to date has aimed at revealing the neural correlates of social interactions using a three-person (or triadic) fMRI hyperscanning paradigm. Here, we simultaneously measured the blood-oxygenation level-dependent signal from 12 triads (n = 36 participants), while they engaged in a collaborative drawing task based on the social game of Pictionary. General linear model analysis revealed increased activation in the brain regions previously linked with the theory of mind during the collaborative phase compared to the independent phase of the task. Furthermore, using intersubject correlation analysis, we revealed increased synchronization of the right temporo‐parietal junction (R TPJ) during the collaborative phase. The increased synchrony in the R TPJ was observed to be positively associated with the overall team performance on the task. In sum, our paradigm revealed a vital role of the R TPJ among other theory-of-mind regions during a triadic collaborative drawing task.
+The brain and behavior are under energetic constraints, which are likely driven by mitochondrial energy production capacity. However, the mitochondria-behavior relationship has not been systematically studied on a brain-wide scale. Here we examine the association between mitochondrial health index and stress-related behaviors in mice with diverse mitochondrial and behavioral phenotypes. Miniaturized assays of mitochondrial respiratory chain function and mitochondrial DNA (mtDNA) content were deployed on 571 samples from 17 brain regions. We find specific patterns of mito-behavior associations that vary across brain regions and behaviors. Furthermore, multi-slice network analysis applied to our brain-wide mitochondrial dataset identified three large-scale networks of brain regions. A major network composed of cortico-striatal regions exhibits highest mitochondria-behavior correlations, suggesting that this mito-based network is functionally significant. Mito-based networks can also be recapitulated using correlated gene expression and structural connectome data, thereby providing convergent multimodal evidence of mitochondrial functional organization anchored in gene, brain and behavior.
 
 
+Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. (2021). Mouse brain-wide mitochondrial connectivity anchored in gene, brain and behavior. bioRxiv.
