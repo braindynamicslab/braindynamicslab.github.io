@@ -8,7 +8,7 @@ twitter:
 github: 
 scholar: 
 image: /images/team/kmonlux.png
-alumni: false
+alumni: true
 grad: true
 cv: 
 ---

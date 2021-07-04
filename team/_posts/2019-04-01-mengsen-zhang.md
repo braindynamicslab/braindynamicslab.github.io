@@ -9,6 +9,8 @@ github: mengsenz
 scholar: YfVxfjMAAAAJ
 image: /images/team/mengsen-sq.jpg
 postdoc: true
+alumni: true
+
 cv: 
 ---
 ### Who am I
