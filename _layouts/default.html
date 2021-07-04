@@ -52,63 +52,62 @@
 </head>
 
 <body>
-	
-	<div id="header">
-		<nav class="navbar navbar-default navbar-static-top" role="navigation">	 
-			<div class="container">	
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-element" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					{% if page.categories.first != 'home' %}					
-					<object class="logo navbar-brand" data="/images/bdl-logo.svg" type="image/svg+xml"></object>
-					<a class="navbar-brand" href="/">brain dynamics lab</a>
-					{% endif %}
-				</div>
-				<div class="collapse navbar-collapse" id="navbar-collapse-element">
-					<ul class="nav navbar-nav navbar-right">
-						{% if page.categories.first == 'blog' %}
-						<li class="active">
-						{% else %}
-						<li>
-						{% endif %}
-						<a href="/blog/">blog</a>
-						</li>
-						{% if page.categories.first == 'papers' %}
-						<li class="active">
-						{% else %}
-						<li>
-						{% endif %}
-						<a href="/papers/">papers</a>
-						</li>
-						{% if page.categories.first == 'projects' %}
-						<li class="active">
-						{% else %}
-						<li>
-						{% endif %}
-						<a href="/projects/">projects</a></li>	  
-						{% if page.categories.first == 'team' %}
-						<li class="active">
-						{% else %}
-						<li>
-						{% endif %}
-						<a href="/team/">team</a></li>	  	  
-					</ul>
-				</div>
-			</div>
-		</nav>	
-	</div>
-	
-	<div class="container">	
-		
-	{{ content }}
-	
-	</div>
-	
-	<div id="footer"><span style="display:none">foo</span></div>
+        <div id="header">
+                <nav class="navbar navbar-expand-md navbar-light bg-navbar">
+                        <div class="container">
+                                {% if page.categories.first != 'home' %}
+                                <a class="navbar-brand" href="/">
+                                        <img class="logo navbar-brand d-inline-block align-top ml-0 mr-1" src="/images/bdl-logo.svg">
+                                        brain dynamics lab
+                                </a>
+                                {% else %}
+                                <a class="navbar-brand" href="/">
+                                </a>
+                                {% endif %}
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                        <ul class="navbar-nav nav-pills ml-auto">
+                                                {% if page.categories.first == 'blog' %}
+                                                <li class="nav-link active">
+                                                {% else %}
+                                                <li class="nav-link">
+                                                {% endif %}
+                                                <a class="mx-1" href="/blog/">blog</a>
+                                                </li>
+                                                {% if page.categories.first == 'papers' %}
+                                                <li class="nav-link active">
+                                                {% else %}
+                                                <li class="nav-link">
+                                                {% endif %}
+                                                <a class="mx-1" href="/papers/">papers</a>
+                                                </li>
+                                                {% if page.categories.first == 'projects' %}
+                                                <li class="nav-link active">
+                                                {% else %}
+                                                <li class="nav-link">
+                                                {% endif %}
+                                                <a class="mx-1" href="/projects/">projects</a></li>
+                                                {% if page.categories.first == 'team' %}
+                                                <li class="nav-link active">
+                                                {% else %}
+                                                <li class="nav-link">
+                                                {% endif %}
+                                                <a class="mx-1" href="/team/">team</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </nav>
+        </div>
+
+        <div class="container mt-4">
+
+        {{ content }}
+
+        </div>
+
+        <div id="footer"><span style="display:none">foo</span></div>	
 		
 </body>
 </html>
