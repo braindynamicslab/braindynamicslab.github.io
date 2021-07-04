@@ -1,33 +1,16 @@
 ---
 layout: paper
-title: Finding the neural correlates of collaboration using a three-person fMRI hyperscanning paradigm
-image: /images/papers/xie-3phs.png
-authors: Xie H., Howell A., Scherier M., Sheau K., Manchanda M., Ayub R., Glover G., Jung M., Reiss A.L., and Saggar M.
+title: Implementing evolutionary optimization to model neural functional connectivity
+image: /images/papers/kaitlin-acm.png
+authors: Maile, K., Saggar, M., & Miikkulainen, R. 
 year: 2019
-ref: Xie, et al. 2019. bioRxiv
-journal: "bioRxiv"
-doi: 10.1101/782870
+ref: Maile, K., Saggar, M., & Miikkulainen, R. GECCO
+journal: "GECCO"
+doi: 10.1145/3319619.3326826
 github: 
-pdf: /pdfs/papers/xie-3phs-biorxiv.pdf
+pdf: /pdfs/papers/kaitlin-acm.pdf
 ---
 
 # Abstract
-
-Humans have an extraordinary ability to interact and cooperate with others, which plays a pivotal
-role in societies at large. Despite its potential social and evolutionary significance, research on
-finding the neural correlates of collaboration has been limited partly due to restrictions on
-simultaneous neuroimaging of more than one participant (a.k.a. hyperscanning). A series of
-works now exists that used dyadic fMRI hyperscanning to examine the interaction between two
-participants. However, to our knowledge, no study to date has aimed at revealing the neural
-correlates of social interactions using a 3-person (or triadic) fMRI hyperscanning paradigm.
-Here, for the first time, we simultaneously measured the blood-oxygenation-level-dependent
-(BOLD) signal of triads (m=12 triads; n=36 participants), while they engaged in a joint drawing
-task based on the social game of Pictionary®. General linear model (GLM) analysis revealed
-increased activation in the brain regions previously linked with the theory of mind (ToM) during
-the collaborative phase compared to the independent phase of the task. Furthermore, using intersubject brain synchronization (IBS) analysis, we revealed increased synchrony of the right
-temporo-parietal junction (R TPJ) during the collaborative phase. The increased synchrony in the
-R TPJ was observed to be positively associated with the overall team performance on the task. In
-sum, our novel paradigm revealed a vital role of the R TPJ among other ToM regions during a
-triadic collaborative drawing task.
-
+Computational models are crucial in understanding brain function. Their architecture is designed to replicate known brain structures, and the behavior that emerges is then compared to observed fMRI and other imaging techniques. As the models become more complex with more parameters, they can explain more of the observed phenomena, and may eventually be used for diagnosis and design of treatments of brain disorders. However, those parameters need to be carefully optimized for the models to work, which becomes intractable as the models grow. In this preliminary work, CMA-ES has been configured to optimize continuous parameters of a functional connectivity model, resulting in a better fit to empirical data than manually selected parameters in all trial runs. This approach will be combined with other EC techniques to optimize other parameters. The techniques will be scaled up to more detailed structural and functional data and local parameters.
 
