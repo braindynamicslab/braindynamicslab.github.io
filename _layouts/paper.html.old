@@ -1,0 +1,97 @@
+---
+layout: default
+---
+{% include base.html %}
+{% assign paper = page %}
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="media">
+			{% if paper.image %}
+			<img class="pull-left pad-right media-object" src="{{base}}{{ paper.image }}">
+			{% endif %}
+			<div class="media-body titlebox">
+				<div class="title media-heading">
+					{{ paper.title }}
+				</div>
+				<p>
+				<div class="smallhead">
+					{{ paper.authors }}
+					{{ paper.year }}.
+					{{ paper.journal }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="bigspacer"></div>
+		<div class="glyphbox note">
+			{% if paper.pdf %}
+			<div class="smallhead">
+				PDF
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-file-text-o fa-fw"></i>
+				<a class="off" href="{{base}}{{ paper.pdf }}">{{ paper.pdf | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if paper.supplement %}
+			<div class="smallhead">
+				Supplement
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-paperclip fa-fw"></i>
+				<a class="off" href="{{base}}{{ paper.supplement }}">{{ paper.supplement | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if paper.doi %}
+			<div class="smallhead">
+				DOI
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-external-link fa-fw"></i>
+				<a class="off" href="http://dx.doi.org/{{ paper.doi }}">{{ paper.doi }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if paper.github %}
+			<div class="smallhead">
+				GitHub
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-github-alt fa-fw"></i>
+				<a class="off" href="{{ paper.github }}">{{ paper.github | remove: 'http://github.com/' | remove: 'https://github.com/' }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+            {% if paper.movie %}
+			<div class="smallhead">
+				Movie
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-file-text-o fa-fw"></i>
+				<a class="off" href="{{base}}{{ paper.movie }}">{{ paper.movie | split: '/' | last }}</a>
+			</div>
+			<div class="bigspacer"></div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="post">
+			{{ content }}
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>

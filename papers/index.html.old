@@ -1,0 +1,26 @@
+---
+layout: default
+title: brain dynamics lab / papers
+categories: 
+ - papers
+---
+{% include base.html %}
+
+{% for paper in site.categories.papers %}
+    {% cycle 'add rows': '<div class="row">', nil, nil %}
+		<div class="col-md-3 paperbox">
+			<div class="media">
+  				<a class="pull-right" href="{{base}}{{ paper.url }}">
+    				<img width=100 class="media-object" src="{{base}}{{ paper.image }}">
+  				</a>
+ 			 	<div class="media-body">
+    				<div class="smallhead media-heading"><a href="{{base}}{{ paper.url }}" class="off">{{ paper.title }}</a></div>
+    				<p class="note">{{ paper.ref }}</p>
+  				</div>
+			</div>
+			<div class="bigspacer"></div>
+			<div class="spacer"></div>
+    </div>
+    {% cycle 'close rows': nil, nil, '</div>' %}
+{% endfor %}
+{% cycle 'close rows': nil, '</div>', '</div>' %}
