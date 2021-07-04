@@ -1,8 +1,8 @@
 ---
 layout: paper
-title: Finding the neural correlates of collaboration using a three-person fMRI hyperscanning paradigm.
+title: Simplicial and topological descriptions of human brain dynamics.
 image: /images/papers/petri-netneu.png
-authors: Billings, J., Saggar, M., Hlinka, J., Keilholz, S., & Petri, G. (2021).
+authors: Billings, J., Saggar, M., Hlinka, J., Keilholz, S., & Petri, G.
 year: 2021
 ref: Billings, J., Saggar, M., Hlinka, J., Keilholz, S., & Petri, G. (2021). Network Neuroscience 
 journal: "Network Neuroscience"
