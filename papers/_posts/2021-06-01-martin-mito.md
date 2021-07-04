@@ -2,9 +2,9 @@
 layout: paper
 title: Mouse brain-wide mitochondrial connectivity anchored in gene, brain and behavior.
 image: /images/papers/martin-mito.png
-authors: Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. (2021)
+authors: Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. 
 year: 2021
-ref: Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. BioRxiv
+ref: Rosenberg, A., Saggar, M., Rogu, P., Limoges, A. W., Sandi, C., Mosharov, E. V., ... & Picard, M. (2021) BioRxiv
 journal: "BioRxiv"
 doi: 10.1101/2021.06.02.446767
 github: 
