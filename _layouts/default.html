@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    {% include base.html %}
 	<meta charset="utf-8"/>
 	<title>{{ page.title }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +64,8 @@
 						<span class="icon-bar"></span>
 					</button>
 					{% if page.categories.first != 'home' %}					
-					<object class="logo navbar-brand" data="{{base}}/images/bdl-logo.svg" type="image/svg+xml"></object>
-					<a class="navbar-brand" href="{{base}}/">brain dynamics lab</a>
+					<object class="logo navbar-brand" data="/images/bdl-logo.svg" type="image/svg+xml"></object>
+					<a class="navbar-brand" href="/">brain dynamics lab</a>
 					{% endif %}
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse-element">
@@ -76,27 +75,27 @@
 						{% else %}
 						<li>
 						{% endif %}
-						<a href="{{base}}/blog/">blog</a>
+						<a href="/blog/">blog</a>
 						</li>
 						{% if page.categories.first == 'papers' %}
 						<li class="active">
 						{% else %}
 						<li>
 						{% endif %}
-						<a href="{{base}}/papers/">papers</a>
+						<a href="/papers/">papers</a>
 						</li>
 						{% if page.categories.first == 'projects' %}
 						<li class="active">
 						{% else %}
 						<li>
 						{% endif %}
-						<a href="{{base}}/projects/">projects</a></li>	  
+						<a href="/projects/">projects</a></li>	  
 						{% if page.categories.first == 'team' %}
 						<li class="active">
 						{% else %}
 						<li>
 						{% endif %}
-						<a href="{{base}}/team/">team</a></li>	  	  
+						<a href="/team/">team</a></li>	  	  
 					</ul>
 				</div>
 			</div>
