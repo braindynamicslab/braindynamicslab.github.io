@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: NeuroDesign: From Neuroscience Research to Design Thinking Practice.
+title: NeuroDesign From Neuroscience Research to Design Thinking Practice.
 image: /images/papers/jan-chapter.png
 authors: Auernhammer, J., Sonalkar, N., & Saggar, M. 
 year: 2021

@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: Creativity and the brain: An editorial introduction to the special issue on the neuroscience of creativity.
+title: Creativity and the brain An editorial introduction to the special issue on the neuroscience of creativity.
 image: /images/papers/ni-editorial.png
 authors: Saggar, M., Volle, E., Uddin, L. Q., Chrysikou, E. G., & Green, A. E.  
 year: 2021
