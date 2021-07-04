@@ -3,7 +3,7 @@ layout: paper
 title: Finding the neural correlates of collaboration using a three-person fMRI hyperscanning paradigm.
 image: /images/papers/hyperscan.png
 authors: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. 
-year: 2020
+year: 2021
 ref: Xie, H., Karipidis, I. I., Howell, A., Schreier, M., Sheau, K. E., Manchanda, M. K., ... & Saggar, M. (2020) PNAS 
 journal: "PNAS"
 doi: 10.1073/pnas.1917407117
