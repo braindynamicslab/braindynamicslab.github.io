@@ -35,7 +35,7 @@ categories:
   <div class="row">
   {% else %}
     {% assign counter = counter | plus: 1 %}
-    {% assign mod = counter | modulo: 3 %}
+    {% assign mod = counter | modulo: 2 %}
     {% if mod == 0 %}
 
   </div>
@@ -50,7 +50,7 @@ categories:
         <p class="note">{{ paper.ref }}</p>
       </div>
       <a href="{{ paper.url }}">
-        <img class="ml-3" width=100 class="media-object" src="{{ paper.image }}">
+        <img class="ml-2" width=100 class="media-object" src="{{ paper.image }}">
       </a>
     </div>
     <div class="bigspacer"></div>
