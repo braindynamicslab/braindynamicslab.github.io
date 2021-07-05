@@ -5,9 +5,9 @@ categories:
  - projects
 ---
 
-{% for paper in site.categories.projects %}
+{% for project in site.categories.projects %}
 {% capture prev_year %}{{ this_year }}{% endcapture %}
-{% capture this_year %}{{ paper.year }}{% endcapture %}
+{% capture this_year %}{{ project.year }}{% endcapture %}
 
 
 {% if forloop.first %}
@@ -43,14 +43,14 @@ categories:
 
     {% endif %}
   {% endif %}
-  <div class="col-lg-6 paperbox">
+  <div class="col-lg-6 projectbox">
     <div class="media">
       <div class="media-body">
-        <div class="smallhead mb-1"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
-        <p class="note">{{ paper.authors }} <strong> {{ paper.journal }} </strong></p>
+        <div class="smallhead mb-1"><a href="{{ project.url }}" class="off">{{ project.title }}</a></div>
+        <p class="note">{{ project.authors }} <strong> {{ project.journal }} </strong></p>
       </div>	      
-	<a href="{{ paper.url }}">
-        <img class="ml-3" width=150 class="media-object" src="{{ paper.image }}">
+	<a href="{{ project.url }}">
+        <img class="ml-3" width=150 class="media-object" src="{{ project.image }}">
       </a>
     </div>
     <div class="bigspacer"></div>
