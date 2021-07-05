@@ -1,7 +1,7 @@
 ---
 layout: member
 title: Yinming Sun
-position: Postdoc
+position: Postdoctoral Scholar
 handle: yinming.sun
 email: yinming.sun@stanford.edu
 twitter: 
