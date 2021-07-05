@@ -11,6 +11,7 @@ image: /images/team/yinming.png
 alumni: false
 grad: false
 aff: false
+core: true
 
 cv: 
 ---

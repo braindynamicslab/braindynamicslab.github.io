@@ -11,6 +11,7 @@ image: /images/team/manish.jpg
 pi: true
 aff: false
 alumni: false
+core: true
 
 cv: /pdfs/team/saggar-cv.pdf
 ---

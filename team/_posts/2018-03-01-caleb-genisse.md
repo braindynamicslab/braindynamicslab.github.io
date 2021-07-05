@@ -11,6 +11,7 @@ image: /images/team/caleb.jpg
 grad: true
 aff: false
 alumni: false
+core: true
 
 cv: 
 ---
