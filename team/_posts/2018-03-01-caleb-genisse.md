@@ -10,6 +10,8 @@ scholar: S5lu_LAAAAAJ
 image: /images/team/caleb.jpg
 grad: true
 aff: false
+alumni: false
+
 cv: 
 ---
 

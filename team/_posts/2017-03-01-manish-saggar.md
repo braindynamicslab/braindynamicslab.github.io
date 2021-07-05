@@ -10,6 +10,8 @@ scholar: KLbpCO0AAAAJ
 image: /images/team/manish.jpg
 pi: true
 aff: false
+alumni: false
+
 cv: /pdfs/team/saggar-cv.pdf
 ---
 

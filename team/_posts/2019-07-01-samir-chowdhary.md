@@ -10,6 +10,7 @@ scholar:
 image: /images/team/samir.jpg
 postdoc: true
 aff: false
+alumni: false
 
 cv: 
 ---
