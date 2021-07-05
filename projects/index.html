@@ -4,17 +4,16 @@ title: brain dynamics lab / projects
 categories: 
  - projects
 ---
-{% include base.html %}
 
 {% for project in site.categories.projects %}
     {% cycle 'add rows': '<div class="row">', nil, nil %}
 		<div class="col-md-4 paperbox">
 			<div class="media">
-  				<a class="pull-right" href="{{base}}{{ project.url }}">
-    				<img width=100 class="media-object" src="{{base}}{{ project.image }}">
+  				<a class="pull-right" href="{{ project.url }}">
+    				<img width=100 class="media-object" src="{{ project.image }}">
   				</a>
  			 	<div class="media-body">
-    				<div class="smallhead media-heading"><a href="{{base}}{{ project.url }}" class="off">{{ project.title }}</a></div>
+    				<div class="smallhead media-heading"><a href="{{ project.url }}" class="off">{{ project.title }}</a></div>
     				<p class="note">{{ project.ref }}</p>
   				</div>
 			</div>
