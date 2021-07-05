@@ -4,7 +4,8 @@ title: Role of brain dynamics in creativity and its enhancement
 image: /images/projects/creativity.png
 github: braindynamicslab
 ref: 2012-2019
-authors: 2012-2019
+authors: 
+funding: HPDTRP
 
 ---
 

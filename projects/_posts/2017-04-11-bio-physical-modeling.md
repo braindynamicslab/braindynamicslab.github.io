@@ -5,6 +5,7 @@ image: /images/papers/saggar-mean-field-meditation-ni.png
 github: braindynamicslab
 ref: 2017-2022
 authors: 2017-2022
+funding: Varela Grant
 
 ---
 

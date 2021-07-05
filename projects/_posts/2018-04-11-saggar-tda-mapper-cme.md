@@ -4,7 +4,8 @@ title: Characterizing spatio-temporal dynamics in brain activity
 image: /images/papers/saggar-tda-mapper-cme.png
 github: braindynamicslab
 ref: 2015-2020
-authors: 2015-2020
+authors: 
+funding: NIMH
 
 ---
 

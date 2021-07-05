@@ -3,7 +3,8 @@ layout: paper
 title: Creative brain development
 image: /images/projects/kids-brain.png
 ref: 2013-2014
-authors: 2013
+authors: 
+funding: 
 
 ---
 
