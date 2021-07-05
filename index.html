@@ -4,12 +4,11 @@ title: brain dynamics lab
 categories:
  - home
 ---
-{% include base.html %}
 <div class="row">
 	<div class="col-md-12">
-		<object class="pull-right biglogo" data="{{base}}/images/bdl-logo.png"></object>
+		<object class="pull-right biglogo" data="/images/bdl-logo.png"></object>
 		<div class="bigtitle logobox">
-            brain dynamics lab @ <font color=maroon>stanford</font>
+            brain dynamics lab @ <font color=maroon><strong>stanford</strong></font>
 		</div>
 	</div>
 </div>
@@ -33,7 +32,7 @@ categories:
 <div class="row">
 	<div class="col-md-12">
 		<div class="head">
-			<a class="off" href="{{base}}/blog/">Recent posts</a>
+			<a class="off" href="/blog/">Recent posts</a>
 		</div>
 		<div class="spacer"></div>
 	</div>
@@ -52,7 +51,7 @@ categories:
 		<div class="pad-left">
 			<div class="note">
 				<i class="fa fa-comment-o fa-fw"></i>
-				<a class="off" href="{{base}}{{ post.url }}">
+				<a class="off" href="{{ post.url }}">
 				{{ post.title }}
 				</a>
 			</div>
@@ -61,7 +60,7 @@ categories:
 				Posted
 				{{ post.date | date: "%-d %b %Y" }}
         {% if post.author %}
-        by <a class="off" href="{{base}}
+        by <a class="off" href="
           {% for member in site.categories.team %}
             {% if member.title == post.author %}
               {{ member.url }}
@@ -73,7 +72,7 @@ categories:
         {% endif %}
         {% if post.authors %}
         by
-        <a class="off" href="{{base}}
+        <a class="off" href="
           {% for member in site.categories.team %}
             {% if member.title == post.authors.first %}
               {{ member.url }}
@@ -83,7 +82,7 @@ categories:
         {{ post.authors.first }}
         </a>
         and
-        <a class="off" href="{{base}}
+        <a class="off" href="
           {% for member in site.categories.team %}
             {% if member.title == post.authors.last %}
               {{ member.url }}
@@ -105,7 +104,7 @@ categories:
 <div class="row">
 	<div class="col-md-12">
 		<div class="head">
-			<a class="off" href="{{base}}/papers/">Recent papers</a>
+			<a class="off" href="/papers/">Recent papers</a>
 		</div>
 		<div class="spacer"></div>
 	</div>
@@ -117,7 +116,7 @@ categories:
 		<div class="pad-left">
 			<div class="note">
 				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="{{base}}{{ paper.url }}">
+				<a class="off" href="{{ paper.url }}">
 				{{ paper.title }}
 				</a>
 			</div>
@@ -137,7 +136,7 @@ categories:
 <div class="row">
 	<div class="col-md-12">
 		<div class="head">
-			<a class="off" href="{{base}}/projects/">Active projects</a>
+			<a class="off" href="/projects/">Active projects</a>
 		</div>
 		<div class="spacer"></div>
 	</div>
@@ -149,18 +148,18 @@ categories:
 		<div class="pad-left">
 			<div class="note">
 				<i class="fa fa-edit fa-fw"></i>
-				<a class="off" href="{{base}}{{ project.url }}">
+				<a class="off" href="{{ project.url }}">
 				{{ project.title }} - {{ project.description }}
 				</a>
 			</div>
 			<div class="smallspacer"></div>
 			<div class="smallnote">
 				Updated
-				<a class="off" href="{{base}}{{ project.commits.first.url }}">
+				<a class="off" href="{{ project.commits.first.url }}">
 				{{ project.commits.first.date | date: "%-d %b %Y" }}
 				</a>
 				by
-				<a class="off" href="{{base}}{{ project.commits.first.author_url }}">
+				<a class="off" href="{{ project.commits.first.author_url }}">
 				{{ project.commits.first.author_login }}
 				</a>
 			</div>
@@ -186,8 +185,8 @@ categories:
 		<div class="pad-left">
 			<ul class="list-inline">
 				{% for page in site.categories.misc %}
-				<li class="footernav">
-					<i class="fa fa-angle-right"></i> <a class="off" href="{{base}}{{ page.url }}">{{ page.title }}</a>
+				<li class="footernav list-inline-item">
+					<i class="fa fa-angle-right"></i> <a class="off" href="{{ page.url }}">{{ page.title }}</a>
 				</li>
 				{% endfor %}
 
