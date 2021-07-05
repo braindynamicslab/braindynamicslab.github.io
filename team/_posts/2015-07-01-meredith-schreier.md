@@ -10,6 +10,7 @@ github:
 scholar: 
 image: /images/team/meredith.jpg
 alumni: true
+aff: false
 cv: 
 ---
 

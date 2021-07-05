@@ -9,6 +9,7 @@ github: manishsaggar1
 scholar: KLbpCO0AAAAJ
 image: /images/team/manish.jpg
 pi: true
+aff: false
 cv: /pdfs/team/saggar-cv.pdf
 ---
 

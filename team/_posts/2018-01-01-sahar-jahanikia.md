@@ -9,6 +9,7 @@ github:
 scholar: 
 image: /images/team/sahar-jahanikia.jpg
 alumni: true
+aff: false
 current: California
 cv: 
 ---

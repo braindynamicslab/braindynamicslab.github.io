@@ -9,6 +9,7 @@ github:
 scholar: 
 image: /images/team/samir.jpg
 postdoc: true
+aff: false
 
 cv: 
 ---

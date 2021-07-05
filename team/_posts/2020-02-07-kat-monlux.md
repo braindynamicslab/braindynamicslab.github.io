@@ -10,6 +10,7 @@ scholar:
 image: /images/team/kmonlux.png
 alumni: true
 grad: true
+aff: false
 cv: 
 ---
 

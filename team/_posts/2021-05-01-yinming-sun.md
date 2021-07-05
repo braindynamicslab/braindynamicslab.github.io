@@ -10,6 +10,8 @@ scholar:
 image: /images/team/yinming.png
 alumni: false
 grad: false
+aff: false
+
 cv: 
 ---
 

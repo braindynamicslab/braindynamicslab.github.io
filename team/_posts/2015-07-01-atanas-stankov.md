@@ -10,6 +10,7 @@ github:
 scholar: --
 image: /images/team/atanas.jpg
 alumni: true
+aff: false
 cv: 
 ---
 

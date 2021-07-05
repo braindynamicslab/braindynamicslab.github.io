@@ -10,6 +10,7 @@ scholar:
 image: /images/team/kaitlin-maile.jpeg
 grad: true
 alumni: true
+aff: false
 cv: 
 ---
 

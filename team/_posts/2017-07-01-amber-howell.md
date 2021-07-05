@@ -10,6 +10,7 @@ github: amhowell2
 scholar: --
 image: /images/team/amber-howell.jpg
 alumni: true
+aff: false
 cv: 
 ---
 

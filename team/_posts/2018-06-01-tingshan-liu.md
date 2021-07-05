@@ -10,6 +10,7 @@ github:
 scholar: 
 image: /images/team/missing-photo.jpg
 alumni: true
+aff: false
 cv: 
 ---
 

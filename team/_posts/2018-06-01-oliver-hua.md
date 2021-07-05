@@ -10,7 +10,7 @@ scholar:
 image: /images/team/oliver.jpg
 postdoc: true
 alumni: true
-
+aff: false
 cv: 
 ---
 

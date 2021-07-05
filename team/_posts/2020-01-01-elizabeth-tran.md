@@ -10,6 +10,7 @@ scholar:
 image: /images/team/elizabeth-tran.jpg
 grad: true
 alumni: true
+aff: false
 cv: 
 ---
 
