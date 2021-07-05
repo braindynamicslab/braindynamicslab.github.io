@@ -1,17 +1,19 @@
 ---
 layout: member
-title: Elizabeth Tran
-position: Graduate Student
-handle: elizabeth
-email: eliztran@stanford.edu
+title: Eleanor Cole
+position: Postdoctoral Scholar
+handle: ecole
+email: ecole@stanford.edu
 twitter: 
 github: 
 scholar: 
-image: /images/team/elizabeth-tran.jpg
-grad: true
-alumni: true
+image: /images/team/ecole.png
+grad: false
+alumni: false
+aff: true
 cv: 
 ---
 
-I am a Masters student in Biomedican Informatics (admitted Sprint 2018).
+I am a postdoctoral scholar in the department of psychiatry & behavioral sciences. I am currently working to better understand restricted and repetitive behavior in autism spectrum disorder with Dr. Antonio Hardan.
+
 

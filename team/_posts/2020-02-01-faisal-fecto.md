@@ -1,17 +1,18 @@
 ---
 layout: member
-title: Elizabeth Tran
-position: Graduate Student
-handle: elizabeth
-email: eliztran@stanford.edu
+title: Faisal Fecto
+position: Instructor
+handle: fecto
+email: fecto@stanford.edu
 twitter: 
 github: 
 scholar: 
-image: /images/team/elizabeth-tran.jpg
-grad: true
-alumni: true
+image: /images/team/faisal.jpg
+grad: false
+alumni: false
+aff: true
+
 cv: 
 ---
 
-I am a Masters student in Biomedican Informatics (admitted Sprint 2018).
-
+I am an Instructor in the Division of Neuromuscular Medicine at the Department of Neurology & Neurological Sciences. I am interested in quantifying disease progression for Myotonic dystrophy (DM) using neuroimaging markers.
