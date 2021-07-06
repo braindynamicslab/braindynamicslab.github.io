@@ -3,7 +3,7 @@ layout: paper
 title: Quantifying and capturing transitions in intrinsic brain activity in healthy and patient populations
 image: /images/projects/quant-rest.png
 ref: 2015-2020
-authors: 
+contributors: manishsaggar1, calebgeniesse
 funding: NIMH (K99/R00)
 aims:  Despite the burgeoning literature showing group-based differences in brain activity at rest, its specific association to any particular disorder is still lacking, making it an ineffective biomarker. We also lack applicable translation of group-based results to personalized clinical care. The proposed research will be particularly focused on developing individualized metrics to capture and computationally model the dynamics of brain activity at rest, so that specific biomarkers can be developed for early detection and treatment of mental illness.
 
