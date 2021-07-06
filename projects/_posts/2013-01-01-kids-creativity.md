@@ -27,7 +27,7 @@ Here, we aimed at understanding how creative brain develops using functional neu
 
 
 ### Press
-
+- <a href="https://scopeblog.stanford.edu/2019/05/20/creativity-can-jump-or-slump-during-middle-childhood-a-stanford-study-shows/"> Stanford SCOPE </a>
 
 ### Funding
 A postdoctoral fellowship from the Stanford Maternal & Child Health Research Institute (MCHRI) to M.S.
