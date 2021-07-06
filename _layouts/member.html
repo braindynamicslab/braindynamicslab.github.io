@@ -144,7 +144,7 @@ layout: default
 			{% for project in site.categories.projects %}
 				{% if project.author %}
 					{% if member.title == project.author %}
-						<p><a href="{{ project.url }}" class="off">{{ project.title }} - {{ project.description }}</a>
+						<p><a href="{{ project.url }}" class="off">{{ project.title }} - {{ project.aims }}</a>
 					{% endif %}
 				{% endif %}
 				{% if project.authors %}
@@ -155,7 +155,7 @@ layout: default
 						{% endif %}
 					{% endfor %}
 					{% if found %}
-						<p><a href="{{ project.url }}" class="off">{{ project.title }} - {{ project.description }}</a>
+						<p><a href="{{ project.url }}" class="off">{{ project.title }} - {{ project.aims }}</a>
 					{% endif %}
 				{% endif %}
 			{% endfor %}
