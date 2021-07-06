@@ -36,7 +36,7 @@ To this end, we first proposed to develop methods that can examine dynamics of r
 5. Saggar, M., Sporns, O., Gonzalez-Castillo, J., Bandettini, P.A., Carlsson, G., Glover, G., Reiss, A.L. (2018) <a href="http://dx.doi.org/10.1038/s41467-018-03664-4">Towards a new approach to visualize and quantify brain’s dynamical organization using topological data analysis </a>. <strong> Nature Communications </strong>.  
 6. Geniesse, C., Sporns, O., Petri, G., Saggar, M. (2019). <a href="http://dx.doi.org/10.1162/netn_a_00093"> Generating dynamical neuroimaging spatiotemporal representations (DyNeuSR) using topological data analysis </a>. <strong> Network Neuroscience </strong>. 
 7. Saggar, M. & Uddin, L. (2019). <a href="http://dx.doi.org/10.1523/ENEURO.0384-19.2019"> Pushing the boundaries of psychiatric neuroimaging to ground diagnosis in biology </a>. <strong> eNeuro </strong>. 
-
+8. Saggar, M., Sporns, O., Carlsson, G., Glover, G., Reiss, A.L., Hall S., (2018) Using Topological Data Analysis to Reveal the Intrinsic Dynamical Organization of the Brain in Individuals with Fragile X Syndrome. <emph> Society for Biological Psychiatry Meeting </emph> in May 2018, NY. 
 
 ### Funding
 A career development award (K99/R00) was awarded to M.S.
