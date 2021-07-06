@@ -123,7 +123,7 @@ layout: default
 
 		{% for project in site.data.projects %}
 			{% for contributor in project.contributors %}
-				{% if contributor.login == member.github %}
+				{% if contributor == member.github %}
 					{% assign projectsq = true %}
 				{% endif %}
 			{% endfor %}
@@ -136,7 +136,7 @@ layout: default
 		{% for project in site.data.projects %}
 			{% assign present = false %}
 			{% for contributor in project.contributors %}
-				{% if contributor.login == member.github %}
+				{% if contributor == member.github %}
 					{% assign present = true %}
 				{% endif %}
 			{% endfor %}
