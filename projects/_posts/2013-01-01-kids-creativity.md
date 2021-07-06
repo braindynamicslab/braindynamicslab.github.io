@@ -6,7 +6,8 @@ ref: 2013-2014
 authors: 
 funding: MCHRI, Stanford
 aims: We aimed at understanding how creative brain develops using functional neuroimaging (fNIRS). Using a cohort-sequential (semi-longitudinal) study of children enrolled in 3rd and 4th grades, we examined the neural correlates of the widely recognized decline in creative capacity in children as they enter 4th grade.
-status: Completed
+
+done: true
 
 ---
 

@@ -7,7 +7,7 @@ authors:
 funding: Mind & Life Institute (Varela Award)
 aims: In this project we aimed to characterize and computationally model the longitudinal changes in neural activity (EEG) associated with intensive meditation training (~6 hrs/d for 3 months). This project was done as a part of a larger project (the Shamatha project) whose goal was to study the effects of intensive meditation practice on attention, emotional regulation, and the associated neural correlates.
 
-status: Completed
+done: true
 
 ---
 
