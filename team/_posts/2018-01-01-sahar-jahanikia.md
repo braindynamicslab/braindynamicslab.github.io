@@ -7,7 +7,7 @@ email: saharjk@stanford.edu
 twitter: sahar_jk
 github: 
 scholar: 
-image: /images/team/sahar-jahanikia.JPG
+image: /images/team/sahar-jahanikia.jpg
 alumni: true
 aff: false
 current: California
