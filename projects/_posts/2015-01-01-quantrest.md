@@ -24,7 +24,7 @@ To this end, we first proposed to develop methods that can examine dynamics of r
 - Our method circumvents arbitrary averaging of data in space (over regions/nodes) or time (over 30 s windows or scan sessions)
 - The statistical inferences made by our method are at the level of single participants.
 
-### Next step
+### Next steps
 - Next we are working towards applying our approach to study intrinsic activity dynamics 
 - We are also working on better characterizing changes in brain activity dynamics in patients with FXS
 
