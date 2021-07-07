@@ -1,11 +1,11 @@
 ---
 layout: paper
-title: Understanding the role of design reflection vs rumination in creative thinking
+title: Understanding the role of design reflection (vs rumination) in creative thinking
 image: /images/projects/reflection.png
 ref: 2017-2018
 authors: Saggar M, Sonalkar N, Jahanikia S, Geniesse C, Xie O
 funding: HPDTRP, Stanford
-aims: Here, we set out to perform a cross-disciplinary investigation, across the three domains of: neuroscience, design interaction, and speech analysis, to quantify the reflection processes and link them to individual differences in creativity and design thinking both at the individual and team levels. 
+aims: Here, we set out to perform a cross-disciplinary investigation, across the three domains of neuroscience, design interaction, and speech analysis, to quantify the reflection processes and link them to individual differences in creativity and design thinking both at the individual and team levels. 
 
 done: false
 
