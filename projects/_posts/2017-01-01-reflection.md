@@ -1,9 +1,9 @@
 ---
 layout: paper
-title: Creative brain development
+title: Understanding the role of design reflection (vs rumination) in creative thinking
 image: /images/projects/kids-brain.png
 ref: 2013-2014
-authors: 
+authors: Saggar M, Sonalkar N, Jahanikia S, Geniesse C, Xie O
 funding: MCHRI, Stanford
 aims: We aimed at understanding how creative brain develops using functional neuroimaging (fNIRS). Using a cohort-sequential (semi-longitudinal) study of children enrolled in 3rd and 4th grades, we examined the neural correlates of the widely recognized decline in creative capacity in children as they enter 4th grade.
 

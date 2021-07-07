@@ -121,45 +121,22 @@ layout: default
 		{% endfor %}
 		{% endif %}
 
-
 		{% for project in site.categories.projects %}
-			{% if project.author %}
-				{% if member.title == project.author %}
-					{% assign projectsq = true %}
-				{% endif %}
-			{% endif %}
-			{% if project.authors %}
-				{% for author in project.authors %}
-					{% if member.title == author %}
-						{% assign projectsq = true %}
-					{% endif %}
-				{% endfor %}
-			{% endif %}
+		{% if project.authors contains searchstring %}
+		{% assign projectsq = true %}
+		{% endif %}
 		{% endfor %}
 
 		{% if projectsq == true %}
-			<div class="bigspacer"></div>
-			<div class="head">Projects</div>
-			<div class="spacer"></div>
-			{% for project in site.categories.projects %}
-				{% if project.author %}
-					{% if member.title == project.author %}
-						<p><a href="{{ project.url }}" class="off"><strong> {{ project.title }} </strong>: {{ project.aims }}</a>
-					{% endif %}
-				{% endif %}
-				{% if project.authors %}
-					{% assign found = false %}
-					{% for author in project.authors %}
-						{% if member.title == author %}
-							{% assign found = true %}
-						{% endif %}
-					{% endfor %}
-					{% if found %}
-						<p><a href="{{ project.url }}" class="off"> <strong> {{ project.title }} </strong>: {{ project.aims }}</a>
-					{% endif %}
-				{% endif %}
-			{% endfor %}
+		<div class="bigspacer"></div>
+		<div class="head">Projects</div>
+		<div class="spacer"></div>
+		{% for project in site.categories.projects %}
+		{% if project.authors contains searchstring %}
+		<p><a href="{{ project.url }}" class="off">{{ project.title }}</a>
 		{% endif %}
+		{% endfor %}
+		{% endif %}       
                             
             
 		{% for post in site.categories.blog %}
