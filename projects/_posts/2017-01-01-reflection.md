@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: Understanding the role of design reflection (vs rumination) in creative thinking
+title: Understanding the role of design reflection vs rumination in creative thinking
 image: /images/projects/reflection.png
 ref: 2017-2018
 authors: Saggar M, Sonalkar N, Jahanikia S, Geniesse C, Xie O
