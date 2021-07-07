@@ -2,14 +2,13 @@
 layout: default
 ---
 
-{% include base.html %}
 {% assign project = page %}
 
 <div class="row">
 	<div class="col-md-12">
 		<div class="media">
 			{% if project.image %}
-			<img class="pull-left pad-right media-object" src="{{base}}{{ project.image }}">
+			<img class="pull-left pad-right media-object" src="{{ project.image }}">
 			{% endif %}
 			<div class="media-body titlebox">
 				<div class="title media-heading">
@@ -39,7 +38,7 @@ layout: default
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="{{base}}{{ project.pdf }}">{{ project.pdf | split: '/' | last }}</a>
+				<a class="off" href="{{ project.pdf }}">{{ project.pdf | split: '/' | last }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
@@ -50,7 +49,7 @@ layout: default
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-paperclip fa-fw"></i>
-				<a class="off" href="{{base}}{{ project.supplement }}">{{ project.supplement | split: '/' | last }}</a>
+				<a class="off" href="{{ project.supplement }}">{{ project.supplement | split: '/' | last }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
@@ -83,7 +82,7 @@ layout: default
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="{{base}}{{ project.movie }}">{{ project.movie | split: '/' | last }}</a>
+				<a class="off" href="{{ project.movie }}">{{ project.movie | split: '/' | last }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}
