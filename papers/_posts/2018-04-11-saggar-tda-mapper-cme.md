@@ -7,9 +7,9 @@ year: 2018
 ref: Saggar, Sporns, Gonzalez-Castillo, Bandettini, Carlsson, Glover and Reiss. 2018. Nature Communications.
 journal: "Nature Communications"
 doi: 10.1038/s41467-018-03664-4
-github: 
+github:
 pdf: /pdfs/papers/saggar-tda-mapper-cme.pdf
-supplement: /pdfs/papers/saggar-tda-mapper-cme-supp.pdf
+supplement: /pdfs/papers/saggar-tda-mapper-cme-si.pdf
 movie: /movs/papers/saggar-tda-mapper-cme.mov
 ---
 
