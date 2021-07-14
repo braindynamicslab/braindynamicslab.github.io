@@ -1,13 +1,13 @@
 ---
 layout: paper
 title: Pushing the Boundaries of Psychiatric Neuroimaging to Ground Diagnosis in Biology
-image: /images/papers/saggar-eneuro.png
+image: /images/papers/saggar-eneuro1.png
 authors: Saggar M. and Uddin L. Q.
 year: 2019
 ref: Saggar & Uddin (2019), eNeuro
 journal: "eNeuro"
 doi: 10.1523/ENEURO.0384-19.2019
-github: 
+github:
 pdf: /pdfs/papers/saggar-eneuro.pdf
 ---
 
