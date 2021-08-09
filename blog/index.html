@@ -5,18 +5,18 @@ categories:
  - blog
 category: blog
 ---
-{% include base.html %}
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="centered-pills">
 			<ul class="nav nav-pills note">
 				<li role="presentation" class="active">
-					<a class="off" href="{{base}}/blog/">
+					<a class="off" href="/blog/">
 						<i class="fa fa-refresh fa-fw"></i> Timeline
 					</a>
 				</li>
 				<li role="presentation">
-					<a class="off" href="{{base}}/blog/archive/">
+					<a class="off" href="/blog/archive/">
 						<i class="fa fa-list-ul fa-fw"></i> Index
 					</a>
 				</li>
@@ -37,13 +37,13 @@ category: blog
 				<div class="media">
 					<div class="media-body">
 						<div class="title media-heading">
-							<a href="{{base}}{{ post.url }}" class="off">{{ post.title }}</a>
+							<a href="{{ post.url }}" class="off">{{ post.title }}</a>
 						</div>
 						<p>
 						<div class="smallhead">
 							{{ post.date | date: "%-d %b %Y" }}
 							{% if post.author %}
-							by <a class="off" href="{{base}}
+							by <a class="off" href="
                 {% for member in site.categories.team %}
                   {% if member.title == post.author %}
                     {{ member.url }}
@@ -55,7 +55,7 @@ category: blog
 							{% endif %}
               {% if post.authors %}
               by
-              <a class="off" href="{{base}}
+              <a class="off" href="
                 {% for member in site.categories.team %}
                   {% if member.title == post.authors.first %}
                     {{ member.url }}
@@ -65,7 +65,7 @@ category: blog
               {{ post.authors.first }}
               </a>
               and
-              <a class="off" href="{{base}}
+              <a class="off" href="
                 {% for member in site.categories.team %}
                   {% if member.title == post.authors.last %}
                     {{ member.url }}
@@ -89,11 +89,11 @@ category: blog
 			<div class="col-md-10">
 				{% if post.image %}
 				{% if post.link %}
-				<a href="{{base}}{{ post.link }}">
-					<img class="offset" src="{{base}}{{ post.image }}">
+				<a href="{{ post.link }}">
+					<img class="offset" src="{{ post.image }}">
 				</a>
 				{% else %}
-				<img class="offset" src="{{base}}{{ post.image }}">
+				<img class="offset" src="{{ post.image }}">
 				{% endif %}
 				{% endif %}
 				<div class="post">
@@ -119,7 +119,7 @@ category: blog
 		<div id="scroll" class="centered-pills">
 			<ul class="nav nav-pills note">
 				<li role="presentation">
-					<a class="off" href="{{base}}/blog/">
+					<a class="off" href="/blog/">
 						<i class="fa fa-chevron-up fa-fw"></i> Back to top
 					</a>
 				</li>
@@ -129,4 +129,4 @@ category: blog
 </div>
 
 <!-- Infinite scroll -->
-<script async src="{{base}}/js/infinite-scroll.js"></script>
+<script async src="/js/infinite-scroll.js"></script>
