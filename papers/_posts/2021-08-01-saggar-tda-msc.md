@@ -6,7 +6,7 @@ authors: Saggar, M., Shine, J.M., Liegeois, R., Dosenbach, N.U.F., Fair, D.
 year: 2021
 ref: Saggar, M., Shine, J.M., Liegeois, R., Dosenbach, N.U.F., Fair, D. (2021). BioRxiv
 journal: "BioRxiv"
-doi: https://www.biorxiv.org/content/10.1101/2021.08.05.455149v2
+doi: 10.1101/2021.08.05.455149v2
 github:
 pdf: /pdfs/papers/saggar-tda-msc.pdf
 ---
