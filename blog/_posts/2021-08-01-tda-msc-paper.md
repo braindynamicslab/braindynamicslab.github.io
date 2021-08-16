@@ -6,7 +6,7 @@ image: /images/blog/saggar-tda-mapper-cme.png
 author: Manish Saggar
 ---
 
-{% include base.html %}
+
 
 ### Quick Summary
 
