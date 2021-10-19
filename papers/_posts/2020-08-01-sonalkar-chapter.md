@@ -2,12 +2,12 @@
 layout: paper
 title: Mining the Role of Design Reflection and Associated Brain Dynamics in Creativity
 image: /images/papers/sonalkar-chapter.png
-authors: Sonalkar, N., Jahanikia, S., Xie, H., Geniesse, C., Ayub, R., Beaty, R., & Saggar, M. 
+authors: Sonalkar N., Jahanikia S., Xie H., Geniesse C., Ayub R., Beaty R., & Saggar M. 
 year: 2020
 ref: Sonalkar, N., Jahanikia, S., Xie, H., Geniesse, C., Ayub, R., Beaty, R., & Saggar, M.(2020) Design Thinking Research (pp. 155-167). Springer, Cham.
 journal: "Design Thinking Research"
 doi: 10.1007/978-3-030-28960-7_10
-github: 
+github:
 pdf: /pdfs/papers/sonalkar-chapter.pdf
 ---
 

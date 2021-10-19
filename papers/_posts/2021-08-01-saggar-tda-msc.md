@@ -2,7 +2,7 @@
 layout: paper
 title: Precision dynamical mapping using topological data analysis reveals a unique hub-like transition state at rest
 image: /images/papers/saggar-tda-msc.png
-authors: Saggar, M., Shine, J.M., Liegeois, R., Dosenbach, N.U.F., Fair, D.
+authors: Saggar M., Shine J.M., Liegeois R., Dosenbach N.U.F., Fair D.
 year: 2021
 ref: Saggar, M., Shine, J.M., Liegeois, R., Dosenbach, N.U.F., Fair, D. (2021). BioRxiv
 journal: "BioRxiv"
