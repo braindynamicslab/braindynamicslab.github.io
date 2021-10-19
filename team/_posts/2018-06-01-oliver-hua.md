@@ -2,16 +2,16 @@
 layout: member
 title: Hua (Oliver) Xie
 position: Postdoctoral Scholar
-handle: 
+handle:
 email: huaxie@stanford.edu
-twitter: 
-github: 
-scholar: 
+twitter:
+github:
+scholar: j5xPZdAAAAAJ
 image: /images/team/oliver.jpg
 postdoc: true
 alumni: true
 aff: false
-cv: 
+cv:
 ---
 
-I am a first year Postdoc at BDL. I am currently working on examining the neural correlates of creative thinking in individual and team settings. 
+I am currently a postdoc at the University of Maryland.
