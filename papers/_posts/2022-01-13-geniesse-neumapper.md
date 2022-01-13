@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: NeuMapper: A scalable computational framework for multiscale exploration of the brain’s dynamical organization
+title: NeuMapper: A scalable computational framework for multiscale exploration of the brain\' dynamical organization
 image: /images/papers/geniesse-neumapper.png
 authors: Geniesse, C., Chowdhury, S., Saggar M.
 year: 2022
