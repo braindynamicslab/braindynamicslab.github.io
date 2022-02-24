@@ -16,4 +16,4 @@ core: true
 cv:
 ---
 
-Alexa Booras will be joining the Brain Dynamics Lab soon.
+I’m a Clinical Research Coordinator Associate in the Brain Dynamics Lab. Previously, I worked at UC Davis researching perceptual decision making via psychophysics and computational models. Currently I am working on understanding brain dynamics through topological data analysis. 
