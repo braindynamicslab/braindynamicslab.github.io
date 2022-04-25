@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: Neural resources shift under Methylphenidate: a computational approach to examine anxiety-cognition interplay
+title: Neural resources shift under Methylphenidate a computational approach to examine anxiety-cognition interplay
 image: /images/papers/saggar-mph.png
 authors: Saggar M., Bruno J., Gaillard C., Claudino L., Ernst M.
 year: 2022
