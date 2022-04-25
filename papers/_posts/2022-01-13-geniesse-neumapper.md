@@ -6,7 +6,7 @@ authors: Geniesse C., Chowdhury S., Saggar M.
 year: 2022
 ref: Geniesse, C., Chowdhury, S., Saggar M. (2022) Network Neuroscience
 journal: "Network Neuroscience"
-doi: https://doi.org/10.1162/netn_a_00229
+doi: 10.1162/netn_a_00229
 github: https://github.com/braindynamicslab/neumapper
 pdf: /pdfs/papers/geniesse-neumapper.pdf
 ---

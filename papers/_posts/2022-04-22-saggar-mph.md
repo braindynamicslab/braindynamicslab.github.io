@@ -6,7 +6,7 @@ authors: Saggar M., Bruno J., Gaillard C., Claudino L., Ernst M.
 year: 2022
 ref: Saggar M., Bruno J., Gaillard C., Claudino L., Ernst M. (2022) BioRxiv
 journal: "BioRxiv"
-doi: https://www.biorxiv.org/content/10.1101/2022.04.21.489066v1
+doi: 10.1101/2022.04.21.489066v1
 github:
 pdf: /pdfs/papers/saggar-mph.pdf
 ---
