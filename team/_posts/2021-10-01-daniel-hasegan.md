@@ -1,7 +1,7 @@
 ---
 layout: member
 title: Daniel Hasegan
-position: Research Data Analyst 2
+position: Data Scientist (Consultant)
 handle: hasegan
 email: hasegan@stanford.edu
 twitter:
