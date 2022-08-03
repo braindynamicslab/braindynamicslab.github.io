@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Neural resources shift under Methylphenidate - a computational approach to examine anxiety-cognition interplay
+title: Using TDA-based Mapper to understand the anxiety-cognition interplay
 link: /papers/saggar-mph
-image: /images/papers/saggar-mph.png
+image: /images/blog/saggar-mph.png
 author: Manish Saggar
 ---
 
