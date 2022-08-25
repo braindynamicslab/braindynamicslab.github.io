@@ -2,7 +2,7 @@
 layout: paper
 title: Dysfunctional cortical gradient topography in treatment resistant major depression
 image: /images/papers/lorenzo-trd.png
-authors: Pasquini, L. Fryer, S.L., Eisendrath, S.J., Segal, Z.V., Lee, A.J., Brown, J.A., Saggar, M., Mathalon, D.H.
+authors: Pasquini L. Fryer S.L., Eisendrath S.J., Segal Z.V., Lee A.J., Brown J.A., Saggar M., Mathalon D.H.
 year: 2022
 ref: Pasquini, L. Fryer, S.L., Eisendrath, S.J., Segal, Z.V., Lee, A.J., Brown, J.A., Saggar, M., Mathalon, D.H. (2022) medRxiv
 journal: "medRxiv"
