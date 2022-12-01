@@ -4,11 +4,11 @@ title: Dysfunctional cortical gradient topography in treatment resistant major d
 image: /images/papers/lorenzo-trd.png
 authors: Pasquini L. Fryer S.L., Eisendrath S.J., Segal Z.V., Lee A.J., Brown J.A., Saggar M., Mathalon D.H.
 year: 2022
-ref: Pasquini, L. Fryer, S.L., Eisendrath, S.J., Segal, Z.V., Lee, A.J., Brown, J.A., Saggar, M., Mathalon, D.H. (2022) medRxiv
-journal: "medRxiv"
-doi: 10.1101/2022.06.16.22276402
+ref: Pasquini, L. Fryer, S.L., Eisendrath, S.J., Segal, Z.V., Lee, A.J., Brown, J.A., Saggar, M., Mathalon, D.H. (2022) Biological Psychiatry Cognitive Neuroscience and Neuroimaging
+journal: "Biological Psychiatry Cognitive Neuroscience and Neuroimaging"
+doi: 10.1016/j.bpsc.2022.10.009
 github:
-pdf: /pdfs/papers/lorenzo-trd.pdf
+pdf: /pdfs/papers/lorenzo-trd-bp.pdf
 ---
 
 # Abstract
