@@ -4,11 +4,11 @@ title: Brief intensive social gaze training normalizes functional brain connecti
 image: /images/papers/saggar-fxs.png
 authors: Saggar M., Bruno J., Hall S.
 year: 2022
-ref: Saggar M., Bruno J., Saggar, M. (2022) medRxiv
-journal: "medRxiv"
-doi: 10.1101/2022.06.29.22277031
+ref: Saggar M., Bruno J., Saggar, M. (2022) Cerebral Cortex
+journal: "Cerebral Cortex"
+doi: 10.1093/cercor/bhac411
 github:
-pdf: /pdfs/papers/saggar-fxs.pdf
+pdf: /pdfs/papers/saggar-fxs-cmp.pdf
 ---
 
 # Abstract
