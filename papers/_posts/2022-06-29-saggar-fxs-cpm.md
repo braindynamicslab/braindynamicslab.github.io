@@ -1,7 +1,7 @@
 ---
 layout: paper
 title: Brief intensive social gaze training normalizes functional brain connectivity in boys with fragile X syndrome
-image: /images/papers/saggar-fxs.png
+image: /images/papers/saggar-fxs-2.png
 authors: Saggar M., Bruno J., Hall S.
 year: 2022
 ref: Saggar M., Bruno J., Saggar, M. (2022) Cerebral Cortex
