@@ -1,7 +1,7 @@
 ---
 layout: member
 title: Samir Chowdhury
-position: Research Scientist (Consultant)
+position: Postdoctoral Scholar
 handle: samir
 email: samirc@stanford.edu
 twitter:
@@ -9,7 +9,7 @@ github:
 scholar:
 image: /images/team/samir.jpg
 postdoc: true
-aff: false
+aff: true
 alumni: false
 core: true
 

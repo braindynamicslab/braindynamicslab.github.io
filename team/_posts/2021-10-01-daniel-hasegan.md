@@ -1,14 +1,14 @@
 ---
 layout: member
 title: Daniel Hasegan
-position: Data Scientist (Consultant)
+position: Data Scientist
 handle: hasegan
 email: hasegan@stanford.edu
 twitter:
 github:
 scholar:
 image: /images/team/hasegan.jpeg
-alumni: false
+alumni: true
 grad: false
 aff: false
 core: true
