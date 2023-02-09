@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: Dynamic autonomic nervous system states arise during emotions and manifest in basal physiology
+title: Current opinions on the present and future use of functional near-infrared spectroscopy in psychiatry
 image: /images/papers/rihui-fnirs.png
 authors: Li, R., Hosseini, H., Saggar, M., Balters, S.C., Reiss, A.L.
 year: 2023
@@ -8,7 +8,7 @@ ref: Li, R., Hosseini, H., Saggar, M., Balters, S.C., Reiss, A.L. (2023) NeuroPh
 journal: "NeuroPhotonics"
 doi: 10.1117/1.NPh.10.1.013505
 github:
-pdf: /pdfs/papers/rihui-fnirs.pdf
+pdf: /pdfs/papers/rihui_fnirs.pdf
 ---
 
 # Abstract
