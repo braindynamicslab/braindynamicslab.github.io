@@ -2,7 +2,7 @@
 layout: paper
 title: Development of top-down cortical propagations in youth
 image: /images/papers/pines.png
-authors: Pines, A., Keller, A.S., Larsen, B., Bertolero, M., Ashourvan, A., Bassett, D.S., Cieslak, M., Covitz, S., Fan, Y., Feczko, E., Houghton, A., Rueter A.R., Saggar, M., Shafiei, G., Tapera, T.M., Vogel, J., Weinstein, S.M., Shinohara, R.T., Williams, L.M., Fair, D.A., Satterthwaite, T.D.
+authors: Pines A., Keller A.S., Larsen B., Bertolero M., Ashourvan A., Bassett D.S., Cieslak M., Covitz S., Fan Y., Feczko E., Houghton A., Rueter A.R., Saggar M., Shafiei G., Tapera T.M., Vogel J., Weinstein S.M., Shinohara R.T., Williams L.M., Fair D.A., Satterthwaite T.D.
 year: 2023
 ref: Pines, A., Keller, A.S., Larsen, B., Bertolero, M., Ashourvan, A., Bassett, D.S., Cieslak, M., Covitz, S., Fan, Y., Feczko, E., Houghton, A., Rueter A.R., Saggar, M., Shafiei, G., Tapera, T.M., Vogel, J., Weinstein, S.M., Shinohara, R.T., Williams, L.M., Fair, D.A., Satterthwaite, T.D. (2023) Neuron
 journal: "Neuron"

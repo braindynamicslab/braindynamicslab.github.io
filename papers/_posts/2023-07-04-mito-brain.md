@@ -2,7 +2,7 @@
 layout: paper
 title: Brain mitochondrial diversity and network organization predict anxiety-like behavior in male mice
 image: /images/papers/mito-brain.png
-authors: Rosenberg, A., Saggar, M., Rogu, P., Sandi, C., Dumitriu, D., Anacker, C., Picard, M. 
+authors: Rosenberg A., Saggar M., Rogu P., Sandi C., Dumitriu D., Anacker C., Picard M. 
 year: 2023
 ref: Rosenberg, A., Saggar, M., Rogu, P., Sandi, C., Dumitriu, D., Anacker, C., Picard, M. (2023) Nature Communications
 journal: "Nature Communications"

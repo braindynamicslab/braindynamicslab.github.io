@@ -2,7 +2,7 @@
 layout: paper
 title: Current opinions on the present and future use of functional near-infrared spectroscopy in psychiatry
 image: /images/papers/rihui-fnirs.png
-authors: Li, R., Hosseini, H., Saggar, M., Balters, S.C., Reiss, A.L.
+authors: Li R., Hosseini H., Saggar M., Balters S.C., Reiss A.L.
 year: 2023
 ref: Li, R., Hosseini, H., Saggar, M., Balters, S.C., Reiss, A.L. (2023) NeuroPhotonics
 journal: "NeuroPhotonics"
