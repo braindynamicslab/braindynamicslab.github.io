@@ -6,9 +6,9 @@ authors: Rosenberg A., Saggar M., Rogu P., Sandi C., Dumitriu D., Anacker C., Pi
 year: 2023
 ref: Rosenberg, A., Saggar, M., Rogu, P., Sandi, C., Dumitriu, D., Anacker, C., Picard, M. (2023) Nature Communications
 journal: "Nature Communications"
-doi: 
+doi: 10.1038/s41467-023-39941-0
 github:
-pdf: /pdfs/papers/mito-brain.pdf
+pdf: /pdfs/papers/rosenberg-natcomm.pdf
 ---
 
 # Abstract
