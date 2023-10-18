@@ -1,7 +1,7 @@
 ---
 layout: member
 title: Elizabeth Tran
-position: Graduate Student
+position: Consultant
 handle: elizabeth
 email: eliztran@stanford.edu
 twitter: 
@@ -9,10 +9,10 @@ github:
 scholar: 
 image: /images/team/elizabeth-tran.jpg
 grad: true
-alumni: true
+alumni: false
 aff: true
 cv: 
 ---
 
-I am a Masters student in Biomedican Informatics (admitted Sprint 2018).
+Finished my Masters in Biomedican Informatics at Stanford. Currently working on applying TDA methods on naturalistic fMRI data.
 
