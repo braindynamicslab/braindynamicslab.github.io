@@ -1,7 +1,7 @@
 ---
 layout: talk
 title: Computational Neuropsychiatry - New Approaches to Psychiatric Diagnosis 
-image: /images/talks/brain-mind.png
+image: /images/talks/brainmind.png
 date: Sep 17, 2019
 host: 2018 BrainMind Summit @ Stanford
 speaker: Manish Saggar
@@ -16,6 +16,7 @@ In this talk Manish discusses the challenges in diagnosing mental health disorde
 # Talk
 
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe src="https://www.youtube.com/watch?v=fH17HvGDi0s" width="1024" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/fH17HvGDi0s" frameborder="0" allowfullscreen></iframe>
+
 </div>
 <br>
