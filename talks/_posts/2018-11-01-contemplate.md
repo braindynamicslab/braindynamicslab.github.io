@@ -2,7 +2,7 @@
 layout: talk
 title: Neuroscience of Contemplative Practices
 image: /images/talks/contemplate.png
-date: Fall 2018
+date: Nov 1, 2018
 host: Contemplation By Design Summit 2018, Stanford University
 speaker: Manish Saggar
 view: public
