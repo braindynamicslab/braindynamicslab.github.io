@@ -8,7 +8,7 @@ ref: Quah S.K.L., Jo B., Geniesse C., Uddin L.Q., Mumford J.A., Barch D.M., Fair
 journal: "BioRxiv"
 doi: 10.1101/2024.01.31.577486
 github:
-pdf: /pdfs/papers/shain-rdoc.pdf
+pdf: /pdfs/papers/shaun-rdoc.pdf
 ---
 
 # Abstract
