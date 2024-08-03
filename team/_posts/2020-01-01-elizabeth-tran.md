@@ -9,7 +9,7 @@ github:
 scholar: 
 image: /images/team/elizabeth-tran.jpg
 grad: true
-alumni: false
+alumni: true
 aff: true
 cv: 
 ---
