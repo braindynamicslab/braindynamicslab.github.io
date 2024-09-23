@@ -76,12 +76,12 @@ layout: default
 			{% endif %}
 			{% if page.biorxiv %}
 			<div class="smallhead">
-				GitHub
+				BioRxiv
 			</div>
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-biorxiv-alt fa-fw"></i>
-				<a class="off" href="{{ page.biorxiv }}">{{ page.biorxiv | remove: 'http://github.com/' | remove: 'https://github.com/' | replace: "/", "/<wbr>" | replace: "_", "_<wbr>" }}</a>
+				<a class="off" href="{{ page.biorxiv }}">{{ page.biorxiv }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}			
