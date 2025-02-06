@@ -16,7 +16,7 @@ core: true
 cv: /pdfs/team/saggar-cv.pdf
 ---
 
-* Assistant Professor, Department of Psychiatry & Behavioral Sciences
+* Associate Professor, Department of Psychiatry & Behavioral Sciences
 * Tashia and John Morgridge Endowed Faculty Scholar in Pediatric Translational Medicine, MCHRI
 * Member, Bio-X
 * Member, Child Health Research Institute
