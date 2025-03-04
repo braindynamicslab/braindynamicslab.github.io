@@ -8,7 +8,7 @@ twitter:
 github:
 scholar:
 image: /images/team/soren.png
-alumni: false
+alumni: true
 grad: false
 aff: false
 core: true
