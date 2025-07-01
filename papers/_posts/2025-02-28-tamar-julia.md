@@ -4,9 +4,9 @@ title: Quantitative T1 mapping indicates elevated white matter myelin in childre
 image: /images/papers/julia-tamar.png
 authors:  Plank J.R., Gozdas E., Bruno J., McGhee C.A., Wu H., Raman M.M., Saggar M., Green G.
 year: 2025
-ref: Plank J.R., Gozdas E., Bruno J., McGhee C.A., Wu H., Raman M.M., Saggar M., Green G. (2025) medRxiv
-journal: "medRxiv"
-doi: 10.1101/2025.02.25.25322881
+ref: Plank J.R., Gozdas E., Bruno J., McGhee C.A., Wu H., Raman M.M., Saggar M., Green G. (2025) Biological Psychiatry
+journal: "Biological Psychiatry"
+doi: 10.1016/j.biopsych.2025.04.014
 github:
 pdf: /pdfs/papers/julia-tamar.pdf
 biorxiv: https://www.medrxiv.org/content/10.1101/2025.02.25.25322881v1
