@@ -9,6 +9,8 @@ journal: "Human Brain Mapping"
 doi: 10.1002/hbm.70557
 github: https://github.com/braindynamicslab/dl-task-contrast-prediction
 pdf: /pdfs/papers/madsen-lee-dl.pdf
+biorxiv: https://www.biorxiv.org/content/10.1101/2024.09.10.612309v4
+
 ---
 
 # Abstract
