@@ -9,6 +9,10 @@ aims: We aimed at understanding how creative brain develops using functional neu
 
 done: true
 
+status: Completed
+summary: "Using fNIRS in 3rd- and 4th-graders to understand how the creative brain develops and why creative capacity often dips in 4th grade."
+team: ["Manish Saggar", "Meredith Schreier"]
+collaborators: ""
 ---
 
 ### Aims

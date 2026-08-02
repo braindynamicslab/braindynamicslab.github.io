@@ -9,6 +9,10 @@ aims: In this project we aimed to characterize and computationally model the lon
 
 done: true
 
+status: Completed
+summary: "Characterizing and computationally modeling the longitudinal EEG changes from ~3 months of intensive meditation training, as part of the larger Shamatha Project."
+team: ["Manish Saggar"]
+collaborators: ""
 ---
 
 ### Aims

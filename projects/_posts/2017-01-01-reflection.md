@@ -9,6 +9,10 @@ aims: Here, we set out to perform a cross-disciplinary investigation, across the
 
 done: false
 
+status: Completed
+summary: "A cross-disciplinary study (neuroscience, design interaction, speech analysis) quantifying design reflection versus rumination in creative thinking."
+team: ["Manish Saggar", "Sahar Jahanikia", "Caleb Geniesse", "Hua (Oliver) Xie"]
+collaborators: "Neeraj Sonalkar"
 ---
 
 ### Aims
