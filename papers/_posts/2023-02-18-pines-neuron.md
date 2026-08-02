@@ -9,6 +9,7 @@ journal: "Neuron"
 doi: 10.1016/j.neuron.2023.01.014
 github:
 pdf: /pdfs/papers/pines.pdf
+tags: [development, brain-dynamics]
 ---
 
 # Abstract

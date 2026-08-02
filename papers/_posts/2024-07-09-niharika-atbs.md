@@ -9,6 +9,7 @@ journal: "Mental Health Research"
 doi: 10.1038/s44184-024-00073-y
 github:
 pdf: /pdfs/papers/niharika-atbs.pdf
+tags: [depression, TMS]
 ---
 
 # Abstract

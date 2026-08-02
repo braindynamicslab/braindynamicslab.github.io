@@ -9,6 +9,7 @@ journal: "PNAS"
 doi: 10.1073/pnas.1917407117
 github:
 pdf: /pdfs/papers/hyperscan.pdf
+tags: [social]
 ---
 
 # Abstract

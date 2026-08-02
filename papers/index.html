@@ -5,56 +5,132 @@ categories:
  - papers
 ---
 
+<style>
+.paper-filters { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 4px; }
+.filter-pill {
+  border:1px solid #cfcfcf; background:#fff; color:#444;
+  border-radius:999px; padding:4px 14px; font-size:.85rem; cursor:pointer;
+  transition:background .15s ease, color .15s ease, border-color .15s ease; line-height:1.5;
+}
+.filter-pill:hover { border-color:#800000; color:#800000; }
+.filter-pill.active { background:#800000; border-color:#800000; color:#fff; }
+.filter-count { color:#999; font-size:.8rem; margin:2px 0 18px; }
+.paperbox .media { transition: transform .15s ease; }
+.paperbox:hover .media { transform: translateY(-3px); }
+.paper-tags { margin-top:6px; line-height:1.9; }
+.paper-tag {
+  display:inline-block; font-size:.68rem; letter-spacing:.02em; cursor:pointer;
+  background:#f1eef1; color:#800000; border-radius:4px;
+  padding:1px 7px; margin:0 4px 0 0; transition:background .15s ease;
+}
+.paper-tag:hover { background:#e3d7e3; }
+.filter-empty { color:#888; font-style:italic; padding:10px 0 30px; display:none; }
+</style>
+
+{% capture tags_string %}{% for paper in site.categories.papers %}{% for t in paper.tags %}{{ t }},{% endfor %}{% endfor %}{% endcapture %}
+{% assign all_tags = tags_string | split: "," | uniq | sort_natural %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="paper-filters" id="paperFilters">
+      <button class="filter-pill active" data-filter="all">All papers</button>
+      {% for t in all_tags %}
+      <button class="filter-pill" data-filter="{{ t | slugify }}">{{ t }}</button>
+      {% endfor %}
+    </div>
+    <div class="filter-count" id="filterCount"></div>
+    <div class="filter-empty" id="filterEmpty">No papers match this theme yet.</div>
+  </div>
+</div>
+
+{% assign current_group = "___start___" %}
 {% for paper in site.categories.papers %}
-{% capture prev_year %}{{ this_year }}{% endcapture %}
-{% capture this_year %}{{ paper.year }}{% endcapture %}
-
-
-{% if forloop.first %}
-    {% assign counter = 0 %}
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{ this_year }}</h1>
-<hr style="height:2px;border:none;color:#808088;background-color:#808088;" />    </div>
-  </div>
-  <div class="row">
-  {% elsif this_year != prev_year and this_year > "2011" %}
-    {% assign counter = 0 %}
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      {% if this_year != "2012" %}
-      <h1>{{ this_year }}</h1>
-      {% else %}
-      <h1>2012 and earlier</h1>
-      {% endif %}
-      <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
-
-    </div>
-  </div>
-  <div class="row">
-  {% else %}
-    {% assign counter = counter | plus: 1 %}
-    {% assign mod = counter | modulo: 2 %}
-    {% if mod == 0 %}
-
-  </div>
-  <div class="row">
-
-    {% endif %}
-  {% endif %}
-  <div class="col-lg-6 paperbox">
-    <div class="media">
-      <div class="media-body">
-        <div class="smallhead mb-1"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
-        <p class="note">{{ paper.authors }} <strong> {{ paper.journal }} </strong></p>
-      </div>	      
-	<a href="{{ paper.url }}">
-        <img class="ml-3" width=150 class="media-object" src="{{ paper.image }}">
-      </a>
-    </div>
-    <div class="bigspacer"></div>
-    <div class="spacer"></div>
+  {% assign yr = paper.year | plus: 0 %}
+  {% if yr <= 2012 %}{% assign group_label = "2012 and earlier" %}{% else %}{% assign group_label = paper.year %}{% endif %}
+  {% if group_label != current_group %}
+    {% unless forloop.first %}
       </div>
+    </section>
+    {% endunless %}
+    {% assign current_group = group_label %}
+    <section class="year-group" data-year="{{ group_label }}">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ group_label }}</h1>
+          <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+        </div>
+      </div>
+      <div class="row">
+  {% endif %}
+        <div class="col-lg-6 paperbox paper-item" data-tags="{% for t in paper.tags %}{{ t | slugify }} {% endfor %}">
+          <div class="media">
+            <div class="media-body">
+              <div class="smallhead mb-1"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
+              <p class="note">{{ paper.authors }} <strong> {{ paper.journal }} </strong></p>
+              {% if paper.tags %}<p class="paper-tags">{% for t in paper.tags %}<span class="paper-tag" data-tag="{{ t | slugify }}">{{ t }}</span>{% endfor %}</p>{% endif %}
+            </div>
+            <a href="{{ paper.url }}">
+              <img class="ml-3 media-object" width="150" src="{{ paper.image }}">
+            </a>
+          </div>
+          <div class="bigspacer"></div>
+          <div class="spacer"></div>
+        </div>
+  {% if forloop.last %}
+      </div>
+    </section>
+  {% endif %}
 {% endfor %}
-  </div>
+
+<script>
+(function () {
+  var filterBar = document.getElementById('paperFilters');
+  if (!filterBar) return;
+  var pills   = filterBar.querySelectorAll('.filter-pill');
+  var items   = document.querySelectorAll('.paper-item');
+  var groups  = document.querySelectorAll('.year-group');
+  var countEl = document.getElementById('filterCount');
+  var emptyEl = document.getElementById('filterEmpty');
+
+  function apply(filter) {
+    var visible = 0;
+    items.forEach(function (it) {
+      var tags = (it.getAttribute('data-tags') || '').trim().split(/\s+/);
+      var show = (filter === 'all') || tags.indexOf(filter) !== -1;
+      it.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    // hide a whole year section if none of its papers are visible
+    groups.forEach(function (g) {
+      var any = Array.prototype.some.call(
+        g.querySelectorAll('.paper-item'),
+        function (it) { return it.style.display !== 'none'; }
+      );
+      g.style.display = any ? '' : 'none';
+    });
+    emptyEl.style.display = visible ? 'none' : 'block';
+    countEl.textContent = (filter === 'all')
+      ? 'Showing all ' + visible + ' papers'
+      : 'Showing ' + visible + ' paper' + (visible === 1 ? '' : 's');
+  }
+
+  pills.forEach(function (p) {
+    p.addEventListener('click', function () {
+      pills.forEach(function (x) { x.classList.remove('active'); });
+      p.classList.add('active');
+      apply(p.getAttribute('data-filter'));
+    });
+  });
+
+  // clicking a tag chip on a card activates that filter
+  document.querySelectorAll('.paper-tag').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var t = chip.getAttribute('data-tag');
+      var pill = filterBar.querySelector('.filter-pill[data-filter="' + t + '"]');
+      if (pill) { pill.click(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    });
+  });
+
+  apply('all'); // initialize count
+})();
+</script>

@@ -9,6 +9,7 @@ journal: "Springer"
 doi: 10.1007/978-3-031-36103-6_10
 github:
 pdf: /pdfs/papers/neurodesign.pdf
+tags: [creativity]
 ---
 
 # Abstract

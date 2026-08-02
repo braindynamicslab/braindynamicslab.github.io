@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-modeling-motivation-cogsci.pdf
 supplement: 
 movie: 
+tags: [modeling]
 ---
 
 # Abstract

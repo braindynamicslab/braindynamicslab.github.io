@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/singh-bipolar-disorder.pdf
 supplement: 
 movie: 
+tags: [psychiatry, development]
 ---
 
 # Abstract

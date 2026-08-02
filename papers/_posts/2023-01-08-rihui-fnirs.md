@@ -9,6 +9,7 @@ journal: "NeuroPhotonics"
 doi: 10.1117/1.NPh.10.1.013505
 github:
 pdf: /pdfs/papers/rihui_fnirs.pdf
+tags: [psychiatry, methods]
 ---
 
 # Abstract

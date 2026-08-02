@@ -10,6 +10,7 @@ doi: 10.1016/j.isci.2026.115121
 github:
 pdf: /pdfs/papers/john-ibogaine.pdf
 biorxiv: 
+tags: [psychedelics]
 ---
 
 # Abstract

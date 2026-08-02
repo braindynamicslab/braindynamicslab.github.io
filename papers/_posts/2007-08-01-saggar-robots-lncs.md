@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-robots-lncs.pdf
 supplement: 
 movie: /movies/saggar-robots-lncs-stable.mpg
+tags: [modeling, methods]
 ---
 
 # Abstract

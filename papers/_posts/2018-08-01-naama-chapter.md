@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/naama-chapter.pdf
 supplement: 
 movie: 
+tags: [creativity, social]
 ---
 
 # Abstract

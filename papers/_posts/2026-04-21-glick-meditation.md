@@ -10,6 +10,7 @@ doi: 10.64898/2026.04.19.26351219
 github:
 pdf: /pdfs/papers/glick-meditation.pdf
 biorxiv: 
+tags: [meditation]
 ---
 
 # Abstract

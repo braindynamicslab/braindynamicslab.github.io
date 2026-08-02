@@ -11,6 +11,7 @@ github: https://github.com/braindynamicslab/dl-task-contrast-prediction
 pdf: /pdfs/papers/madsen-lee-dl.pdf
 biorxiv: https://www.biorxiv.org/content/10.1101/2024.09.10.612309v4
 
+tags: [methods, psychiatry]
 ---
 
 # Abstract

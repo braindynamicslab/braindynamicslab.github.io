@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/klabunde-saggar-pws-hbm.pdf
 supplement: 
 movie: 
+tags: [genetics]
 ---
 
 # Abstract

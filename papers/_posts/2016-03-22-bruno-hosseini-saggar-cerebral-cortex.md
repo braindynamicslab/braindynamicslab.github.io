@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/bruno-hosseini-saggar-cerebral-cortex.pdf
 supplement: 
 movie: 
+tags: [genetics]
 ---
 
 # Abstract

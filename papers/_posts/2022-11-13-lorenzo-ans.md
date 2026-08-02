@@ -9,6 +9,7 @@ journal: "Psychophysiology"
 doi: 10.1111/psyp.14218
 github:
 pdf: /pdfs/papers/lorenzo-ans-pp.pdf
+tags: [brain-dynamics]
 ---
 
 # Abstract

@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-ind-con-ni.pdf
 supplement:
 movie:
+tags: [methods]
 ---
 
 # Abstract

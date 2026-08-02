@@ -9,6 +9,7 @@ journal: "NeuroImage"
 doi: 10.1016/j.neuroimage.2022.119686
 github:
 pdf: /pdfs/papers/saggar-mph-ni.pdf
+tags: [psychiatry]
 ---
 
 # Abstract

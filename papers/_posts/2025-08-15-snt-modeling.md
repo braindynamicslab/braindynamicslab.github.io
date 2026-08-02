@@ -10,6 +10,7 @@ doi: 10.1101/2025.08.13.25333640
 github: 
 pdf: /pdfs/papers/snt-model.pdf
 biorxiv: 
+tags: [depression, TMS, modeling]
 ---
 
 # Abstract

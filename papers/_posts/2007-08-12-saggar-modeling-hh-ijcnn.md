@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-modeling-hh-ijcnn.pdf
 supplement: 
 movie: 
+tags: [modeling, methods]
 ---
 
 # Abstract

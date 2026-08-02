@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-mean-field-meditation-ni.pdf
 supplement: 
 movie: 
+tags: [meditation, modeling]
 ---
 
 # Abstract

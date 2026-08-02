@@ -9,6 +9,7 @@ journal: "BioRxiv"
 doi: 10.1101/2024.06.16.599236
 github:
 pdf: /pdfs/papers/yinming-dense.pdf
+tags: [TMS, methods]
 ---
 
 # Abstract

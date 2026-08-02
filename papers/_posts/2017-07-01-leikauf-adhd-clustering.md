@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/leikauf-adhd-clustering.pdf
 supplement: 
 movie: 
+tags: [psychiatry]
 ---
 
 # Abstract
