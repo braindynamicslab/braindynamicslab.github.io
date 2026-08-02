@@ -22,9 +22,10 @@ categories:
 }
 .proj-card {
   border:1px solid #e6e6e6; border-radius:10px; overflow:hidden;
-  background:#fff; display:flex; flex-direction:column;
+  background:#fff; display:flex; flex-direction:column; cursor:pointer;
   transition:transform .15s ease, box-shadow .15s ease;
 }
+.proj-card:focus-visible { outline:2px solid #800000; outline-offset:2px; }
 .proj-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(0,0,0,.09); }
 .proj-thumb {
   height:150px; width:100%; object-fit:cover; background:#f4f2f4;
@@ -74,7 +75,7 @@ categories:
 
 <div class="proj-grid" id="projGrid">
 {% for project in site.categories.projects %}
-  <div class="proj-card proj-item" data-status="{{ project.status | slugify }}">
+  <div class="proj-card proj-item" data-status="{{ project.status | slugify }}" data-href="{{ project.url }}" role="link" tabindex="0" aria-label="{{ project.title | escape }}">
     {% if project.image %}<img class="proj-thumb" src="{{ project.image }}" alt="{{ project.title }}">{% endif %}
     <div class="proj-body">
       <span class="proj-status {{ project.status | slugify }}">{{ project.status }}</span>
@@ -127,6 +128,21 @@ categories:
       pills.forEach(function (x) { x.classList.remove('active'); });
       p.classList.add('active');
       apply(p.getAttribute('data-filter'));
+    });
+  });
+
+  // Whole-card click opens the project page (but real links inside still work)
+  items.forEach(function (card) {
+    var href = card.getAttribute('data-href');
+    if (!href) return;
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;                 // let avatar / title links win
+      if (window.getSelection && String(window.getSelection())) return; // don't hijack text selection
+      if (e.metaKey || e.ctrlKey) { window.open(href, '_blank'); }       // new tab
+      else { window.location = href; }
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { window.location = href; }
     });
   });
 
