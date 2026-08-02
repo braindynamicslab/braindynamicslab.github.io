@@ -3,9 +3,32 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>{{ page.title }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
+	<!-- SEO: title / description / canonical (added 2026) -->
+	{% capture seo_title %}{% if page.categories contains 'home' %}Brain Dynamics Lab @ Stanford{% else %}{{ page.title }} | Brain Dynamics Lab{% endif %}{% endcapture %}
+	{% capture seo_desc %}{% if page.description %}{{ page.description }}{% elsif page.aims %}{{ page.aims }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+	{% assign seo_desc = seo_desc | strip_html | strip_newlines | strip | truncate: 200 | escape %}
+	{% capture seo_image %}{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/images/bdl-logo-2.png{% endif %}{% endcapture %}
+	{% capture seo_url %}{{ site.url }}{{ page.url }}{% endcapture %}
+	<title>{{ seo_title | strip | escape }}</title>
+	<meta name="description" content="{{ seo_desc }}">
+	<link rel="canonical" href="{{ seo_url }}">
+
+	<!-- Open Graph (LinkedIn, Facebook, Slack, iMessage previews) -->
+	<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+	<meta property="og:site_name" content="Brain Dynamics Lab">
+	<meta property="og:title" content="{{ seo_title | strip | escape }}">
+	<meta property="og:description" content="{{ seo_desc }}">
+	<meta property="og:url" content="{{ seo_url }}">
+	<meta property="og:image" content="{{ seo_image }}">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ seo_title | strip | escape }}">
+	<meta name="twitter:description" content="{{ seo_desc }}">
+	<meta name="twitter:image" content="{{ seo_image }}">
+
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 	

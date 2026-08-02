@@ -18,6 +18,12 @@ sass:
 
 plugins: ['jekyll-twitter-plugin']
 
+# Force-publish these files even though the "*.xml" / "*.txt" exclude globs below would catch them.
+include:
+  - sitemap.xml
+  - robots.txt
+  - feed.xml
+
 exclude:
   - "*.branches"
   - "*.class"
