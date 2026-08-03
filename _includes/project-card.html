@@ -1,0 +1,27 @@
+<div class="proj-card proj-item" data-status="{{ include.project.status | slugify }}" data-href="{{ include.project.url }}" role="link" tabindex="0" aria-label="{{ include.project.title | escape }}">
+  {% if include.project.image %}<img class="proj-thumb" src="{{ include.project.image }}" alt="{{ include.project.title }}">{% endif %}
+  <div class="proj-body">
+    <span class="proj-status {{ include.project.status | slugify }}">{{ include.project.status }}</span>
+    <div class="proj-title"><a href="{{ include.project.url }}" class="off">{{ include.project.title }}</a></div>
+    <div class="proj-summary">{{ include.project.summary | default: include.project.aims | truncate: 220 }}</div>
+    <div class="proj-meta">
+      {% if include.project.ref %}<span>{{ include.project.ref }}</span>{% endif %}
+      {% if include.project.funding %}<span class="dot">·</span><span>{{ include.project.funding }}</span>{% endif %}
+    </div>
+    {% if include.project.team %}
+    <div class="proj-people">
+      {% for person in include.project.team %}
+        {% assign member = site.categories.team | where: "title", person | first %}
+        {% if member and member.image %}
+          <a href="{{ member.url }}" title="{{ member.title }}"><img class="proj-avatar" src="{{ member.image }}" alt="{{ member.title }}"></a>
+        {% else %}
+          <span class="proj-avatar-missing" title="{{ person }}">{{ person | slice: 0 }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if include.project.collaborators and include.project.collaborators != "" %}
+    <div class="proj-collab"><strong>With:</strong> {{ include.project.collaborators }}</div>
+    {% endif %}
+  </div>
+</div>

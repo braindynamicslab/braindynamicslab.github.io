@@ -74,35 +74,9 @@ categories:
 </div>
 
 <div class="proj-grid" id="projGrid">
-{% for project in site.categories.projects %}
-  <div class="proj-card proj-item" data-status="{{ project.status | slugify }}" data-href="{{ project.url }}" role="link" tabindex="0" aria-label="{{ project.title | escape }}">
-    {% if project.image %}<img class="proj-thumb" src="{{ project.image }}" alt="{{ project.title }}">{% endif %}
-    <div class="proj-body">
-      <span class="proj-status {{ project.status | slugify }}">{{ project.status }}</span>
-      <div class="proj-title"><a href="{{ project.url }}" class="off">{{ project.title }}</a></div>
-      <div class="proj-summary">{{ project.summary | default: project.aims | truncate: 220 }}</div>
-      <div class="proj-meta">
-        {% if project.ref %}<span>{{ project.ref }}</span>{% endif %}
-        {% if project.funding %}<span class="dot">·</span><span>{{ project.funding }}</span>{% endif %}
-      </div>
-      {% if project.team %}
-      <div class="proj-people">
-        {% for person in project.team %}
-          {% assign member = site.categories.team | where: "title", person | first %}
-          {% if member and member.image %}
-            <a href="{{ member.url }}" title="{{ member.title }}"><img class="proj-avatar" src="{{ member.image }}" alt="{{ member.title }}"></a>
-          {% else %}
-            <span class="proj-avatar-missing" title="{{ person }}">{{ person | slice: 0 }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
-      {% endif %}
-      {% if project.collaborators and project.collaborators != "" %}
-      <div class="proj-collab"><strong>With:</strong> {{ project.collaborators }}</div>
-      {% endif %}
-    </div>
-  </div>
-{% endfor %}
+{% comment %} Active projects first, then everything else (Completed) — each newest-first {% endcomment %}
+{% for project in site.categories.projects %}{% if project.status == 'Active' %}{% include project-card.html project=project %}{% endif %}{% endfor %}
+{% for project in site.categories.projects %}{% unless project.status == 'Active' %}{% include project-card.html project=project %}{% endunless %}{% endfor %}
 </div>
 
 <script>
