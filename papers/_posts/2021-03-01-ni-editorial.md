@@ -9,6 +9,7 @@ journal: "NeuroImage"
 doi: 10.1016/j.neuroimage.2021.117836
 github:
 pdf: /pdfs/papers/ni-editorial.pdf
+tags: [creativity]
 ---
 
 # Abstract

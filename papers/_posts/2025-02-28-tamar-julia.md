@@ -10,6 +10,7 @@ doi: 10.1016/j.biopsych.2025.04.014
 github:
 pdf: /pdfs/papers/julia-tamar.pdf
 biorxiv: https://www.medrxiv.org/content/10.1101/2025.02.25.25322881v1
+tags: [genetics, development]
 ---
 
 # Abstract

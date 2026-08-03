@@ -10,6 +10,7 @@ doi: 10.64898/2025.12.27.696696
 github:
 pdf: /pdfs/papers/caleb-sv-tda.pdf
 biorxiv: https://www.biorxiv.org/content/10.64898/2025.12.27.696696v1
+tags: [TDA, brain-dynamics, psychiatry]
 ---
 
 # Abstract

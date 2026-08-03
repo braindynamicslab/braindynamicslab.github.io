@@ -9,6 +9,7 @@ journal: "Cerebral Cortex"
 doi: 10.1093/cercor/bhac411
 github:
 pdf: /pdfs/papers/saggar-fxs-cmp.pdf
+tags: [genetics, social]
 ---
 
 # Abstract

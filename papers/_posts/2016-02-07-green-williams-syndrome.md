@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/green-williams-syndrome.pdf
 supplement: 
 movie: 
+tags: [genetics]
 ---
 
 # Abstract

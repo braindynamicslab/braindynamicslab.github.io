@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-social-fmri-ni.pdf
 supplement: 
 movie: 
+tags: [social]
 ---
 
 # Abstract

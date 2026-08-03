@@ -9,6 +9,7 @@ journal: "Nature Communications"
 doi: 10.1038/s41467-023-39941-0
 github:
 pdf: /pdfs/papers/rosenberg-natcomm.pdf
+tags: [mitochondria]
 ---
 
 # Abstract

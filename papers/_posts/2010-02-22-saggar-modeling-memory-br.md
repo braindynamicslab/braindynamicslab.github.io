@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-modeling-memory-br.pdf
 supplement: 
 movie: 
+tags: [modeling]
 ---
 
 # Abstract

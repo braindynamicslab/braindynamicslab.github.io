@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-creativity-cerebral-cortex.pdf
 supplement: 
 movie: 
+tags: [creativity]
 ---
 
 # Abstract

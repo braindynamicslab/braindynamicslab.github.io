@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-genetic-algorithms-ieee-smc.pdf
 supplement: 
 movie: 
+tags: [methods]
 ---
 
 # Abstract

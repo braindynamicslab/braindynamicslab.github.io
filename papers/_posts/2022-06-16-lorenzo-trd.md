@@ -9,6 +9,7 @@ journal: "Biological Psychiatry Cognitive Neuroscience and Neuroimaging"
 doi: 10.1016/j.bpsc.2022.10.009
 github:
 pdf: /pdfs/papers/lorenzo-trd-bp.pdf
+tags: [depression]
 ---
 
 # Abstract

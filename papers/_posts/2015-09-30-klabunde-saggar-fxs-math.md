@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/klabunde-saggar-fxs-math.pdf
 supplement: 
 movie: 
+tags: [genetics]
 ---
 
 # Abstract

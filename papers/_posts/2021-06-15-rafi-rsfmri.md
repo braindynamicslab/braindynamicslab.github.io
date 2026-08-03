@@ -9,6 +9,7 @@ journal: "Translational Psychiatry"
 doi: 10.1038/s41398-021-01221-0
 github:
 pdf: /pdfs/papers/asd-rsfmri.pdf
+tags: [psychiatry]
 ---
 
 # Abstract

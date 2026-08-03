@@ -9,6 +9,7 @@ journal: "Design Thinking Research"
 doi: 10.1007/978-3-030-28960-7_10
 github:
 pdf: /pdfs/papers/sonalkar-chapter.pdf
+tags: [creativity, brain-dynamics]
 ---
 
 # Abstract

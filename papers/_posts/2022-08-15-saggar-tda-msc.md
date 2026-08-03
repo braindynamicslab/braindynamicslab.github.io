@@ -9,6 +9,7 @@ journal: "Nature Communications"
 doi: 10.1038/s41467-022-32381-2
 github: https://github.com/braindynamicslab/tda-msc-rsfMRI
 pdf: /pdfs/papers/saggar-tda-msc-ncomm.pdf
+tags: [TDA, brain-dynamics]
 ---
 
 # Abstract

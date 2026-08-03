@@ -10,6 +10,7 @@ doi: 10.1016/j.bpsc.2026.02.001
 github:
 pdf: /pdfs/papers/malvika-ibogaine.pdf
 biorxiv: 
+tags: [psychedelics]
 ---
 
 # Abstract

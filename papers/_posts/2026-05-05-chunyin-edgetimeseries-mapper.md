@@ -10,6 +10,7 @@ doi: 10.64898/2026.04.30.722005
 github:
 pdf: /pdfs/papers/chunyin-edgetimeseries-mapper.pdf
 biorxiv: 
+tags: [TDA, brain-dynamics]
 ---
 
 # Abstract
