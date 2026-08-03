@@ -12,7 +12,7 @@ done: true
 status: Completed
 summary: "Developing individualized metrics to capture and computationally model resting-state brain dynamics, toward personalized biomarkers for mental illness."
 team: ["Manish Saggar", "Sahar Jahanikia", "Amber Howell", "Atanas D. Stankov"]
-collaborators: ""
+collaborators: "Allan Reiss, Gunnar Carlsson, Olaf Sporns"
 ---
 
 ### Aims
