@@ -10,6 +10,7 @@ doi: 10.1007/978-3-030-62037-0_16
 github:
 pdf: /pdfs/papers/jan-chapter.pdf
 tags: [creativity]
+projects: [ent-mgr]
 ---
 
 # Abstract

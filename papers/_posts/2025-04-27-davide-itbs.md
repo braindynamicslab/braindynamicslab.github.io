@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/davide-itbs.pdf
 biorxiv: 
 tags: [depression, TMS, modeling]
+projects: [neuromod]
 ---
 
 # Abstract

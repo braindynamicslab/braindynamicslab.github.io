@@ -10,6 +10,7 @@ doi: 10.1101/2021.06.02.446767
 github:
 pdf: /pdfs/papers/martin-mito.pdf
 tags: [mitochondria]
+projects: [comp-mito]
 ---
 
 # Abstract

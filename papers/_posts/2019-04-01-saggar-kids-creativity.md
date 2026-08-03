@@ -10,6 +10,7 @@ doi: 10.1016/j.neuroimage.2019.03.080
 github: 
 pdf: /pdfs/papers/saggar-kids-creativity.pdf
 tags: [creativity, development]
+projects: [kids-creativity]
 ---
 
 # Abstract

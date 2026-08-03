@@ -12,6 +12,7 @@ pdf: /pdfs/papers/saggar-pascal-neuropsych.pdf
 supplement: 
 movie: 
 tags: [social]
+projects: [quantrest]
 ---
 
 # Abstract

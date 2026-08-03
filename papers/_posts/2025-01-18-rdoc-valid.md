@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/shaun-rdoc-nc.pdf
 biorxiv: https://www.biorxiv.org/content/10.1101/2024.01.31.577486v3
 tags: [psychiatry]
+projects: [rdoc-r01]
 ---
 
 # Abstract

@@ -12,6 +12,7 @@ pdf: /pdfs/papers/saggar-tsalikian-diabetes.pdf
 supplement: 
 movie: 
 tags: [development]
+projects: [quantrest]
 ---
 
 # Abstract

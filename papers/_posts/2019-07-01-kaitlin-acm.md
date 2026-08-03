@@ -10,6 +10,7 @@ doi: 10.1145/3319619.3326826
 github: 
 pdf: /pdfs/papers/kaitlin-acm.pdf
 tags: [modeling, methods]
+projects: [dp2]
 ---
 
 # Abstract

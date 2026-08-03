@@ -10,6 +10,7 @@ doi: 10.1523/ENEURO.0384-19.2019
 github:
 pdf: /pdfs/papers/saggar-eneuro.pdf
 tags: [psychiatry]
+projects: [quantrest, dp2]
 ---
 
 # Abstract

@@ -12,6 +12,7 @@ pdf: /pdfs/papers/saggar-pictionary-sci-reports.pdf
 supplement: 
 movie: 
 tags: [creativity]
+projects: [ccbp]
 ---
 
 # Abstract

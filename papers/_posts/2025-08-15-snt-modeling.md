@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/snt-model.pdf
 biorxiv: 
 tags: [depression, TMS, modeling]
+projects: [neuromod]
 ---
 
 # Abstract

@@ -10,6 +10,7 @@ doi: 10.1162/netn_a_00190
 github:
 pdf: /pdfs/papers/petri-netneu.pdf
 tags: [TDA, brain-dynamics]
+projects: [dp2]
 ---
 
 # Abstract

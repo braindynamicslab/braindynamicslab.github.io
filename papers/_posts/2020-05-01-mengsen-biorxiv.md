@@ -10,6 +10,7 @@ doi: 10.1101/2020.05.14.097196
 github: 
 pdf: /pdfs/papers/mengsen-saggar.pdf
 tags: [brain-dynamics, modeling]
+projects: [dp2]
 ---
 
 # Abstract

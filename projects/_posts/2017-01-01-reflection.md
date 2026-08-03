@@ -9,6 +9,10 @@ aims: Here, we set out to perform a cross-disciplinary investigation, across the
 
 done: false
 
+status: Completed
+summary: "A cross-disciplinary study (neuroscience, design interaction, speech analysis) quantifying design reflection versus rumination in creative thinking."
+team: ["Manish Saggar", "Sahar Jahanikia", "Caleb Geniesse", "Hua (Oliver) Xie"]
+collaborators: "Neeraj Sonalkar"
 ---
 
 ### Aims
@@ -22,11 +26,6 @@ Design reflection has been shown of critical import for the development of desig
     - naturalistic video paradigm 
 - Examined how creative cognition is anchored with other well-established cognitive tasks
     
-
-### Presentations/Papers
-1. Xie, H., Beaty, R.E., Jahanikia, S., Geniesse, C., Sonalkar, N., Saggar, M. (in revision) <a href ="https://www.biorxiv.org/content/biorxiv/early/2021/01/03/2020.12.31.425008.full.pdf"> Spontaneous and deliberate modes of creativity: Multitask eigen-connectivity analysis captures latent cognitive modes during creative thinking </a>. <strong> BioRxiv </strong>
-2. Sonalkar, N., Jahanikia, S., Xie, H., Geniesse, C., Ayub, R., Beaty, R., Saggar, M. (2019). <a href="https://doi.org/10.1007/978-3-030-28960-7_10"> Mining the Role of Design Reflection and Associated Brain Dynamics in Creativity </a>. <strong> Design Thinking Research Understanding Innovation </strong>. Springer Verlag Publishers. Pp 155-167 
-
 
 ### Next steps
 - Examining the effect of exploration-exploitation balance on creativity 
