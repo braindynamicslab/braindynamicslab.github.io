@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-meditation-fhns.pdf
 supplement: 
 movie: 
+projects: [meditation]
 ---
 
 # Abstract

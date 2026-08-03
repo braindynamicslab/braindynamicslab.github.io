@@ -90,6 +90,21 @@ layout: default
 	<div class="col-lg-8">
 		<div class="post">
 			{{ content }}
+
+			{% if page.categories contains 'projects' %}
+			{% assign proj_papers = site.categories.papers | where_exp: "p", "p.projects contains page.slug" %}
+			{% if proj_papers.size > 0 %}
+			<div class="bigspacer"></div>
+			<h3>Papers from this project</h3>
+			<hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+			{% for paper in proj_papers %}
+			<div class="note" style="margin-bottom:14px;">
+				<a class="off" href="{{ paper.url }}"><strong>{{ paper.title }}</strong></a><br>
+				<span style="color:#666;">{{ paper.authors }}</span>{% if paper.journal %} <strong>{{ paper.journal }}</strong>{% endif %}{% if paper.year %} ({{ paper.year }}){% endif %}
+			</div>
+			{% endfor %}
+			{% endif %}
+			{% endif %}
 		</div>
 	</div>
 	<div class="col-lg-1"></div>

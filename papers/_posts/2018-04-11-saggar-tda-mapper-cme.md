@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-tda-mapper-cme.pdf
 supplement: /pdfs/papers/saggar-tda-mapper-cme-si.pdf
 movie: /movs/papers/saggar-tda-mapper-cme.mov
+projects: [quantrest]
 ---
 
 # Abstract

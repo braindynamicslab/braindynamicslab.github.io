@@ -9,6 +9,7 @@ journal: "NeuroImage"
 doi: 10.1016/j.neuroimage.2019.03.080
 github: 
 pdf: /pdfs/papers/saggar-kids-creativity.pdf
+projects: [kids-creativity]
 ---
 
 # Abstract

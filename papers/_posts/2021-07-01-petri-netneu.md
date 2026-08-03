@@ -9,6 +9,7 @@ journal: "Network Neuroscience"
 doi: 10.1162/netn_a_00190
 github:
 pdf: /pdfs/papers/petri-netneu.pdf
+projects: [dp2]
 ---
 
 # Abstract

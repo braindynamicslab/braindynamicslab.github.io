@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-tsalikian-diabetes.pdf
 supplement: 
 movie: 
+projects: [quantrest]
 ---
 
 # Abstract

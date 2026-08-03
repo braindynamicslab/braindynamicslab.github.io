@@ -9,6 +9,7 @@ journal: "Network Neuroscience"
 doi: 10.1162/netn_a_00093
 github: http://github.com/braindynamicslab/dyneusr/
 pdf: /pdfs/papers/geniesse_dyneusr_netneu.pdf
+projects: [quantrest, dp2]
 ---
 
 # Abstract

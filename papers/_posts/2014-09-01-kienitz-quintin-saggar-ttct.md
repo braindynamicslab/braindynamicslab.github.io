@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/kienitz-quintin-saggar-ttct.pdf
 supplement: 
 movie: 
+projects: [ccbp]
 ---
 
 # Abstract

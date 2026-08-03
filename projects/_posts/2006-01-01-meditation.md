@@ -29,10 +29,6 @@ In the second phase, we used a computational modeling approach that can realisti
 - A new method to model lateral connectivity in thalamic reticular nucleus is shown.
 - Modeled intrathalamic gain & corticothalamic delay change with meditation training.
 
-### Presentations/Papers
-1. Saggar, M., Zanesco, A. P., King, B. G., Bridwell, D. A., MacLean, K. A., Aichele, S. R., Jacobs, T.L., Wallace, B.A., Saron, C.D., Miikkulainen, R. (2015) <a href="http://dx.doi.org/10.1016/j.neuroimage.2015.03.073 "> Mean-field thalamocortical modeling of longitudinal EEG acquired during intensive meditation training</a>. <strong>NeuroImage</strong>, 114, 88–104 
-2. Saggar, M., King, B. G., Zanesco, A. P., MacLean, K. A., Aichele, S. R., Jacobs, T. L., Bridwell, D.A., Shaver, P.R., Rosenberg, E.L., Sahdra, B.K., Ferrer, E., Tang, A.C., Mangun, G.R., Wallace, B.A., Miikkulainen, R., Saron, C.D. (2012) <a href="http://dx.doi.org/10.3389/fnhum.2012.00256 "> Intensive training induces longitudinal changes in meditation state-related EEG oscillatory activity</a>. <strong> Frontiers in Human Neuroscience </strong>, 6, 256 
-
 ### Next steps
 Drop us a line, if you are interested in exploring following or other related ideas 
 - In the future, we are interested in examining whether meditation training can enhance creative capacity

@@ -10,6 +10,7 @@ doi: 10.1038/s41467-025-55831-z
 github:
 pdf: /pdfs/papers/shaun-rdoc-nc.pdf
 biorxiv: https://www.biorxiv.org/content/10.1101/2024.01.31.577486v3
+projects: [rdoc-r01]
 ---
 
 # Abstract

@@ -10,6 +10,7 @@ doi: 10.1101/2025.04.23.648963
 github:
 pdf: /pdfs/papers/davide-itbs.pdf
 biorxiv: 
+projects: [neuromod]
 ---
 
 # Abstract

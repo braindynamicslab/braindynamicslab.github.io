@@ -26,10 +26,6 @@ Here, we aimed at understanding how creative brain develops using functional neu
 - Functional segregation of right frontal regions tracked creativity development.
 - Heightened (normative) externalizing behavior was associated with creativity.
 
-### Presentations/Papers
-1. Saggar, M., Xie, H., Beaty, R. E., Stankov, A.D., Schreier, M., Reiss, A.L. (2019) <a href="http://dx.doi.org/10.1016/j.neuroimage.2019.03.080"> Creativity slumps and bumps: examining neurobehavioral basis of creativity development during middle childhood.</a> <strong> NeuroImage </strong> 
-
-
 ### Press
 - <a href="https://scopeblog.stanford.edu/2019/05/20/creativity-can-jump-or-slump-during-middle-childhood-a-stanford-study-shows/"> Stanford SCOPE </a>
 

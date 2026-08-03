@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-pascal-neuropsych.pdf
 supplement: 
 movie: 
+projects: [quantrest]
 ---
 
 # Abstract

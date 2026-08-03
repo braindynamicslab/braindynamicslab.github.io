@@ -11,6 +11,7 @@ github:
 pdf: /pdfs/papers/saggar-pictionary-sci-reports.pdf
 supplement: 
 movie: 
+projects: [ccbp]
 ---
 
 # Abstract
