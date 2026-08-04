@@ -140,12 +140,12 @@ layout: default
 			{% endif %}
 			{% if page.biorxiv %}
 			<div class="smallhead">
-				BioRxiv
+				{% if page.biorxiv contains 'medrxiv' %}Preprint{% else %}BioRxiv{% endif %}
 			</div>
 			<div class="pad-left note">
 				<div class="smallspacer"></div>
 				<i class="fa fa-biorxiv-alt fa-fw"></i>
-				<a class="off" href="{{ page.biorxiv }}">{{ page.biorxiv | remove: 'https://www.biorxiv.org/content/' | remove: 'http://www.biorxiv.org/content/' | replace: "/", "/<wbr>" | replace: "_", "_<wbr>" }}</a>
+				<a class="off" href="{{ page.biorxiv }}">{{ page.biorxiv | remove: 'https://www.biorxiv.org/content/' | remove: 'http://www.biorxiv.org/content/' | remove: 'https://www.medrxiv.org/content/' | remove: 'http://www.medrxiv.org/content/' | replace: "/", "/<wbr>" | replace: "_", "_<wbr>" }}</a>
 			</div>
 			<div class="bigspacer"></div>
 			{% endif %}

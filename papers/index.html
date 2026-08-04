@@ -69,9 +69,11 @@ categories:
               <p class="note">{{ paper.authors }} <strong> {{ paper.journal }} </strong></p>
               {% if paper.tags %}<p class="paper-tags">{% for t in paper.tags %}<span class="paper-tag" data-tag="{{ t | slugify }}">{{ t }}</span>{% endfor %}</p>{% endif %}
             </div>
+            {% if paper.image %}
             <a href="{{ paper.url }}">
               <img class="ml-3 media-object" width="150" src="{{ paper.image }}">
             </a>
+            {% endif %}
           </div>
           <div class="bigspacer"></div>
           <div class="spacer"></div>

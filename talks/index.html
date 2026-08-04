@@ -5,40 +5,119 @@ categories:
  - talks
 ---
 
-  <div class="row">
-    <div class="col-md-12">
-      <h1> Recent Talks </h1>
-      <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+<style>
+.talk-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:22px; margin:16px 0 40px; }
+.talk-card { border:1px solid #e6e6e6; border-radius:10px; overflow:hidden; background:#fff; cursor:pointer;
+  display:flex; flex-direction:column; transition:transform .15s ease, box-shadow .15s ease; }
+.talk-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(0,0,0,.09); }
+.talk-card:focus-visible { outline:2px solid #800000; outline-offset:2px; }
+.talk-thumb-wrap { position:relative; height:158px; background:#2a2a33; overflow:hidden; }
+.talk-thumb { width:100%; height:100%; object-fit:cover; display:block; }
+.talk-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:2.6rem; text-shadow:0 2px 10px rgba(0,0,0,.55); opacity:.92; transition:transform .15s ease; }
+.talk-card:hover .talk-play { transform:scale(1.12); }
+.talk-body { padding:14px 16px 16px; display:flex; flex-direction:column; flex:1; }
+.talk-title { font-weight:600; font-size:1rem; line-height:1.3; color:#222; margin-bottom:8px; }
+.talk-meta { font-size:.78rem; color:#888; line-height:1.45; margin-top:auto; }
+.talk-meta .host { color:#a06; }
+
+.talk-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.78); z-index:2000;
+  align-items:center; justify-content:center; padding:22px; }
+.talk-modal.open { display:flex; }
+.talk-modal-inner { background:#fff; border-radius:12px; max-width:840px; width:100%; max-height:92vh;
+  overflow:auto; padding:18px 20px 22px; position:relative; }
+.talk-close { position:absolute; top:6px; right:14px; border:none; background:none; font-size:2rem;
+  line-height:1; color:#999; cursor:pointer; }
+.talk-close:hover { color:#800000; }
+.talk-embed-16x9 { position:relative; width:100%; padding-bottom:56.25%; height:0; background:#000; border-radius:8px; overflow:hidden; }
+.talk-embed-16x9 iframe, .talk-embed-16x9 img { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+.talk-modal-title { font-size:1.2rem; font-weight:600; color:#222; margin:16px 0 4px; padding-right:24px; }
+.talk-modal-meta { font-size:.82rem; color:#888; margin-bottom:12px; }
+.talk-modal-abstract { font-size:.9rem; color:#444; line-height:1.6; }
+</style>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Talks</h1>
+    <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+  </div>
+</div>
+
+<div class="talk-grid">
+{% for talk in site.categories.talks %}{% if talk.view != 'private' %}
+  <div class="talk-card" role="button" tabindex="0"
+       data-embed="{{ talk.link }}"
+       data-title="{{ talk.title | strip | escape }}"
+       data-date="{{ talk.date | date: '%b %-d, %Y' }}"
+       data-host="{{ talk.host | escape }}"
+       data-abstract="{{ talk.abstract | strip_html | strip | escape }}">
+    <div class="talk-thumb-wrap">
+      {% if talk.image %}<img class="talk-thumb" src="{{ talk.image }}" alt="{{ talk.title | escape }}" onerror="this.style.display='none'">{% endif %}
+      <span class="talk-play">&#9658;</span>
+    </div>
+    <div class="talk-body">
+      <div class="talk-title">{{ talk.title }}</div>
+      <div class="talk-meta">{{ talk.date | date: '%b %-d, %Y' }}{% if talk.host %}<br><span class="host">{{ talk.host }}</span>{% endif %}</div>
     </div>
   </div>
-
-{% for talk in site.categories.talks %}
- {% if talk.view != private %} 
- <div class="col-lg-12 paperbox">
-    <div class="media">
-      <div class="media-body">
-        <div class="head mb-1"><a href="{{ talk.url }}" class="off">{{ talk.title }}</a>
-        </div>
-
-          <p class="note"> <strong> Speaker: </strong> {{ talk.speaker }} </p>
-          <p class="note"> <strong> Date: </strong> {{ talk.date }} </p>
-          <p class="note"> <strong> Hosted by: </strong> {{ talk.host }} </p>  
-          <p class="note"> <strong> Abstract: </strong> {{ talk.abstract }} </p>  
-          <iframe width="560" height="315" src="{{ talk.link }}" frameborder="0" allowfullscreen></iframe>
-          <hr>
-          
-      </div>	      
-	<a href="{{ talk.url }}">
-        <img class="ml-3" width=150 class="media-object" src="{{ talk.image }}">
-      </a>
-    </div>
-    <div class="bigspacer"></div>
-    <div class="spacer"></div>
- </div>
-{% endif %}
-{% endfor %}
-
- 
+{% endif %}{% endfor %}
 </div>
-  
 
+<div class="talk-modal" id="talkModal" aria-hidden="true">
+  <div class="talk-modal-inner" role="dialog" aria-modal="true">
+    <button class="talk-close" id="talkClose" aria-label="Close">&times;</button>
+    <div id="talkEmbed"></div>
+    <div class="talk-modal-title" id="talkModalTitle"></div>
+    <div class="talk-modal-meta" id="talkModalMeta"></div>
+    <div class="talk-modal-abstract" id="talkModalAbstract"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var modal   = document.getElementById('talkModal');
+  var embedEl = document.getElementById('talkEmbed');
+  var titleEl = document.getElementById('talkModalTitle');
+  var metaEl  = document.getElementById('talkModalMeta');
+  var absEl   = document.getElementById('talkModalAbstract');
+  if (!modal) return;
+
+  function isImage(u){ return /\.(png|jpe?g|webp|gif)(\?|$)/i.test(u); }
+
+  function open(card){
+    var embed = card.getAttribute('data-embed') || '';
+    if (isImage(embed)) {
+      embedEl.innerHTML = '<div class="talk-embed-16x9"><img src="' + embed + '" alt=""></div>';
+    } else if (embed) {
+      var sep = embed.indexOf('?') > -1 ? '&' : '?';
+      embedEl.innerHTML = '<div class="talk-embed-16x9"><iframe src="' + embed + sep
+        + 'autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div>';
+    } else {
+      embedEl.innerHTML = '';
+    }
+    titleEl.textContent = card.getAttribute('data-title') || '';
+    var date = card.getAttribute('data-date') || '', host = card.getAttribute('data-host') || '';
+    metaEl.textContent = [date, host].filter(Boolean).join('  ·  ');
+    absEl.textContent = card.getAttribute('data-abstract') || '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    embedEl.innerHTML = '';           // stop playback
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.talk-card').forEach(function (card) {
+    card.addEventListener('click', function () { open(card); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+    });
+  });
+  document.getElementById('talkClose').addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>

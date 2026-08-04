@@ -1,5 +1,5 @@
 name: Brain Dynamics Lab
-description: Capturing and quantifying transitions in brain activity at the single participant level
+description: "Stanford Brain Dynamics Lab — computational psychiatry and machine learning for mental health, modeling brain dynamics at the single-participant level."
 url: https://braindynamicslab.github.io
 baseurl: /
 

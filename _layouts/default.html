@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- SEO: title / description / canonical (added 2026) -->
-	{% capture seo_title %}{% if page.categories contains 'home' %}Brain Dynamics Lab @ Stanford{% else %}{{ page.title }} | Brain Dynamics Lab{% endif %}{% endcapture %}
+	{% capture seo_title %}{% if page.categories contains 'home' %}Brain Dynamics Lab @ Stanford — Computational Psychiatry{% else %}{{ page.title }} | Brain Dynamics Lab{% endif %}{% endcapture %}
 	{% capture seo_desc %}{% if page.description %}{{ page.description }}{% elsif page.aims %}{{ page.aims }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 	{% assign seo_desc = seo_desc | strip_html | strip_newlines | strip | truncate: 200 | escape %}
 	{% capture seo_image %}{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/images/bdl-logo-2.png{% endif %}{% endcapture %}
