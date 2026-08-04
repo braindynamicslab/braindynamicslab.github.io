@@ -1,6 +1,6 @@
 ---
 layout: paper
-title: Efficient Deep Learning Models for PredictingIndividualized Task Activation From Resting-State Functional Connectivity
+title: Efficient Deep Learning Models for Predicting Individualized Task Activation From Resting-State Functional Connectivity
 image: /images/papers/rdoc-dl.png
 authors: Madsen S.*, Lee Y.*, Quah S.K.L., Uddin L.Q., Mumford J.A., Barch D.M., Fair D.A., Gotlib I.H., Poldrack, R.A., Kuceyeski A., Saggar M. (* co-first)
 year: 2026

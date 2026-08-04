@@ -94,11 +94,13 @@ categories:
   var countEl = document.getElementById('filterCount');
   var emptyEl = document.getElementById('filterEmpty');
 
-  function apply(filter) {
+  var active = [];  // selected theme filters (OR / union); empty = show all
+
+  function apply() {
     var visible = 0;
     items.forEach(function (it) {
       var tags = (it.getAttribute('data-tags') || '').trim().split(/\s+/);
-      var show = (filter === 'all') || tags.indexOf(filter) !== -1;
+      var show = active.length === 0 || active.some(function (f) { return tags.indexOf(f) !== -1; });
       it.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -111,28 +113,41 @@ categories:
       g.style.display = any ? '' : 'none';
     });
     emptyEl.style.display = visible ? 'none' : 'block';
-    countEl.textContent = (filter === 'all')
+    countEl.textContent = (active.length === 0)
       ? 'Showing all ' + visible + ' papers'
-      : 'Showing ' + visible + ' paper' + (visible === 1 ? '' : 's');
+      : 'Showing ' + visible + ' paper' + (visible === 1 ? '' : 's')
+        + ' in ' + active.length + ' theme' + (active.length === 1 ? '' : 's');
+    // reflect the current selection on the pills
+    pills.forEach(function (p) {
+      var f = p.getAttribute('data-filter');
+      if (f === 'all') { p.classList.toggle('active', active.length === 0); }
+      else { p.classList.toggle('active', active.indexOf(f) !== -1); }
+    });
   }
 
   pills.forEach(function (p) {
     p.addEventListener('click', function () {
-      pills.forEach(function (x) { x.classList.remove('active'); });
-      p.classList.add('active');
-      apply(p.getAttribute('data-filter'));
+      var f = p.getAttribute('data-filter');
+      if (f === 'all') {
+        active = [];                          // clear all selections
+      } else {
+        var i = active.indexOf(f);
+        if (i === -1) { active.push(f); }     // toggle theme on
+        else { active.splice(i, 1); }         // toggle theme off
+      }
+      apply();
     });
   });
 
-  // clicking a tag chip on a card activates that filter
+  // clicking a tag chip on a card selects just that theme
   document.querySelectorAll('.paper-tag').forEach(function (chip) {
     chip.addEventListener('click', function () {
-      var t = chip.getAttribute('data-tag');
-      var pill = filterBar.querySelector('.filter-pill[data-filter="' + t + '"]');
-      if (pill) { pill.click(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      active = [chip.getAttribute('data-tag')];
+      apply();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
-  apply('all'); // initialize count
+  apply(); // initialize
 })();
 </script>
