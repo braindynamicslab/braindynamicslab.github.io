@@ -1,0 +1,110 @@
+---
+layout: default
+title: brain dynamics lab / code
+categories:
+ - code
+---
+
+<style>
+.code-intro { color:#555; margin:0 0 22px; font-size:1.02rem; }
+.code-intro a { color:#800000; }
+.repo-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+  gap:20px; margin-bottom:40px;
+}
+.repo-card {
+  border:1px solid #e6e6e6; border-radius:10px; background:#fff;
+  padding:18px 20px; display:flex; flex-direction:column; text-decoration:none; color:inherit;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.repo-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(0,0,0,.09); }
+.repo-top { display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:8px; }
+.repo-name { font-weight:700; color:#800000; font-size:1.02rem; word-break:break-word; }
+.repo-stats { color:#888; font-size:.8rem; white-space:nowrap; flex-shrink:0; }
+.repo-stats span { margin-left:9px; }
+.repo-desc { font-size:.9rem; color:#444; line-height:1.5; margin:0 0 14px; flex:1; overflow-wrap:anywhere; }
+.repo-desc.empty { color:#aaa; font-style:italic; }
+.repo-meta { display:flex; align-items:center; flex-wrap:wrap; gap:14px; font-size:.78rem; color:#999; margin-top:auto; }
+.repo-lang { display:inline-flex; align-items:center; gap:6px; }
+.lang-dot { width:11px; height:11px; border-radius:50%; display:inline-block; background:#ccc; }
+.repo-topics { margin-top:10px; display:flex; flex-wrap:wrap; gap:5px; }
+.repo-topic { font-size:.68rem; background:#eef; color:#556; border-radius:999px; padding:1px 9px; }
+.code-state { color:#888; padding:16px 0 40px; font-size:.95rem; }
+.code-state a { color:#800000; font-weight:600; }
+</style>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Code</h1>
+    <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+    <p class="code-intro">
+      Open-source tools and analysis code from the lab, pulled live from
+      <a href="https://github.com/braindynamicslab" target="_blank" rel="noopener">github.com/braindynamicslab</a>.
+    </p>
+  </div>
+</div>
+
+<div class="code-state" id="codeState">Loading repositories…</div>
+<div class="repo-grid" id="repoGrid"></div>
+
+<script>
+(function () {
+  var ORG = 'braindynamicslab';
+  var HIDE = ['braindynamicslab.github.io']; // don't feature the website repo itself
+  var LANG_COLORS = {
+    'Python':'#3572A5', 'MATLAB':'#e16737', 'Matlab':'#e16737', 'C++':'#f34b7d',
+    'Jupyter Notebook':'#DA5B0B', 'HTML':'#e34c26', 'JavaScript':'#f1e05a',
+    'R':'#198CE7', 'Shell':'#89e051', 'TeX':'#3D6117', 'C':'#555555'
+  };
+  var grid = document.getElementById('repoGrid');
+  var state = document.getElementById('codeState');
+
+  function esc(s){ var d=document.createElement('div'); d.textContent=s==null?'':s; return d.innerHTML; }
+  function monthYear(iso){
+    try { var d=new Date(iso); return d.toLocaleDateString(undefined,{month:'short',year:'numeric'}); }
+    catch(e){ return ''; }
+  }
+
+  function render(repos){
+    grid.innerHTML = repos.map(function(r){
+      var lang = r.language ? '<span class="repo-lang"><span class="lang-dot" style="background:'
+        + (LANG_COLORS[r.language]||'#ccc') + '"></span>' + esc(r.language) + '</span>' : '';
+      var stars = r.stargazers_count ? '<span>★ ' + r.stargazers_count + '</span>' : '';
+      var forks = r.forks_count ? '<span>⑂ ' + r.forks_count + '</span>' : '';
+      var topics = (r.topics && r.topics.length)
+        ? '<div class="repo-topics">' + r.topics.slice(0,5).map(function(t){return '<span class="repo-topic">'+esc(t)+'</span>';}).join('') + '</div>'
+        : '';
+      var desc = r.description
+        ? '<p class="repo-desc">' + esc(r.description) + '</p>'
+        : '<p class="repo-desc empty">No description</p>';
+      return '<a class="repo-card" href="' + esc(r.html_url) + '" target="_blank" rel="noopener">'
+        + '<div class="repo-top"><span class="repo-name">' + esc(r.name) + '</span>'
+        + '<span class="repo-stats">' + stars + forks + '</span></div>'
+        + desc
+        + '<div class="repo-meta">' + lang
+        + (r.pushed_at ? '<span>Updated ' + monthYear(r.pushed_at) + '</span>' : '') + '</div>'
+        + topics + '</a>';
+    }).join('');
+    state.style.display = 'none';
+  }
+
+  function fail(){
+    state.innerHTML = 'Couldn’t load repositories right now. '
+      + 'View them directly on <a href="https://github.com/' + ORG + '" target="_blank" rel="noopener">GitHub</a>.';
+  }
+
+  fetch('https://api.github.com/orgs/' + ORG + '/repos?per_page=100&sort=pushed')
+    .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
+    .then(function(repos){
+      if(!Array.isArray(repos)) throw new Error('bad payload');
+      repos = repos.filter(function(r){ return !r.fork && HIDE.indexOf(r.name)===-1; });
+      repos.sort(function(a,b){
+        return (b.stargazers_count - a.stargazers_count)
+            || (new Date(b.pushed_at) - new Date(a.pushed_at));
+      });
+      if(!repos.length){ fail(); return; }
+      render(repos);
+    })
+    .catch(fail);
+})();
+</script>
