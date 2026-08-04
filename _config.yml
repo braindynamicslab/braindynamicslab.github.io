@@ -1,6 +1,6 @@
 name: Brain Dynamics Lab
 description: "Stanford Brain Dynamics Lab — computational psychiatry and machine learning for mental health, modeling brain dynamics at the single-participant level."
-url: https://braindynamicslab.github.io
+url: https://bdl.stanford.edu
 baseurl: /
 
 permalink: /:categories/:title/
