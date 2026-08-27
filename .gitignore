@@ -9,3 +9,6 @@ _site/
 
 # Other files
 .DS_Store
+
+# full-res lab photo originals (optimized copies live in images/gallery/)
+images/fun-pics/

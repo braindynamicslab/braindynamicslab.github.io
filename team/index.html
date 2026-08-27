@@ -69,4 +69,66 @@ categories:
 {% endfor %}
 {% cycle 'close rows 2': '', '</div>', '</div>' %}
 
+<div class="bigspacer"></div>
+<div class="row">
+        <div class="col-lg-12">
+                <div class="title">Lab Life</div>
+        </div>
+</div>
+<div class="bigspacer"></div>
+
+<style>
+.lab-gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(165px, 1fr)); gap:10px; margin-bottom:30px; }
+.lg-thumb { border:0; padding:0; background:none; cursor:pointer; border-radius:8px; overflow:hidden; aspect-ratio:1/1; }
+.lg-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s ease; }
+.lg-thumb:hover img { transform:scale(1.06); }
+.lg-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:2000; align-items:center; justify-content:center; }
+.lg-modal.open { display:flex; }
+.lg-full { max-width:92vw; max-height:88vh; border-radius:6px; }
+.lg-close { position:absolute; top:12px; right:20px; font-size:2.2rem; color:#fff; background:none; border:0; cursor:pointer; line-height:1; }
+.lg-nav { position:absolute; top:50%; transform:translateY(-50%); font-size:3rem; color:#fff; background:none; border:0; cursor:pointer; padding:0 18px; opacity:.8; }
+.lg-nav:hover { opacity:1; }
+.lg-prev { left:6px; } .lg-next { right:6px; }
+@media (max-width:520px){ .lg-nav { font-size:2.2rem; padding:0 10px; } }
+</style>
+
+{% assign photos = site.static_files | where_exp: "f", "f.path contains '/images/gallery/lab-'" | sort: "path" %}
+<div class="lab-gallery" id="labGallery">
+  {% for photo in photos %}
+  <button class="lg-thumb" data-full="{{ photo.path }}" aria-label="Open lab photo">
+    <img src="{{ photo.path | replace: '/gallery/lab-', '/gallery/thumbs/lab-' }}" alt="Brain Dynamics Lab" loading="lazy">
+  </button>
+  {% endfor %}
+</div>
+
+<div class="lg-modal" id="lgModal" aria-hidden="true">
+  <button class="lg-close" id="lgClose" aria-label="Close">&times;</button>
+  <button class="lg-nav lg-prev" id="lgPrev" aria-label="Previous photo">&#8249;</button>
+  <img class="lg-full" id="lgFull" src="" alt="Brain Dynamics Lab photo">
+  <button class="lg-nav lg-next" id="lgNext" aria-label="Next photo">&#8250;</button>
+</div>
+
+<script>
+(function () {
+  var modal = document.getElementById('lgModal'), full = document.getElementById('lgFull');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.lg-thumb'));
+  if (!modal || !thumbs.length) return;
+  var idx = 0;
+  function show(i) { idx = (i + thumbs.length) % thumbs.length; full.src = thumbs[idx].getAttribute('data-full'); }
+  function open(i) { show(i); modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+  function close() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); full.src = ''; document.body.style.overflow = ''; }
+  thumbs.forEach(function (t, i) { t.addEventListener('click', function () { open(i); }); });
+  document.getElementById('lgClose').addEventListener('click', close);
+  document.getElementById('lgPrev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+  document.getElementById('lgNext').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
+
 
