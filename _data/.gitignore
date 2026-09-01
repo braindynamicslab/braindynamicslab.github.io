@@ -2,3 +2,6 @@
 *
 # Except this file
 !.gitignore
+
+# but do track the hand-maintained collaborators list
+!collaborators.yml

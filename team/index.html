@@ -5,47 +5,34 @@ categories:
  - team
 ---
 
-
-<div class="row">
-        <div class="col-lg-12">
-                <div class="title">
-                        Current members
-                </div>
-        </div>
-</div>
-
-<div class="bigspacer"></div>
-
-{% for member in site.categories.team reversed %}
-        {% if member.alumni != true  %}
-    {% cycle 'add rows': '<div class="row">', '', '' %}
-                <div class="col-lg-4 memberbox">
-                        <div class="media">
-                                <a class="float-left" href="{{ member.url }}">
-                                <img width=160 class="mr-3" src="{{ member.image }}">
-                                </a>
-                                <div class="media-body">
-                                <div class="head mb-1"><a href="{{ member.url }}" class="off">{{ member.title }}</a></div>
-                                <p class="note">{{ member.position }}</p>
-                                </div>
-                        </div>
-                        <div class="bigspacer"></div>
-                        <div class="bigspacer"></div>
-        </div>
-    {% cycle 'close rows': '', '', '</div>' %}
-    {% endif %}
-{% endfor %}
-{% cycle 'close rows': '', '</div>', '</div>' %}
-
-<div class="bigspacer"></div>
-<div class="row">
-        <div class="col-lg-12">
-                <div class="title">Lab Life</div>
-        </div>
-</div>
-<div class="bigspacer"></div>
-
 <style>
+/* member + collaborator grids */
+.team-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(135px, 1fr)); gap:22px; margin:6px 0 30px; }
+.team-card { text-align:center; }
+.team-card img, .team-card .team-initials {
+  width:100%; aspect-ratio:1/1; border-radius:12px; display:block;
+  box-shadow:0 1px 7px rgba(0,0,0,.09); transition:transform .15s ease;
+}
+.team-card img { object-fit:cover; }
+.team-card .team-initials {
+  display:flex; align-items:center; justify-content:center;
+  background:#7a1f3d; color:#fff; font-size:1.9rem; font-weight:600;
+}
+.team-card a { text-decoration:none; display:block; }
+.team-card:hover img, .team-card:hover .team-initials { transform:translateY(-3px); }
+.team-card .nm { font-size:.92rem; font-weight:600; margin-top:9px; line-height:1.25; }
+.team-card .nm, .team-card .nm a { color:#222; }
+.team-card .nm a:hover { color:#800000; }
+.team-card .pos { font-size:.78rem; color:#8a8a8a; line-height:1.3; margin-top:2px; }
+
+/* past members — compact list, no photos */
+.past-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:8px 22px; margin:6px 0 30px; }
+.past-grid .p-name { font-weight:600; }
+.past-grid .p-name a { color:#333; }
+.past-grid .p-name a:hover { color:#800000; }
+.past-grid .p-pos { color:#999; font-size:.84rem; }
+
+/* Lab Life gallery + lightbox */
 .lab-gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(165px, 1fr)); gap:10px; margin-bottom:30px; }
 .lg-thumb { border:0; padding:0; background:none; cursor:pointer; border-radius:8px; overflow:hidden; aspect-ratio:1/1; }
 .lg-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s ease; }
@@ -59,6 +46,43 @@ categories:
 .lg-prev { left:6px; } .lg-next { right:6px; }
 @media (max-width:520px){ .lg-nav { font-size:2.2rem; padding:0 10px; } }
 </style>
+
+<div class="row"><div class="col-md-12">
+  <h1>Current members</h1>
+  <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+</div></div>
+
+<div class="team-grid">
+{% for member in site.categories.team reversed %}{% if member.alumni != true %}
+  <div class="team-card">
+    <a href="{{ member.url }}"><img src="{{ member.image }}" alt="{{ member.title | escape }}" loading="lazy"></a>
+    <div class="nm"><a href="{{ member.url }}" class="off">{{ member.title }}</a></div>
+    <div class="pos">{{ member.position }}</div>
+  </div>
+{% endif %}{% endfor %}
+</div>
+
+<div class="row"><div class="col-md-12">
+  <h1>Collaborators</h1>
+  <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+</div></div>
+
+<div class="team-grid">
+{% for c in site.data.collaborators %}
+  <div class="team-card">
+    {% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{% endif %}
+    {% if c.photo %}<img src="{{ c.photo }}" alt="{{ c.name | escape }}" loading="lazy">{% else %}<span class="team-initials">{{ c.name | slice: 0 }}</span>{% endif %}
+    {% if c.url %}</a>{% endif %}
+    <div class="nm">{% if c.url %}<a href="{{ c.url }}" class="off" target="_blank" rel="noopener">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</div>
+    <div class="pos">{{ c.affiliation }}</div>
+  </div>
+{% endfor %}
+</div>
+
+<div class="row"><div class="col-md-12">
+  <h1>Lab Life</h1>
+  <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+</div></div>
 
 {% assign photos = site.static_files | where_exp: "f", "f.path contains '/images/gallery/lab-'" | sort: "path" %}
 <div class="lab-gallery" id="labGallery">
@@ -99,35 +123,16 @@ categories:
 })();
 </script>
 
+<div class="row"><div class="col-md-12">
+  <h1>Past members</h1>
+  <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+</div></div>
 
-<div class="row">
-        <div class="col-lg-12">
-                <div class="title">
-                        Past members
-                </div>
-        </div>
+<div class="past-grid">
+{% for member in site.categories.team reversed %}{% if member.alumni == true %}
+  <div>
+    <span class="p-name"><a href="{{ member.url }}" class="off">{{ member.title }}</a></span>
+    <div class="p-pos">{{ member.position }}</div>
+  </div>
+{% endif %}{% endfor %}
 </div>
-
-<div class="bigspacer"></div>
-
-{% for member in site.categories.team reversed %}
-        {% if member.alumni == true %}
-    {% cycle 'add rows 2': '<div class="row">', '', '' %}
-                <div class="col-lg-4 memberbox">
-                        <div class="media">
-                                <!--
-                                <a class="pull-left" href="{{ member.url }}">
-                                <img width=160 class="media-object" src="{{ member.image }}">
-                                </a>
-                                -->
-                                <div class="media-body">
-                                <div class="head media-heading"><a href="{{ member.url }}" class="off">{{ member.title }}</a></div>
-                                <p class="note">{{ member.position }}</p>
-                                </div>
-                        </div>
-                        <div class="bigspacer"></div>
-        </div>
-    {% cycle 'close rows 2': '', '', '</div>' %}
-    {% endif %}
-{% endfor %}
-{% cycle 'close rows 2': '', '</div>', '</div>' %}

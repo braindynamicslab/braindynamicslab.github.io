@@ -1,0 +1,70 @@
+# Collaborators shown on the /team/ page (seeded from project collaborator lists).
+# For each: add a `photo:` (drop the headshot in images/collaborators/ and reference it,
+# e.g. /images/collaborators/nolan-williams.jpg) — without one, a clean initials circle shows.
+# `url:` is optional (link to their lab/page). PLEASE VERIFY affiliations — these are best-guess drafts.
+
+- name: Nolan Williams
+  affiliation: Stanford University
+  photo: /images/collaborators/nolan.jpeg
+  url: https://bsl.stanford.edu/in-memoriam-dr-nolan-williams/
+- name: David Spiegel
+  affiliation: Stanford University
+  photo: /images/collaborators/david-spiegel.png
+  url: https://med.stanford.edu/profiles/david-spiegel
+- name: Amit Etkin
+  affiliation: Alto Neuroscience
+  photo: /images/collaborators/amit.webp
+  url: https://altoneuroscience.com/team/amit-etkin-md-phd/
+- name: Cammie Rolle
+  affiliation: Stanford University
+  photo: /images/collaborators/cammie.jpeg
+  url: https://bsl.stanford.edu/faculty/
+- name: Corey Keller
+  affiliation: Stanford University
+  photo: /images/collaborators/corey.jpg
+  url: https://profiles.stanford.edu/corey-keller
+- name: Booil Jo
+  affiliation: Stanford University
+  photo: /images/collaborators/booil.jpg
+  url: https://profiles.stanford.edu/booil-jo
+- name: Russ Poldrack
+  affiliation: Stanford University
+  photo: /images/collaborators/russ.jpg
+  url: https://profiles.stanford.edu/russell-poldrack
+- name: Ian Gotlib
+  affiliation: Stanford University
+  photo: /images/collaborators/iang.webp
+  url: https://profiles.stanford.edu/ian-gotlib
+- name: Deanna Barch
+  affiliation: Washington University in St. Louis
+  photo: /images/collaborators/deanna.jpeg
+  url: https://psych.washu.edu/people/deanna-barch
+- name: Damien Fair
+  affiliation: University of Minnesota
+  photo: /images/collaborators/damien.jpg
+  url: https://icd.umn.edu/damien-fair
+- name: Lucina Uddin
+  affiliation: UCLA
+  photo: /images/collaborators/lucina.webp
+  url: https://bri.ucla.edu/people/lucina-uddin-ph-d/
+- name: Tamar Green
+  affiliation: Stanford University
+  photo: /images/collaborators/tamar.jpg
+  url: https://med.stanford.edu/profiles/tamar-green
+- name: Grace Hawthorne
+  affiliation: Stanford d.school
+  photo: /images/collaborators/grace.jpeg
+  url: https://dschool.stanford.edu/directory/grace-hawthorne
+- name: Allan Reiss
+  affiliation: Stanford University
+  photo: /images/collaborators/allan.jpg
+  url: https://profiles.stanford.edu/allan-reiss
+- name: Risto Miikkulainen
+  affiliation: UT Austin
+  photo: /images/collaborators/risto.jpg
+  url: https://www.cs.utexas.edu/~risto/
+- name: Davide Momi
+  affiliation: UC Irvine
+  photo: /images/collaborators/davide.webp
+  url: https://scholar.google.com/citations?user=I-BACCgAAAAJ&hl=en  
+
