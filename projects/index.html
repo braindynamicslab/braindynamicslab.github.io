@@ -6,19 +6,27 @@ categories:
 ---
 
 <style>
-.proj-filters { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 4px; }
-.proj-pill {
-  border:1px solid #cfcfcf; background:#fff; color:#444;
-  border-radius:999px; padding:4px 14px; font-size:.85rem; cursor:pointer;
-  transition:background .15s ease, color .15s ease, border-color .15s ease; line-height:1.5;
+/* left-rail section labels (shared motif with the papers timeline) */
+.rail-group { display:grid; grid-template-columns:150px 1fr; column-gap:20px; }
+.rail-label .rl {
+  position:sticky; top:18px; text-align:right; padding-right:18px;
+  font-size:1.15rem; font-weight:400; color:#1f1f1f; line-height:1.25;
 }
-.proj-pill:hover { border-color:#800000; color:#800000; }
-.proj-pill.active { background:#800000; border-color:#800000; color:#fff; }
-.proj-count { color:#999; font-size:.8rem; margin:2px 0 20px; }
+.rail-body { position:relative; border-left:2px solid #e9e9e9; padding:2px 0 30px 26px; }
+.rail-body::before {
+  content:''; position:absolute; left:-8px; top:8px; width:13px; height:13px;
+  border-radius:50%; background:#800000; box-shadow:0 0 0 4px #fff;
+}
+@media (max-width:640px){
+  .rail-group { grid-template-columns:1fr; }
+  .rail-label .rl { position:static; text-align:left; padding:0 0 6px 2px; font-size:1.05rem; }
+  .rail-body { border-left:none; padding:0 0 22px 0; }
+  .rail-body::before { display:none; }
+}
 
 .proj-grid {
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
-  gap:24px; margin-bottom:40px;
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(215px, 1fr));
+  gap:20px; margin:2px 0 0;
 }
 .proj-card {
   border:1px solid #e6e6e6; border-radius:10px; overflow:hidden;
@@ -28,16 +36,12 @@ categories:
 .proj-card:focus-visible { outline:2px solid #800000; outline-offset:2px; }
 .proj-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(0,0,0,.09); }
 .proj-thumb {
-  height:150px; width:100%; object-fit:cover; background:#f4f2f4;
-  border-bottom:1px solid #eee;
+  height:150px; width:100%; object-fit:contain; background:#fff;
+  border-bottom:1px solid #eee; padding:8px;
 }
 .proj-body { padding:16px 18px 18px; display:flex; flex-direction:column; flex:1; }
-.proj-status {
-  align-self:flex-start; font-size:.68rem; font-weight:600; letter-spacing:.04em;
-  text-transform:uppercase; border-radius:4px; padding:2px 9px; margin-bottom:9px;
-}
-.proj-status.active    { background:#e8f3ec; color:#1c7a43; }
-.proj-status.completed { background:#eee; color:#666; }
+/* status now lives on the rail label, so hide the redundant per-card badge */
+.proj-status { display:none; }
 .proj-title { font-size:1.05rem; font-weight:600; line-height:1.3; margin-bottom:7px; }
 .proj-title a { color:#222; }
 .proj-title a:hover { color:#800000; }
@@ -56,57 +60,28 @@ categories:
 .proj-collab strong { color:#777; font-weight:600; }
 </style>
 
-{% capture status_string %}{% for p in site.categories.projects %}{{ p.status }},{% endfor %}{% endcapture %}
-{% assign all_status = status_string | split: "," | uniq | sort %}
-
-<div class="row">
-  <div class="col-md-12">
-    <h1>Projects</h1>
-    <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
-    <div class="proj-filters" id="projFilters">
-      <button class="proj-pill active" data-filter="all">All</button>
-      {% for s in all_status %}
-      <button class="proj-pill" data-filter="{{ s | slugify }}">{{ s }}</button>
-      {% endfor %}
+<section class="rail-group">
+  <div class="rail-label"><div class="rl">Active</div></div>
+  <div class="rail-body">
+    <div class="proj-grid">
+      {% for project in site.categories.projects %}{% if project.status == 'Active' %}{% include project-card.html project=project %}{% endif %}{% endfor %}
     </div>
-    <div class="proj-count" id="projCount"></div>
   </div>
-</div>
+</section>
 
-<div class="proj-grid" id="projGrid">
-{% comment %} Active projects first, then everything else (Completed) — each newest-first {% endcomment %}
-{% for project in site.categories.projects %}{% if project.status == 'Active' %}{% include project-card.html project=project %}{% endif %}{% endfor %}
-{% for project in site.categories.projects %}{% unless project.status == 'Active' %}{% include project-card.html project=project %}{% endunless %}{% endfor %}
-</div>
+<section class="rail-group">
+  <div class="rail-label"><div class="rl">Completed</div></div>
+  <div class="rail-body">
+    <div class="proj-grid">
+      {% for project in site.categories.projects %}{% unless project.status == 'Active' %}{% include project-card.html project=project %}{% endunless %}{% endfor %}
+    </div>
+  </div>
+</section>
 
 <script>
 (function () {
-  var bar = document.getElementById('projFilters');
-  if (!bar) return;
-  var pills = bar.querySelectorAll('.proj-pill');
-  var items = document.querySelectorAll('.proj-item');
-  var countEl = document.getElementById('projCount');
-
-  function apply(filter) {
-    var visible = 0;
-    items.forEach(function (it) {
-      var show = (filter === 'all') || it.getAttribute('data-status') === filter;
-      it.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    countEl.textContent = 'Showing ' + visible + ' project' + (visible === 1 ? '' : 's');
-  }
-
-  pills.forEach(function (p) {
-    p.addEventListener('click', function () {
-      pills.forEach(function (x) { x.classList.remove('active'); });
-      p.classList.add('active');
-      apply(p.getAttribute('data-filter'));
-    });
-  });
-
   // Whole-card click opens the project page (but real links inside still work)
-  items.forEach(function (card) {
+  document.querySelectorAll('.proj-item').forEach(function (card) {
     var href = card.getAttribute('data-href');
     if (!href) return;
     card.addEventListener('click', function (e) {
@@ -119,7 +94,5 @@ categories:
       if (e.key === 'Enter') { window.location = href; }
     });
   });
-
-  apply('all');
 })();
 </script>

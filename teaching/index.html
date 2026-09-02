@@ -6,11 +6,27 @@ categories:
 ---
 
 <style>
-.teach-intro { color:#555; margin:0 0 6px; font-size:1.02rem; }
-.teach-sec { font-size:1.35rem; font-weight:700; color:#222; margin:34px 0 4px; }
+/* left-rail section labels (shared motif with the papers timeline) */
+.rail-group { display:grid; grid-template-columns:170px 1fr; column-gap:20px; }
+.rail-label .rl {
+  position:sticky; top:18px; text-align:right; padding-right:18px;
+  font-size:1.15rem; font-weight:400; color:#1f1f1f; line-height:1.25;
+}
+.rail-body { position:relative; border-left:2px solid #e9e9e9; padding:2px 0 30px 26px; }
+.rail-body::before {
+  content:''; position:absolute; left:-8px; top:8px; width:13px; height:13px;
+  border-radius:50%; background:#800000; box-shadow:0 0 0 4px #fff;
+}
+@media (max-width:640px){
+  .rail-group { grid-template-columns:1fr; }
+  .rail-label .rl { position:static; text-align:left; padding:0 0 6px 2px; font-size:1.05rem; }
+  .rail-body { border-left:none; padding:0 0 22px 0; }
+  .rail-body::before { display:none; }
+}
+
 .teach-grid {
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(330px, 1fr));
-  gap:22px; margin:14px 0 10px;
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+  gap:22px; margin:2px 0 0;
 }
 .teach-card {
   border:1px solid #e6e6e6; border-radius:10px; background:#fff;
@@ -38,96 +54,96 @@ categories:
 .teach-btn:hover { border-color:#800000; background:#fbf6f9; }
 </style>
 
-<div class="row">
-  <div class="col-md-12">
-    <h1>Teaching</h1>
-    <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
-    <p class="teach-intro">Courses I teach — and have taught — at Stanford and beyond.</p>
-  </div>
-</div>
+<section class="rail-group">
+  <div class="rail-label"><div class="rl">Currently teaching</div></div>
+  <div class="rail-body">
+    <div class="teach-grid">
 
-<div class="teach-sec">Currently teaching</div>
-<div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-top">
+          <span class="teach-code">PSYC 250</span>
+          <span class="teach-term">Co-Instructor &middot; Winter</span>
+        </div>
+        <div class="teach-title">Neuroimaging Research Methods</div>
+        <p class="teach-desc">
+          <!-- TODO: refine description -->
+          A graduate course on the principles and practice of human neuroimaging — MRI physics,
+          experimental design, and the preprocessing and analysis of fMRI data.
+        </p>
+        <div class="teach-meta">Stanford &middot; Psychiatry &amp; Behavioral Sciences &middot; 2015–present</div>
+        <div class="teach-links">
+          <a class="teach-btn" href="https://explorecourses.stanford.edu/search?q=PSYC%20250" target="_blank" rel="noopener">Course info</a>
+        </div>
+      </div>
 
-  <div class="teach-card">
-    <div class="teach-top">
-      <span class="teach-code">PSYC 250</span>
-      <span class="teach-term">Co-Instructor &middot; Winter</span>
-    </div>
-    <div class="teach-title">Neuroimaging Research Methods</div>
-    <p class="teach-desc">
-      <!-- TODO: refine description -->
-      A graduate course on the principles and practice of human neuroimaging — MRI physics,
-      experimental design, and the preprocessing and analysis of fMRI data.
-    </p>
-    <div class="teach-meta">Stanford &middot; Psychiatry &amp; Behavioral Sciences &middot; 2015–present</div>
-    <div class="teach-links">
-      <a class="teach-btn" href="https://explorecourses.stanford.edu/search?q=PSYC%20250" target="_blank" rel="noopener">Course info</a>
-    </div>
-  </div>
+      <div class="teach-card">
+        <div class="teach-top">
+          <span class="teach-code">PSYC 20N</span>
+          <span class="teach-term new">IntroSem &middot; New</span>
+        </div>
+        <div class="teach-title">Can You Train Your Brain?</div>
+        <p class="teach-desc">
+          <!-- TODO: refine description -->
+          An undergraduate introductory seminar exploring whether — and how — we can shape our own
+          brains, drawing on the neuroscience of learning, plasticity, attention, and well-being.
+        </p>
+        <div class="teach-meta">Stanford &middot; Fall quarter &middot; First offered 2026</div>
+        <div class="teach-links">
+          <a class="teach-btn" href="https://explorecourses.stanford.edu/search?q=PSYC%2020N" target="_blank" rel="noopener">Course info</a>
+        </div>
+      </div>
 
-  <div class="teach-card">
-    <div class="teach-top">
-      <span class="teach-code">PSYC 20N</span>
-      <span class="teach-term new">IntroSem &middot; New</span>
-    </div>
-    <div class="teach-title">Can You Train Your Brain?</div>
-    <p class="teach-desc">
-      <!-- TODO: refine description -->
-      An undergraduate introductory seminar exploring whether — and how — we can shape our own
-      brains, drawing on the neuroscience of learning, plasticity, attention, and well-being.
-    </p>
-    <div class="teach-meta">Stanford &middot; Fall quarter &middot; First offered 2026</div>
-    <div class="teach-links">
-      <a class="teach-btn" href="https://explorecourses.stanford.edu/search?q=PSYC%2020N" target="_blank" rel="noopener">Course info</a>
-    </div>
-  </div>
+      <div class="teach-card">
+        <div class="teach-top">
+          <span class="teach-term">Instructor &middot; High-school program</span>
+        </div>
+        <div class="teach-title">Clinical Neuroscience Internship / Virtual Experience (CNI/V-X)</div>
+        <p class="teach-desc">
+          <!-- TODO: refine description -->
+          An immersive internship and virtual experience introducing high-school students to
+          clinical neuroscience and brain research.
+        </p>
+        <div class="teach-meta">Stanford &middot; 2015–present</div>
+        <div class="teach-links">
+          <a class="teach-btn" href="https://med.stanford.edu/psychiatry/special-initiatives/CNIX.html" target="_blank" rel="noopener">Course info</a>
+        </div>
+      </div>
 
-  <div class="teach-card">
-    <div class="teach-top">
-      <span class="teach-term">Instructor &middot; High-school program</span>
-    </div>
-    <div class="teach-title">Clinical Neuroscience Internship / Virtual Experience (CNI/V-X)</div>
-    <p class="teach-desc">
-      <!-- TODO: refine description -->
-      An immersive internship and virtual experience introducing high-school students to
-      clinical neuroscience and brain research.
-    </p>
-    <div class="teach-meta">Stanford &middot; 2015–present</div>
-    <div class="teach-links">
-      <a class="teach-btn" href="https://med.stanford.edu/psychiatry/special-initiatives/CNIX.html" target="_blank" rel="noopener">Course info</a>
     </div>
   </div>
+</section>
 
-</div>
+<section class="rail-group">
+  <div class="rail-label"><div class="rl">Previously taught</div></div>
+  <div class="rail-body">
+    <div class="teach-grid">
 
-<div class="teach-sec">Previously taught</div>
-<div class="teach-grid">
+      <div class="teach-card past">
+        <div class="teach-top">
+          <span class="teach-code">DESINST 366</span>
+          <span class="teach-term">Co-Instructor</span>
+        </div>
+        <div class="teach-title">Creative Gym</div>
+        <div class="teach-meta">Stanford d.school (Hasso Plattner Institute of Design) &middot; 2017</div>
+      </div>
 
-  <div class="teach-card past">
-    <div class="teach-top">
-      <span class="teach-code">DESINST 366</span>
-      <span class="teach-term">Co-Instructor</span>
+      <div class="teach-card past">
+        <div class="teach-top">
+          <span class="teach-code">ME 379</span>
+          <span class="teach-term">Co-Instructor</span>
+        </div>
+        <div class="teach-title">Fail Faster</div>
+        <div class="teach-meta">Stanford d.school (Hasso Plattner Institute of Design) &middot; 2013–2015</div>
+      </div>
+
+      <div class="teach-card past">
+        <div class="teach-top">
+          <span class="teach-term">Teaching Assistant</span>
+        </div>
+        <div class="teach-title">Software Engineering</div>
+        <div class="teach-meta">UT Austin &middot; Department of Computer Science &middot; 2005–2006</div>
+      </div>
+
     </div>
-    <div class="teach-title">Creative Gym</div>
-    <div class="teach-meta">Stanford d.school (Hasso Plattner Institute of Design) &middot; 2017</div>
   </div>
-
-  <div class="teach-card past">
-    <div class="teach-top">
-      <span class="teach-code">ME 379</span>
-      <span class="teach-term">Co-Instructor</span>
-    </div>
-    <div class="teach-title">Fail Faster</div>
-    <div class="teach-meta">Stanford d.school (Hasso Plattner Institute of Design) &middot; 2013–2015</div>
-  </div>
-
-  <div class="teach-card past">
-    <div class="teach-top">
-      <span class="teach-term">Teaching Assistant</span>
-    </div>
-    <div class="teach-title">Software Engineering</div>
-    <div class="teach-meta">UT Austin &middot; Department of Computer Science &middot; 2005–2006</div>
-  </div>
-
-</div>
+</section>

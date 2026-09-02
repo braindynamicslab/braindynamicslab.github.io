@@ -5,6 +5,7 @@ categories:
  - home
 description: "Stanford's Brain Dynamics Lab (PI Manish Saggar) develops computational and machine-learning methods to model brain dynamics and advance computational psychiatry and mental health."
 ---
+
 <div class="row">
 	<div class="col-lg-12">
 		<object class="pull-right" height=200  data="/images/bdl-logo-2.png"></object>
@@ -94,3 +95,118 @@ description: "Stanford's Brain Dynamics Lab (PI Manish Saggar) develops computat
 	</div>
 	{% endfor %}
 </div>
+
+<script>
+/* Full-page ambient particle network behind the whole homepage + a light
+   d.school-style cursor trail. Vanilla JS, no deps. The canvas is fixed to the
+   viewport, sits BEHIND all content (z-index:-1), and is deliberately faint so
+   text stays readable. Degrades: reduced-motion -> one static frame;
+   touch -> network only (no trail); hidden tab -> paused. */
+(function () {
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TRAIL   = window.matchMedia('(pointer: fine)').matches && !REDUCED;
+
+  var cv = document.createElement('canvas');
+  cv.id = 'bgNet';
+  cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
+  document.body.appendChild(cv);
+
+  var ctx, W, H, parts = [], trail = [];
+  var mouse = { x: -999, y: -999, inside: false };
+  var LINK = 130, GRAB = 175;
+
+  function fit() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width  = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    ctx = cv.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var target = Math.max(30, Math.min(100, Math.round((W * H) / 16000)));
+    parts = [];
+    for (var i = 0; i < target; i++) {
+      parts.push({ x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .28 });
+    }
+  }
+
+  window.addEventListener('mousemove', function (e) {
+    mouse.x = e.clientX; mouse.y = e.clientY; mouse.inside = true;
+    if (TRAIL) { trail.push({ x: mouse.x, y: mouse.y, t: performance.now() });
+      if (trail.length > 60) trail.shift(); }
+  });
+  document.addEventListener('mouseleave', function () { mouse.inside = false; mouse.x = mouse.y = -999; });
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    var i, j, p, a, b, dx, dy, d;
+    for (i = 0; i < parts.length; i++) {
+      p = parts[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+      if (mouse.inside) {
+        dx = mouse.x - p.x; dy = mouse.y - p.y; d = Math.hypot(dx, dy);
+        if (d < GRAB) { p.vx += dx / d * 0.005; p.vy += dy / d * 0.005; }
+      }
+      p.vx *= 0.995; p.vy *= 0.995;
+    }
+    // faint links between particles
+    for (i = 0; i < parts.length; i++) {
+      for (j = i + 1; j < parts.length; j++) {
+        a = parts[i]; b = parts[j];
+        dx = a.x - b.x; dy = a.y - b.y; d = Math.hypot(dx, dy);
+        if (d < LINK) {
+          ctx.globalAlpha = (1 - d / LINK) * 0.16;
+          ctx.strokeStyle = '#8b9099'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+    }
+    // slightly warmer links toward the cursor
+    if (mouse.inside) {
+      for (i = 0; i < parts.length; i++) {
+        p = parts[i]; dx = mouse.x - p.x; dy = mouse.y - p.y; d = Math.hypot(dx, dy);
+        if (d < GRAB) {
+          ctx.globalAlpha = (1 - d / GRAB) * 0.28;
+          ctx.strokeStyle = '#8C1515'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(mouse.x, mouse.y); ctx.lineTo(p.x, p.y); ctx.stroke();
+        }
+      }
+    }
+    // light nodes
+    ctx.globalAlpha = 1;
+    for (i = 0; i < parts.length; i++) {
+      p = parts[i]; ctx.fillStyle = 'rgba(140,21,21,.34)';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2); ctx.fill();
+    }
+    // cursor trail (d.school squiggle that erases itself); native cursor stays visible
+    if (TRAIL) {
+      var now = performance.now(), LIFE = 430;
+      trail = trail.filter(function (pt) { return now - pt.t < LIFE; });
+      for (i = 1; i < trail.length; i++) {
+        a = trail[i - 1]; b = trail[i];
+        ctx.globalAlpha = Math.max(0, 1 - (now - b.t) / LIFE) * 0.9;
+        ctx.strokeStyle = '#d21f26'; ctx.lineWidth = 2; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  var raf = null, running = false;
+  function loop() { frame(); raf = requestAnimationFrame(loop); }
+  function start() { if (!running && !REDUCED) { running = true; loop(); } }
+  function stop()  { if (running) { running = false; cancelAnimationFrame(raf); } }
+
+  fit();
+  if (REDUCED) { frame(); }
+  else {
+    start();
+    document.addEventListener('visibilitychange', function () {
+      document.hidden ? stop() : start();
+    });
+  }
+  window.addEventListener('resize', function () { fit(); if (REDUCED) frame(); });
+})();
+</script>
