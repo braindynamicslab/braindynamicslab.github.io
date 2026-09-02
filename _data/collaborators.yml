@@ -43,6 +43,10 @@
   affiliation: Stanford University
   photo: /images/collaborators/hadi.jpg
   url: https://med.stanford.edu/profiles/hadi-hosseini  
+- name: Tamar Green
+  affiliation: Stanford University
+  photo: /images/collaborators/tamar.jpg
+  url: https://med.stanford.edu/profiles/tamar-green
 - name: Deanna Barch
   affiliation: Washington University in St. Louis
   photo: /images/collaborators/deanna.jpeg
@@ -55,10 +59,6 @@
   affiliation: UCLA
   photo: /images/collaborators/lucina.webp
   url: https://bri.ucla.edu/people/lucina-uddin-ph-d/
-- name: Tamar Green
-  affiliation: Stanford University
-  photo: /images/collaborators/tamar.jpg
-  url: https://med.stanford.edu/profiles/tamar-green
 - name: Grace Hawthorne
   affiliation: Stanford d.school
   photo: /images/collaborators/grace.jpeg
