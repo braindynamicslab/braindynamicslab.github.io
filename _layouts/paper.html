@@ -66,96 +66,79 @@ layout: default
 </div>
 
 {% else %}
-{% comment %} ---- PAPER layout: title + sidebar (PDF/DOI/…) + content ---- {% endcomment %}
-<div class="row">
-	<div class="col-lg-12">
-		<div class="media">
-			{% if page.image %}
-			<img class="pull-left pad-right media-object" width=200 src="{{ page.image }}">
-			{% endif %}
-			<div class="media-body titlebox">
-				<div class="title media-heading">
-					{{ page.title }}
-				</div>
-				<p>
-				<div class="smallhead">
-					{{ page.authors }}
-					{{ page.year }}.
-					{{ page.journal }}
-				</div>
-			</div>
+{% comment %} ---- PAPER layout: header (title/authors/venue/buttons) + figure + abstract ---- {% endcomment %}
+<style>
+.pd-back { display:inline-block; font-size:.85rem; color:#999; text-decoration:none; margin:0 0 14px; }
+.pd-back:hover { color:#800000; }
+.pd-title { font-size:1.9rem; font-weight:600; line-height:1.28; color:#1f1f1f; margin:0 0 13px; }
+.pd-authors { font-size:.98rem; color:#555; line-height:1.55; margin:0 0 7px; }
+.pd-venue { font-size:.92rem; margin:0 0 18px; }
+.pd-venue .jn { color:#800000; font-weight:600; }
+.pd-venue .yr { color:#999; }
+.pd-actions { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 15px; }
+.pd-btn {
+  display:inline-flex; align-items:center; gap:7px; text-decoration:none; white-space:nowrap;
+  font-size:.85rem; font-weight:600; border-radius:999px; padding:8px 17px;
+  border:1px solid #d9d9d9; color:#444; background:#fff; transition:background .15s ease, border-color .15s ease, color .15s ease;
+}
+.pd-btn:hover { border-color:#800000; color:#800000; }
+.pd-btn.primary { background:#800000; border-color:#800000; color:#fff; }
+.pd-btn.primary:hover { background:#5f0000; color:#fff; }
+.pd-tags { margin:3px 0 0; }
+.pd-tag { display:inline-block; font-size:.72rem; letter-spacing:.02em; background:#f1eef1; color:#800000;
+  border-radius:4px; padding:2px 9px; margin:0 5px 6px 0; text-decoration:none; }
+.pd-tag:hover { background:#e3d7e3; }
+.pd-hr { height:2px; border:none; color:#808088; background:#808088; margin:18px 0 24px 226px; }
+@media (max-width:640px){ .pd-hr { margin-left:0; } }
+.pd-head { display:flex; align-items:flex-start; gap:26px; }
+.pd-head-thumb { flex:0 0 200px; }
+.pd-head-thumb img { width:100%; display:block; border:1px solid #eaeaea; border-radius:10px;
+  background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.05); }
+.pd-head-main { flex:1 1 auto; min-width:0; }
+@media (max-width:640px){
+  .pd-head { flex-direction:column; gap:16px; }
+  .pd-head-thumb { flex-basis:auto; max-width:230px; }
+}
+.pd-body { font-size:.99rem; line-height:1.65; color:#333; margin-left:226px; }
+@media (max-width:640px){ .pd-body { margin-left:0; } }
+.pd-body h1, .pd-body h2, .pd-body h3 { font-size:1.15rem; font-weight:700; color:#222; margin:0 0 12px; }
+.pd-relproj { margin-top:22px; font-size:.9rem; color:#666; }
+.pd-relproj a { color:#800000; font-weight:600; }
+</style>
+
+<a class="pd-back" href="/papers/">&larr; All papers</a>
+
+<div class="pd-head">
+	{% if page.image %}
+	<div class="pd-head-thumb"><img src="{{ page.image }}" alt="{{ page.title | escape }} — figure"></div>
+	{% endif %}
+	<div class="pd-head-main">
+		<h1 class="pd-title">{{ page.title }}</h1>
+		<div class="pd-authors">{{ page.authors }}</div>
+		<div class="pd-venue">{% if page.journal %}<span class="jn">{{ page.journal }}</span>{% endif %}{% if page.year %} <span class="yr">&middot; {{ page.year }}</span>{% endif %}</div>
+
+		<div class="pd-actions">
+			{% if page.pdf %}<a class="pd-btn primary" href="{{ page.pdf }}"><i class="fa fa-file-pdf-o"></i> PDF</a>{% endif %}
+			{% if page.doi %}<a class="pd-btn" href="https://doi.org/{{ page.doi }}"><i class="fa fa-external-link"></i> DOI</a>{% endif %}
+			{% if page.biorxiv %}<a class="pd-btn" href="{{ page.biorxiv }}"><i class="fa fa-file-text-o"></i> {% if page.biorxiv contains 'medrxiv' %}medRxiv{% else %}bioRxiv{% endif %}</a>{% endif %}
+			{% if page.github %}<a class="pd-btn" href="{{ page.github }}"><i class="fa fa-github"></i> Code</a>{% endif %}
+			{% if page.supplement %}<a class="pd-btn" href="{{ page.supplement }}"><i class="fa fa-paperclip"></i> Supplement</a>{% endif %}
 		</div>
+
+		{% if page.tags %}<div class="pd-tags">{% for t in page.tags %}<a class="pd-tag" href="/papers/">{{ t }}</a>{% endfor %}</div>{% endif %}
 	</div>
 </div>
 
-<div class="bigspacer"></div>
+<hr class="pd-hr">
 
-<div class="row">
-	<div class="col-lg-3">
-		<div class="bigspacer"></div>
-		<div class="glyphbox note">
-			{% if page.pdf %}
-			<div class="smallhead">
-				PDF
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="{{ page.pdf }}">{{ page.pdf | split: '/' | last }}</a>
-			</div>
-			<div class="bigspacer"></div>
-			{% endif %}
-			{% if page.supplement %}
-			<div class="smallhead">
-				Supplement
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-paperclip fa-fw"></i>
-				<a class="off" href="{{ page.supplement }}">{{ page.supplement | split: '/' | last }}</a>
-			</div>
-			<div class="bigspacer"></div>
-			{% endif %}
-			{% if page.doi %}
-			<div class="smallhead">
-				DOI
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-external-link fa-fw"></i>
-				<a class="off" href="https://doi.org/{{ page.doi }}">{{ page.doi }}</a>
-			</div>
-			<div class="bigspacer"></div>
-			{% endif %}
-			{% if page.github %}
-			<div class="smallhead">
-				GitHub
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-github-alt fa-fw"></i>
-				<a class="off" href="{{ page.github }}">{{ page.github | remove: 'http://github.com/' | remove: 'https://github.com/' | replace: "/", "/<wbr>" | replace: "_", "_<wbr>" }}</a>
-			</div>
-			<div class="bigspacer"></div>
-			{% endif %}
-			{% if page.biorxiv %}
-			<div class="smallhead">
-				{% if page.biorxiv contains 'medrxiv' %}Preprint{% else %}BioRxiv{% endif %}
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-biorxiv-alt fa-fw"></i>
-				<a class="off" href="{{ page.biorxiv }}">{{ page.biorxiv | remove: 'https://www.biorxiv.org/content/' | remove: 'http://www.biorxiv.org/content/' | remove: 'https://www.medrxiv.org/content/' | remove: 'http://www.medrxiv.org/content/' | replace: "/", "/<wbr>" | replace: "_", "_<wbr>" }}</a>
-			</div>
-			<div class="bigspacer"></div>
-			{% endif %}
-		</div>
+<div class="pd-body post">
+	{{ content }}
+	{% assign rel_projects = page.projects %}
+	{% if rel_projects and rel_projects.size > 0 %}
+	<div class="pd-relproj">
+		<strong>Part of:</strong>
+		{% for slug in rel_projects %}{% assign proj = site.categories.projects | where: "slug", slug | first %}{% if proj %}<a href="{{ proj.url }}">{{ proj.title }}</a>{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}
 	</div>
-	<div class="col-lg-8">
-		<div class="post">
-			{{ content }}
-		</div>
-	</div>
-	<div class="col-lg-1"></div>
+	{% endif %}
 </div>
 {% endif %}

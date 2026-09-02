@@ -15,9 +15,33 @@ categories:
 .filter-pill:hover { border-color:#800000; color:#800000; }
 .filter-pill.active { background:#800000; border-color:#800000; color:#fff; }
 .filter-count { color:#999; font-size:.8rem; margin:2px 0 18px; }
-.paperbox .media { transition: transform .15s ease; }
-.paperbox:hover .media { transform: translateY(-3px); }
-.paper-tags { margin-top:6px; line-height:1.9; }
+
+/* card grid */
+.papers-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:18px; margin:4px 0 12px; }
+.paper-card {
+  display:flex; flex-direction:column; height:100%;
+  border:1px solid #e8e8e8; border-radius:12px; overflow:hidden; background:#fff;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.paper-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.10); }
+.paper-thumb {
+  height:150px; background:#fff; border-bottom:1px solid #eee;
+  display:flex; align-items:center; justify-content:center; overflow:hidden; padding:10px;
+}
+.paper-thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+.paper-body { padding:15px 16px 14px; display:flex; flex-direction:column; flex:1; }
+.paper-card .p-title {
+  font-size:.95rem; font-weight:700; line-height:1.32; margin:0 0 7px;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.paper-card .p-title a { color:#222; text-decoration:none; }
+.paper-card:hover .p-title a { color:#800000; }
+.paper-card .p-authors {
+  font-size:.77rem; color:#7a7a7a; line-height:1.45; margin:0 0 8px;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.paper-card .p-journal { font-size:.8rem; color:#444; font-weight:600; margin:0 0 11px; }
+.paper-tags { margin-top:auto; line-height:1.9; }
 .paper-tag {
   display:inline-block; font-size:.68rem; letter-spacing:.02em; cursor:pointer;
   background:#f1eef1; color:#800000; border-radius:4px;
@@ -60,23 +84,20 @@ categories:
           <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
         </div>
       </div>
-      <div class="row">
+      <div class="papers-grid">
   {% endif %}
-        <div class="col-lg-6 paperbox paper-item" data-tags="{% for t in paper.tags %}{{ t | slugify }} {% endfor %}">
-          <div class="media">
-            <div class="media-body">
-              <div class="smallhead mb-1"><a href="{{ paper.url }}" class="off">{{ paper.title }}</a></div>
-              <p class="note">{{ paper.authors }} <strong> {{ paper.journal }} </strong></p>
-              {% if paper.tags %}<p class="paper-tags">{% for t in paper.tags %}<span class="paper-tag" data-tag="{{ t | slugify }}">{{ t }}</span>{% endfor %}</p>{% endif %}
-            </div>
+        <div class="paper-item" data-tags="{% for t in paper.tags %}{{ t | slugify }} {% endfor %}">
+          <div class="paper-card">
             {% if paper.image %}
-            <a href="{{ paper.url }}">
-              <img class="ml-3 media-object" width="150" src="{{ paper.image }}">
-            </a>
+            <a class="paper-thumb" href="{{ paper.url }}"><img src="{{ paper.image }}" alt="{{ paper.title | escape }}" loading="lazy"></a>
             {% endif %}
+            <div class="paper-body">
+              <div class="p-title"><a href="{{ paper.url }}">{{ paper.title }}</a></div>
+              <div class="p-authors">{{ paper.authors }}</div>
+              {% if paper.journal %}<div class="p-journal">{{ paper.journal }}</div>{% endif %}
+              {% if paper.tags %}<div class="paper-tags">{% for t in paper.tags %}<span class="paper-tag" data-tag="{{ t | slugify }}">{{ t }}</span>{% endfor %}</div>{% endif %}
+            </div>
           </div>
-          <div class="bigspacer"></div>
-          <div class="spacer"></div>
         </div>
   {% if forloop.last %}
       </div>
