@@ -74,7 +74,8 @@ description: "Stanford's Brain Dynamics Lab (PI Manish Saggar) develops computat
 </div>
 
 <div class="row">
-	{% for project in site.categories.projects limit:4 %}
+	{% assign active_projects = site.categories.projects | where: "status", "Active" %}
+	{% for project in active_projects limit:4 %}
 	<div class="col-md-3 reduced-gutter">
 		<div class="pad-left">
 			<div class="note">
