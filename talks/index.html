@@ -39,6 +39,23 @@ categories:
 .talk-meta { font-size:.78rem; color:#888; line-height:1.45; margin-top:auto; }
 .talk-meta .host { color:#a06; }
 
+/* "recording coming soon" card (talk with no video yet) — links out to the event page */
+.talk-card--soon { text-decoration:none; color:inherit; }
+.talk-card--soon .talk-thumb-wrap {
+  background:linear-gradient(135deg,#7a1f1f 0%,#3a0d0d 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+.talk-soon-badge {
+  display:inline-flex; align-items:center; gap:7px;
+  background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  border-radius:999px; padding:7px 15px; font-size:.8rem; font-weight:600;
+}
+.talk-seminar-tag {
+  align-self:flex-start; display:inline-block; margin-bottom:8px;
+  font-size:.64rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  color:#800000; background:#f1eef1; border-radius:5px; padding:3px 9px;
+}
+
 .talk-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.78); z-index:2000;
   align-items:center; justify-content:center; padding:22px; }
 .talk-modal.open { display:flex; }
@@ -69,6 +86,7 @@ categories:
       <div class="rail-body">
         <div class="talk-grid">
   {% endif %}
+        {% if talk.link %}
         <div class="talk-card" role="button" tabindex="0"
              data-embed="{{ talk.link }}"
              data-title="{{ talk.title | strip | escape }}"
@@ -84,6 +102,18 @@ categories:
             <div class="talk-meta">{{ talk.date | date: '%b %-d, %Y' }}{% if talk.host %}<br><span class="host">{{ talk.host }}</span>{% endif %}</div>
           </div>
         </div>
+        {% else %}
+        <a class="talk-card talk-card--soon" href="{{ talk.event_url | default: '#' }}"{% if talk.event_url %} target="_blank" rel="noopener"{% endif %}>
+          <div class="talk-thumb-wrap">
+            <span class="talk-soon-badge"><i class="fa fa-clock-o"></i> Recording coming soon</span>
+          </div>
+          <div class="talk-body">
+            {% if talk.seminar %}<span class="talk-seminar-tag">{{ talk.seminar }}</span>{% endif %}
+            <div class="talk-title">{{ talk.title }}</div>
+            <div class="talk-meta">{{ talk.date | date: '%b %-d, %Y' }}{% if talk.host %}<br><span class="host">{{ talk.host }}</span>{% endif %}</div>
+          </div>
+        </a>
+        {% endif %}
 {% endif %}{% endfor %}
 {% unless current_year == "___start___" %}
         </div>
@@ -138,7 +168,8 @@ categories:
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.talk-card').forEach(function (card) {
+  // only video cards open the modal; "coming soon" cards are plain links to the event page
+  document.querySelectorAll('.talk-card[data-embed]').forEach(function (card) {
     card.addEventListener('click', function () { open(card); });
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
