@@ -1,0 +1,282 @@
+# Invited & recorded talks, shown on /talks/ as a year timeline.
+# Fields: year (required), title, venue, location, international (true/false),
+#   video (embed URL -> shows a "Watch" button + player), event_url (-> "Event page" link),
+#   abstract (shown in the player modal). Keep newest year first.
+
+# ---------------- 2026 ----------------
+- year: 2026
+  title: "Mapping and Modeling Individual Human Brain Dynamics: From Measurement to Perturbation"
+  venue: "Brain Mind Institute (BMI) Distinguished Seminar, EPFL"
+  location: "Lausanne, Switzerland"
+  international: true
+  event_url: "https://memento.epfl.ch/event/bmi-distinguished-seminar-manish-saggar-mapping-an/"
+
+# ---------------- 2025 ----------------
+- year: 2025
+  title: "Beyond Symptoms: Toward a Mechanistic, Neuroimaging-Based Nosology Using Deep Learning, Latent Representations and Dynamical Systems"
+  venue: "AI4MH Monthly Symposium, Stanford University"
+  location: "Stanford, CA"
+  video: "https://www.youtube.com/embed/iNrnqf0JHLY?start=881&end=1627"
+  abstract: >-
+    In this segment from the Stanford AI4MH (AI for Mental Health) leadership event, Manish Saggar
+    argues for moving beyond symptom-based psychiatric diagnosis toward a mechanistic,
+    neuroimaging-based nosology — using deep learning, latent representations, and dynamical-systems
+    models to ground psychiatric diagnosis in brain biology.
+- year: 2025
+  title: "Beyond the Mean: Revealing the Hidden Scaffolding of Brain Dynamics through Topological Data Analysis"
+  venue: "Center for Studies in Physics and Biology, The Rockefeller University"
+  location: "New York, NY"
+  event_url: "https://www.rockefeller.edu/events-and-lectures/64510-beyond-the-mean-revealing-the-hidden-scaffolding-of-brain-dynamics-through-topological-data-analysis/"
+- year: 2025
+  title: "Real-time 7T neurofeedback to reinforce positive memory states"
+  venue: "Launch of the 7T MRI Scanner, Stanford University"
+  location: "Stanford, CA"
+  event_url: "https://med.stanford.edu/radiology/news/2025-news/stanford-radiology-unveils-two-new-mri-systems-at-lucas-center.html"
+- year: 2025
+  title: "7+ Myths about creativity"
+  venue: "Minds in the Making workshop, CogSci 2025"
+  location: "San Francisco, CA"
+  event_url: "https://minds-making.github.io/"
+- year: 2025
+  title: "Beyond the Average: Using TDA-Based Mapper to Reveal the Hidden Shape of fMRI Data"
+  venue: "University of Iowa"
+  location: "Iowa City, IA"
+- year: 2025
+  title: "Noise to Insight: Advancing Precision Psychiatry through Brain Dynamics and Computational Modeling"
+  venue: "University of Minnesota"
+  location: "Minneapolis, MN"
+- year: 2025
+  title: "Unleashing Creativity: Insights from Brain Dynamics and Neural Correlates"
+  venue: "Rice University"
+  location: "Houston, TX"
+- year: 2025
+  title: "Beyond the Mean: TDA as a Lens to Reveal the Hidden Scaffolding of Brain Dynamics in Healthy and Clinical Populations"
+  venue: "The Topology of Human and Synthetic Minds — King's Institute for Human and Synthetic Minds"
+  location: "London, UK"
+  international: true
+  event_url: "https://lordgrilo.github.io/topology-natural-synthetic-minds/"
+- year: 2025
+  title: "Leveraging AI and ML to Anchor Psychiatric Diagnoses into Biological Features"
+  venue: "Center of Intelligent Robotics, IIIT-Allahabad"
+  location: "Prayagraj, India"
+  international: true
+
+# ---------------- 2024 ----------------
+- year: 2024
+  title: "Using Topological Data Analysis to characterize fluctuations in brain activity patterns"
+  venue: "Semel Institute for Neuroscience and Human Behavior, UCLA"
+  location: "Los Angeles, CA"
+  video: "https://www.youtube.com/embed/CxpGAIjidvQ"
+  abstract: >-
+    Understanding the neurobiological underpinnings of psychiatric disorders has long been a
+    challenge. This talk explores how noninvasive neuroimaging, despite its limitations, can be
+    leveraged to anchor psychiatric disorders into neurobiology using Topological Data Analysis
+    (TDA), specifically Mapper — capturing evoked transitions during tasks, intrinsic transitions
+    at rest, and changes in the landscape associated with psychiatric disorders and neuromodulation.
+- year: 2024
+  title: "Characterizing brain activity dynamics in healthy and patient populations"
+  venue: "Psychology & Brain Sciences, Indiana University"
+  location: "Bloomington, IN"
+- year: 2024
+  title: "Capturing brain dynamics using topological data analysis"
+  venue: "Università degli Studi di Roma Tor Vergata"
+  location: "Rome, Italy"
+  international: true
+- year: 2024
+  title: "Decoding Brain Dynamics: Leveraging Topological Data Analysis and Neuroimaging to Advance Psychiatric Nosology"
+  venue: "Center for Neuroscience, Indian Institute of Science (IISc)"
+  location: "Bangalore, India"
+  international: true
+- year: 2024
+  title: "Higher-order interactions between brain regions are better at profiling tasks in healthy and patient populations"
+  venue: "TopoNets 2024, NetSci"
+  location: "Quebec City, Canada"
+  international: true
+  event_url: "https://sites.google.com/view/toponets2024"
+
+# ---------------- 2023 ----------------
+- year: 2023
+  title: "Interacting minds: Hyperscanning"
+  venue: "MIND Summer School, Dartmouth College"
+  location: "Hanover, NH"
+  video: "https://www.youtube.com/embed/_rU-_tNl014"
+  abstract: >-
+    Manish discusses studies finding the neural correlates of human–human interaction across
+    dyadic, triadic, and internal interactions — from simple motor coordination measured with
+    fNIRS to synchronized three-scanner fMRI hyperscanning of collaborative drawing, analyzed with
+    topological data analysis, and future directions including interaction with non-humans, brain
+    stimulation, and neurodiversity.
+- year: 2023
+  title: "Precision dynamical mapping to better characterize fluctuations in brain activity in healthy and patient populations"
+  venue: "Applied Algebraic Topology Network (AATRN), Dr. Henry Adams"
+  video: "https://www.youtube.com/embed/Xy3OEa27DGc"
+  abstract: >-
+    Exploring how noninvasive neuroimaging can be leveraged to anchor psychiatric disorders into
+    neurobiology. Two challenges are addressed — the inherent noise of noninvasive devices and the
+    limited use of biophysical models — using Topological Data Analysis (Mapper) to capture evoked
+    and intrinsic transitions and changes in the shape of brain dynamics across disorders and
+    interventions.
+- year: 2023
+  title: "Teamwork + group (design) thinking"
+  venue: "Master Class, Society for Neuroscience of Creativity, International Monetary Fund (IMF)"
+  location: "Washington, D.C."
+- year: 2023
+  title: "ideAIte: a synergistic human-machine framework for ideation and prototyping"
+  venue: "Army Research Lab workshop on Hybrid Thinking, Stanford"
+  location: "Stanford, CA"
+- year: 2023
+  title: "Topological data analysis and its application to neuroimaging and genetics"
+  venue: "Greicius Lab, Stanford University"
+  location: "Stanford, CA"
+- year: 2023
+  title: "Precision dynamical mapping to capture intrinsic and evoked transitions in cortical activity"
+  venue: "Computational & Systems Neuroscience Laboratory, Monash University"
+  location: "Melbourne, Australia"
+  international: true
+
+# ---------------- 2022 ----------------
+- year: 2022
+  title: "Meditation: An Approach to Handle Anxiety and Uncertainty"
+  venue: "Mountain View Public Library"
+  location: "Mountain View, CA"
+  video: "https://www.youtube.com/embed/sGkkFWRYViY"
+  abstract: >-
+    A general-audience talk on how meditation can help manage anxiety and uncertainty, drawing on
+    both contemplative practice and the neuroscience of the brain.
+- year: 2022
+  title: "Topological Data Analysis for revealing intrinsic and evoked transitions in brain activity"
+  venue: "Neural Prosthetic Systems Lab (NPSL), Stanford"
+  location: "Stanford, CA"
+- year: 2022
+  title: "Topological Data Analysis for revealing intrinsic and evoked transitions in brain activity"
+  venue: "Center for Neuromodulation in Depression and Stress (CNDS), Perelman School of Medicine, University of Pennsylvania"
+- year: 2022
+  title: "Finding the shape of data"
+  venue: "Center for Sleep and Circadian Sciences (CSCS) Retreat, Stanford"
+  location: "Stanford, CA"
+
+# ---------------- 2021 ----------------
+- year: 2021
+  title: "Precision dynamical mapping using topological data analysis reveals a unique hub-like transition state at rest"
+  venue: "Brain Space Initiative Talk Series, Georgia Tech"
+  video: "https://www.youtube.com/embed/CZ9Fhr6Es1Y"
+  abstract: >-
+    Using a precision-dynamics approach and Topological Data Analysis (Mapper), we reveal the rules
+    governing transitions in brain activity at rest at the single-participant level. Across
+    participants we consistently observe a rich landscape in which activity transitions through a
+    central hub-like "transition state" — a shared attractor-like basin where canonical
+    resting-state networks are equally represented — with idiosyncratic dynamics of potential use
+    in precision medicine.
+- year: 2021
+  title: "Visualizing evoked and resting brain activity dynamics"
+  venue: "National Institute of Mental Health (NIMH) workshop"
+  video: "https://www.youtube.com/embed/wt0bjs1i8xQ?start=1916"
+  abstract: >-
+    Part of an NIMH workshop on advanced statistical methods and dynamic data visualization for
+    mental-health studies, showcasing methods for visualizing dynamic and interactive brain data.
+- year: 2021
+  title: "Characterizing cognitive states associated with creative thinking using network neuroscience and topological data analysis"
+  venue: "Neurodesign Lecture, Hasso Plattner Institute (WT 2020/21)"
+  video: "https://www.tele-task.de/lecture/video/8477/"
+  abstract: >-
+    Manish discusses his research on the neuroscience of creativity: creativity measured with fMRI
+    and Pictionary; enhancing creativity through design thinking; brain development and the 4th-grade
+    creative slump; team creativity via fMRI hyperscanning; and anchoring creativity into known
+    cognitive constructs.
+- year: 2021
+  title: "Characterizing brain dynamics at rest and while interacting with others using topological data analysis"
+  venue: "Dartmouth College"
+  location: "Hanover, NH"
+- year: 2021
+  title: "From Robotics to the Brain and back (hopefully)"
+  venue: "Indian Institute of Information Technology (IIIT) Allahabad (Virtual)"
+  location: "Allahabad, India"
+  international: true
+
+# ---------------- 2019 ----------------
+- year: 2019
+  title: "Using Topological Data Analysis to Capture and Quantify Transitions in Intrinsic Brain Activity in Individuals with Fragile X Syndrome"
+  venue: "Organization for Human Brain Mapping (OHBM) Annual Meeting"
+  location: "Rome, Italy"
+  international: true
+  video: "https://embed-ssl.wistia.com/deliveries/1c5d86c847c083488a8dad3cd6250f8184133dd5.webp"
+  abstract: >-
+    Applying the TDA-based Mapper technique to examine the organization of intrinsic brain activity
+    in individuals with fragile X syndrome (FXS) at the single-participant level, relating features
+    of the brain's dynamical representation to the severity of autism symptoms — one of the first
+    applications of TDA to clinical populations.
+- year: 2019
+  title: "Computational Neuropsychiatry — New Approaches to Psychiatric Diagnosis"
+  venue: "BrainMind Summit, Stanford University"
+  location: "Stanford, CA"
+  video: "https://www.youtube.com/embed/fH17HvGDi0s"
+  abstract: >-
+    On the challenges of diagnosing mental-health disorders without biological markers, and the
+    case for personalized (n=1) neuroimaging — using Topological Data Analysis to understand the
+    shape of individual brain dynamics and improve diagnostic accuracy.
+
+# ---------------- 2018 ----------------
+- year: 2018
+  title: "Neuroscience of Contemplative Practices"
+  venue: "Contemplation By Design Summit, Stanford University"
+  location: "Stanford, CA"
+  video: "https://www.youtube.com/embed/L5uZcjXeIgk"
+  abstract: >-
+    Existing and new research from the emerging interdisciplinary field of contemplative
+    neuroscience — how training in contemplative practices such as meditation affects the brain and
+    behavior, with open questions and new directions for research.
+- year: 2018
+  title: "Computational Neuropsychiatry: new approaches to psychiatric diagnosis"
+  venue: "Ritter Lab, Berlin Institute of Health, Charité"
+  location: "Berlin, Germany"
+  international: true
+
+# ---------------- 2017 ----------------
+- year: 2017
+  title: "Revealing the brain's dynamical organization"
+  venue: "Selective Vulnerability Research Lab, UCSF Memory & Aging Center"
+  location: "San Francisco, CA"
+- year: 2017
+  title: "Understanding Brain Dynamics"
+  venue: "The brainLENS Lab, UCSF"
+  location: "San Francisco, CA"
+
+# ---------------- 2016 ----------------
+- year: 2016
+  title: "The Resting Brain and its dynamics"
+  venue: "Clinical Neuroscience Course, Child & Adolescent Psychiatry Fellowship, UCSF"
+  location: "San Francisco, CA"
+- year: 2016
+  title: "Extracting computational insights from brain dynamics"
+  venue: "Feinberg School of Medicine, Northwestern University"
+  location: "Chicago, IL"
+- year: 2016
+  title: "Extracting insights from brain dynamics"
+  venue: "Department of Bioengineering, University of California, Riverside"
+  location: "Riverside, CA"
+- year: 2016
+  title: "Quantifying brain dynamics in healthy and clinical populations"
+  venue: "Department of Psychology, Utah State University"
+  location: "Logan, UT"
+
+# ---------------- 2014 ----------------
+- year: 2014
+  title: "Finding the neural correlates of creativity and its enhancement across lifespan"
+  venue: "Center for Childhood Creativity, Bay Area Discovery Museum"
+  location: "Sausalito, CA"
+
+# ---------------- 2013 ----------------
+- year: 2013
+  title: "Unleashing Creativity: Longitudinal changes in neural activity and behavioral measures associated with creativity training"
+  venue: "Department of Psychiatry Grand Rounds, Stanford University"
+  location: "Stanford, CA"
+
+# ---------------- 2011 ----------------
+- year: 2011
+  title: "A computational analysis of meditation"
+  venue: "International Computer Science Institute, UC Berkeley"
+  location: "Berkeley, CA"
+- year: 2011
+  title: "A computational analysis of meditation"
+  venue: "Department of Neurology, UC Irvine"
+  location: "Irvine, CA"

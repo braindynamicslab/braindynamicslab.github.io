@@ -5,3 +5,6 @@
 
 # but do track the hand-maintained collaborators list
 !collaborators.yml
+
+# track the talks list too
+!talks.yml

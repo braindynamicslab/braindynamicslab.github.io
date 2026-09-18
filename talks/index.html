@@ -12,7 +12,7 @@ categories:
   position:sticky; top:18px; text-align:right; padding-right:18px;
   font-size:1.4rem; font-weight:400; color:#1f1f1f; line-height:1;
 }
-.rail-body { position:relative; border-left:2px solid #e9e9e9; padding:2px 0 30px 26px; }
+.rail-body { position:relative; border-left:2px solid #e9e9e9; padding:2px 0 26px 26px; }
 .rail-body::before {
   content:''; position:absolute; left:-8px; top:8px; width:13px; height:13px;
   border-radius:50%; background:#800000; box-shadow:0 0 0 4px #fff;
@@ -20,41 +20,37 @@ categories:
 @media (max-width:640px){
   .rail-group { grid-template-columns:1fr; }
   .rail-label .rl { position:static; text-align:left; padding:0 0 6px 2px; }
-  .rail-body { border-left:none; padding:0 0 22px 0; }
+  .rail-body { border-left:none; padding:0 0 18px 0; }
   .rail-body::before { display:none; }
 }
 
-.talk-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:22px; margin:2px 0 0; }
-.talk-card { border:1px solid #e6e6e6; border-radius:10px; overflow:hidden; background:#fff; cursor:pointer;
-  display:flex; flex-direction:column; transition:transform .15s ease, box-shadow .15s ease; }
-.talk-card:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(0,0,0,.09); }
-.talk-card:focus-visible { outline:2px solid #800000; outline-offset:2px; }
-.talk-thumb-wrap { position:relative; height:158px; background:#2a2a33; overflow:hidden; }
-.talk-thumb { width:100%; height:100%; object-fit:cover; display:block; }
-.talk-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  color:#fff; font-size:2.6rem; text-shadow:0 2px 10px rgba(0,0,0,.55); opacity:.92; transition:transform .15s ease; }
-.talk-card:hover .talk-play { transform:scale(1.12); }
-.talk-body { padding:14px 16px 16px; display:flex; flex-direction:column; flex:1; }
-.talk-title { font-weight:600; font-size:1rem; line-height:1.3; color:#222; margin-bottom:8px; }
-.talk-meta { font-size:.78rem; color:#888; line-height:1.45; margin-top:auto; }
-.talk-meta .host { color:#a06; }
+.talk-lead { color:#666; font-size:.92rem; margin:0 0 22px; max-width:720px; }
 
-/* "recording coming soon" card (talk with no video yet) — links out to the event page */
-.talk-card--soon { text-decoration:none; color:inherit; }
-.talk-card--soon .talk-thumb-wrap {
-  background:linear-gradient(135deg,#7a1f1f 0%,#3a0d0d 100%);
-  display:flex; align-items:center; justify-content:center;
+/* compact talk rows */
+.talk-list { display:flex; flex-direction:column; }
+.talk-row {
+  display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
+  padding:11px 0; border-bottom:1px solid #f0eeee;
 }
-.talk-soon-badge {
-  display:inline-flex; align-items:center; gap:7px;
-  background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
-  border-radius:999px; padding:7px 15px; font-size:.8rem; font-weight:600;
+.talk-row:last-child { border-bottom:none; }
+.talk-row-main { min-width:0; }
+.talk-row-title { font-weight:600; color:#222; font-size:.96rem; line-height:1.35; }
+.talk-row-venue { display:block; color:#8a8a8a; font-size:.82rem; line-height:1.4; margin-top:2px; }
+.talk-row-side { flex:0 0 auto; display:flex; align-items:center; gap:8px; padding-top:1px; }
+
+.intl-tag {
+  font-size:.6rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+  color:#1c6b7a; background:#e6f2f4; border-radius:5px; padding:3px 8px; white-space:nowrap;
 }
-.talk-seminar-tag {
-  align-self:flex-start; display:inline-block; margin-bottom:8px;
-  font-size:.64rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
-  color:#800000; background:#f1eef1; border-radius:5px; padding:3px 9px;
+.watch-btn {
+  display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
+  border:1px solid #d8c2d0; background:#fff; color:#800000; cursor:pointer;
+  font-size:.76rem; font-weight:600; border-radius:999px; padding:5px 13px;
+  transition:background .15s ease, border-color .15s ease;
 }
+.watch-btn:hover { background:#800000; border-color:#800000; color:#fff; }
+.event-link { font-size:.76rem; font-weight:600; color:#888; text-decoration:none; white-space:nowrap; }
+.event-link:hover { color:#800000; }
 
 .talk-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.78); z-index:2000;
   align-items:center; justify-content:center; padding:22px; }
@@ -65,61 +61,49 @@ categories:
   line-height:1; color:#999; cursor:pointer; }
 .talk-close:hover { color:#800000; }
 .talk-embed-16x9 { position:relative; width:100%; padding-bottom:56.25%; height:0; background:#000; border-radius:8px; overflow:hidden; }
-.talk-embed-16x9 iframe, .talk-embed-16x9 img { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+.talk-embed-16x9 iframe, .talk-embed-16x9 img { position:absolute; top:0; left:0; width:100%; height:100%; border:0; object-fit:contain; }
 .talk-modal-title { font-size:1.2rem; font-weight:600; color:#222; margin:16px 0 4px; padding-right:24px; }
 .talk-modal-meta { font-size:.82rem; color:#888; margin-bottom:12px; }
 .talk-modal-abstract { font-size:.9rem; color:#444; line-height:1.6; }
 </style>
 
+<p class="talk-lead">Invited talks, seminars, and colloquia. <i class="fa fa-play-circle-o" style="color:#800000"></i> marks talks with a recording you can watch here.</p>
+
 {% assign current_year = "___start___" %}
-{% for talk in site.categories.talks %}{% if talk.view != 'private' %}
-  {% assign yr = talk.date | date: "%Y" %}
-  {% if yr != current_year %}
+{% for t in site.data.talks %}
+  {% if t.year != current_year %}
     {% unless current_year == "___start___" %}
         </div>
       </div>
     </section>
     {% endunless %}
-    {% assign current_year = yr %}
+    {% assign current_year = t.year %}
     <section class="rail-group">
-      <div class="rail-label"><div class="rl">{{ yr }}</div></div>
+      <div class="rail-label"><div class="rl">{{ t.year }}</div></div>
       <div class="rail-body">
-        <div class="talk-grid">
+        <div class="talk-list">
   {% endif %}
-        {% if talk.link %}
-        <div class="talk-card" role="button" tabindex="0"
-             data-embed="{{ talk.link }}"
-             data-title="{{ talk.title | strip | escape }}"
-             data-date="{{ talk.date | date: '%b %-d, %Y' }}"
-             data-host="{{ talk.host | escape }}"
-             data-abstract="{{ talk.abstract | strip_html | strip | escape }}">
-          <div class="talk-thumb-wrap">
-            {% if talk.image %}<img class="talk-thumb" src="{{ talk.image }}" alt="{{ talk.title | escape }}" onerror="this.style.display='none'">{% endif %}
-            <span class="talk-play">&#9658;</span>
+        <div class="talk-row">
+          <div class="talk-row-main">
+            <span class="talk-row-title">{{ t.title }}</span>
+            <span class="talk-row-venue">{{ t.venue }}{% if t.location %} &middot; {{ t.location }}{% endif %}</span>
           </div>
-          <div class="talk-body">
-            <div class="talk-title">{{ talk.title }}</div>
-            <div class="talk-meta">{{ talk.date | date: '%b %-d, %Y' }}{% if talk.host %}<br><span class="host">{{ talk.host }}</span>{% endif %}</div>
+          <div class="talk-row-side">
+            {% if t.international %}<span class="intl-tag">International</span>{% endif %}
+            {% if t.video %}<button class="watch-btn"
+                 data-embed="{{ t.video }}"
+                 data-title="{{ t.title | strip | escape }}"
+                 data-meta="{{ t.venue | escape }}{% if t.location %} &middot; {{ t.location | escape }}{% endif %}"
+                 data-abstract="{{ t.abstract | strip_html | strip | escape }}"><i class="fa fa-play"></i> Watch</button>
+            {% elsif t.event_url %}<a class="event-link" href="{{ t.event_url }}" target="_blank" rel="noopener">Event page &#8599;</a>{% endif %}
           </div>
         </div>
-        {% else %}
-        <a class="talk-card talk-card--soon" href="{{ talk.event_url | default: '#' }}"{% if talk.event_url %} target="_blank" rel="noopener"{% endif %}>
-          <div class="talk-thumb-wrap">
-            <span class="talk-soon-badge"><i class="fa fa-clock-o"></i> Recording coming soon</span>
-          </div>
-          <div class="talk-body">
-            {% if talk.seminar %}<span class="talk-seminar-tag">{{ talk.seminar }}</span>{% endif %}
-            <div class="talk-title">{{ talk.title }}</div>
-            <div class="talk-meta">{{ talk.date | date: '%b %-d, %Y' }}{% if talk.host %}<br><span class="host">{{ talk.host }}</span>{% endif %}</div>
-          </div>
-        </a>
-        {% endif %}
-{% endif %}{% endfor %}
-{% unless current_year == "___start___" %}
+  {% if forloop.last %}
         </div>
       </div>
     </section>
-{% endunless %}
+  {% endif %}
+{% endfor %}
 
 <div class="talk-modal" id="talkModal" aria-hidden="true">
   <div class="talk-modal-inner" role="dialog" aria-modal="true">
@@ -142,8 +126,8 @@ categories:
 
   function isImage(u){ return /\.(png|jpe?g|webp|gif)(\?|$)/i.test(u); }
 
-  function open(card){
-    var embed = card.getAttribute('data-embed') || '';
+  function open(btn){
+    var embed = btn.getAttribute('data-embed') || '';
     if (isImage(embed)) {
       embedEl.innerHTML = '<div class="talk-embed-16x9"><img src="' + embed + '" alt=""></div>';
     } else if (embed) {
@@ -153,10 +137,9 @@ categories:
     } else {
       embedEl.innerHTML = '';
     }
-    titleEl.textContent = card.getAttribute('data-title') || '';
-    var date = card.getAttribute('data-date') || '', host = card.getAttribute('data-host') || '';
-    metaEl.textContent = [date, host].filter(Boolean).join('  ·  ');
-    absEl.textContent = card.getAttribute('data-abstract') || '';
+    titleEl.textContent = btn.getAttribute('data-title') || '';
+    metaEl.textContent  = btn.getAttribute('data-meta') || '';
+    absEl.textContent   = btn.getAttribute('data-abstract') || '';
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -168,12 +151,8 @@ categories:
     document.body.style.overflow = '';
   }
 
-  // only video cards open the modal; "coming soon" cards are plain links to the event page
-  document.querySelectorAll('.talk-card[data-embed]').forEach(function (card) {
-    card.addEventListener('click', function () { open(card); });
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
-    });
+  document.querySelectorAll('.watch-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { open(btn); });
   });
   document.getElementById('talkClose').addEventListener('click', close);
   modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
