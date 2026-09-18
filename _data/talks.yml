@@ -109,6 +109,7 @@
 - year: 2023
   title: "Precision dynamical mapping to better characterize fluctuations in brain activity in healthy and patient populations"
   venue: "Applied Algebraic Topology Network (AATRN), Dr. Henry Adams"
+  event_url: "https://www.aatrn.net/seminar"
   video: "https://www.youtube.com/embed/Xy3OEa27DGc"
   abstract: >-
     Exploring how noninvasive neuroimaging can be leveraged to anchor psychiatric disorders into
@@ -159,6 +160,7 @@
 - year: 2021
   title: "Precision dynamical mapping using topological data analysis reveals a unique hub-like transition state at rest"
   venue: "Brain Space Initiative Talk Series, Georgia Tech"
+  event_url: "https://brainspaceinitiative.github.io/past-talks/"
   video: "https://www.youtube.com/embed/CZ9Fhr6Es1Y"
   abstract: >-
     Using a precision-dynamics approach and Topological Data Analysis (Mapper), we reveal the rules

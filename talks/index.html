@@ -90,12 +90,12 @@ categories:
           </div>
           <div class="talk-row-side">
             {% if t.international %}<span class="intl-tag">International</span>{% endif %}
+            {% if t.event_url %}<a class="event-link" href="{{ t.event_url }}" target="_blank" rel="noopener">Event page &#8599;</a>{% endif %}
             {% if t.video %}<button class="watch-btn"
                  data-embed="{{ t.video }}"
                  data-title="{{ t.title | strip | escape }}"
                  data-meta="{{ t.venue | escape }}{% if t.location %} &middot; {{ t.location | escape }}{% endif %}"
-                 data-abstract="{{ t.abstract | strip_html | strip | escape }}"><i class="fa fa-play"></i> Watch</button>
-            {% elsif t.event_url %}<a class="event-link" href="{{ t.event_url }}" target="_blank" rel="noopener">Event page &#8599;</a>{% endif %}
+                 data-abstract="{{ t.abstract | strip_html | strip | escape }}"><i class="fa fa-play"></i> Watch</button>{% endif %}
           </div>
         </div>
   {% if forloop.last %}
