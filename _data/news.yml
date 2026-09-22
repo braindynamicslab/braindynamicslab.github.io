@@ -1,0 +1,18 @@
+# Homepage "News" feed. Newest first. Keep ~4-6 items fresh.
+# Fields: date (free text, e.g. "Sep 2026"), type (paper|talk|grant|course|award|member -> tag color),
+#   label (short tag text), text (the item; may include an <a href="..."> link).
+
+- date: "Sep 2026"
+  type: paper
+  label: "New paper"
+  text: 'New paper in <em>Molecular Psychiatry</em>: <a href="/papers/snt-modeling/">Neurophysiological signatures of Stanford Neuromodulation Therapy in treatment-resistant depression</a>.'
+
+- date: "Sep 2026"
+  type: talk
+  label: "Talk"
+  text: 'Manish delivered the <a href="/talks/">Brain Mind Institute Distinguished Seminar</a> at EPFL, Lausanne.'
+
+- date: "2026"
+  type: course
+  label: "New course"
+  text: 'New undergraduate seminar — <a href="/teaching/">PSYC 20N: Can You Train Your Brain?</a>'

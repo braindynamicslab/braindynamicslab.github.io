@@ -8,3 +8,6 @@
 
 # track the talks list too
 !talks.yml
+
+# track the homepage news feed too
+!news.yml

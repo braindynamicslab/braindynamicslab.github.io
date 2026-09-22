@@ -6,6 +6,24 @@ categories:
 description: "Stanford's Brain Dynamics Lab (PI Manish Saggar) develops computational and machine-learning methods to model brain dynamics and advance computational psychiatry and mental health."
 ---
 
+<style>
+.news-list { margin:2px 0 8px; }
+.news-item { display:flex; align-items:baseline; gap:12px; padding:9px 0; border-bottom:1px solid #f0eeee; }
+.news-item:last-child { border-bottom:none; }
+.news-tag { flex:0 0 auto; font-size:.62rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  border-radius:5px; padding:3px 8px; white-space:nowrap; }
+.news-tag.paper  { background:#f1eef1; color:#800000; }
+.news-tag.talk   { background:#e6f2f4; color:#1c6b7a; }
+.news-tag.grant  { background:#e8f3ec; color:#1c7a43; }
+.news-tag.course { background:#efeaf5; color:#5a3a8a; }
+.news-tag.award  { background:#fbf1e0; color:#9a6a1a; }
+.news-tag.member { background:#eef1f6; color:#3a5a8a; }
+.news-text { flex:1 1 auto; font-size:.92rem; color:#333; line-height:1.5; }
+.news-text a { color:#800000; font-weight:600; }
+.news-date { flex:0 0 auto; font-size:.78rem; color:#aaa; white-space:nowrap; }
+@media (max-width:600px){ .news-item { flex-wrap:wrap; gap:8px; } .news-date { width:100%; } }
+</style>
+
 <div class="row">
 	<div class="col-lg-12">
 		<object class="pull-right" height=200  data="/images/bdl-logo-2.png"></object>
@@ -29,6 +47,25 @@ description: "Stanford's Brain Dynamics Lab (PI Manish Saggar) develops computat
 </div>
 
 <div class="bigspacer"></div>
+
+{% if site.data.news %}
+<div class="row">
+	<div class="col-md-12">
+		<div class="head">News</div>
+		<div class="spacer"></div>
+		<div class="news-list">
+			{% for item in site.data.news limit:6 %}
+			<div class="news-item">
+				<span class="news-tag {{ item.type }}">{{ item.label | default: item.type }}</span>
+				<span class="news-text">{{ item.text }}</span>
+				<span class="news-date">{{ item.date }}</span>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="bigspacer"></div>
+	</div>
+</div>
+{% endif %}
 
 <div class="spacer"></div>
 
