@@ -9,6 +9,11 @@
   venue: "6th Annual Precision Mental Health Symposium — From Circuits to Mindsets, Stanford University"
   location: "Stanford, CA"
   event_url: "https://www.stanfordpmhw.com/2026-pmh-symposium"
+  video: "https://www.youtube.com/embed/cSTIbT1DhgY"
+  abstract: >-
+    Manish Saggar's talk at Stanford's 6th Annual Precision Mental Health Symposium
+    ("From Circuits to Mindsets: Precision Mental Health in the Real World"), on brain
+    dynamics and the capacity for change.
 - year: 2026
   title: "Mapping and Modeling Individual Human Brain Dynamics: From Measurement to Perturbation"
   venue: "Brain Mind Institute (BMI) Distinguished Seminar, EPFL"
