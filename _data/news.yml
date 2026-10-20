@@ -2,6 +2,11 @@
 # Fields: date (free text, e.g. "Sep 2026"), type (paper|talk|grant|course|award|member -> tag color),
 #   label (short tag text), text (the item; may include an <a href="..."> link).
 
+- date: "Oct 2026"
+  type: talk
+  label: "Upcoming talk"
+  text: 'Oct 23 — Manish speaks at <a href="https://icchai.com" target="_blank" rel="noopener">ICCHAI 2026</a> (online): &ldquo;Contemplative Neuroscience in the Age of AI: From Scientific Discovery to Education&rdquo;.'
+
 - date: "Sep 2026"
   type: talk
   label: "Talk"
