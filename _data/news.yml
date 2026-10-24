@@ -3,6 +3,11 @@
 #   label (short tag text), text (the item; may include an <a href="..."> link).
 
 - date: "Oct 2026"
+  type: paper
+  label: "New paper"
+  text: 'New paper in <em>Biological Psychiatry</em>: <a href="/papers/davide-itbs/">Excitation-Inhibition Balance and Fronto-Limbic Connectivity Distinguish TMS Treatment Outcomes in Refractory Depression</a>.'
+
+- date: "Oct 2026"
   type: talk
   label: "Upcoming talk"
   text: 'Oct 23 — Manish speaks at <a href="https://icchai.com" target="_blank" rel="noopener">ICCHAI 2026</a> (online): &ldquo;Contemplative Neuroscience in the Age of AI: From Scientific Discovery to Education&rdquo;.'
