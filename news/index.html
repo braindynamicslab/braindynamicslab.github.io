@@ -1,0 +1,27 @@
+---
+layout: default
+title: brain dynamics lab / news
+categories:
+ - news
+description: "News and updates from the Stanford Brain Dynamics Lab — new papers, talks, courses, and more."
+---
+
+{% include news-styles.html %}
+
+<a href="/" style="display:inline-block;font-size:.85rem;color:#999;text-decoration:none;margin:0 0 14px;">&larr; Home</a>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>News</h1>
+    <hr style="height:2px;border:none;color:#808088;background-color:#808088;" />
+    <div class="news-list">
+      {% for item in site.data.news %}
+      <div class="news-item">
+        <span class="news-tag {{ item.type }}">{{ item.label | default: item.type }}</span>
+        <span class="news-text">{{ item.text }}</span>
+        <span class="news-date">{{ item.date }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

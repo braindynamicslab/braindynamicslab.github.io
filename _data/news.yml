@@ -27,6 +27,11 @@
   label: "Talk"
   text: 'Manish delivered the <a href="/talks/">Brain Mind Institute Distinguished Seminar</a> at EPFL, Lausanne.'
 
+- date: "Jul 2026"
+  type: paper
+  label: "New paper"
+  text: 'New paper at <em>GECCO &rsquo;26</em>: <a href="/papers/hormoz-ec/">Evolution With Purpose: Hierarchy-Informed Optimization of Whole-Brain Models</a>.'
+
 - date: "2026"
   type: course
   label: "New course"
