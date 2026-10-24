@@ -120,7 +120,7 @@ layout: default
 		<div class="pd-actions">
 			{% if page.pdf %}<a class="pd-btn primary" href="{{ page.pdf }}"><i class="fa fa-file-pdf-o"></i> PDF</a>{% endif %}
 			{% if page.doi %}<a class="pd-btn" href="https://doi.org/{{ page.doi }}"><i class="fa fa-external-link"></i> DOI</a>{% endif %}
-			{% if page.biorxiv %}<a class="pd-btn" href="{{ page.biorxiv }}"><i class="fa fa-file-text-o"></i> {% if page.biorxiv contains 'medrxiv' %}medRxiv{% else %}bioRxiv{% endif %}</a>{% endif %}
+			{% if page.biorxiv %}<a class="pd-btn" href="{{ page.biorxiv }}"><i class="fa fa-file-text-o"></i> {% if page.biorxiv contains 'medrxiv' %}medRxiv{% elsif page.biorxiv contains 'arxiv' %}arXiv{% else %}bioRxiv{% endif %}</a>{% endif %}
 			{% if page.github %}<a class="pd-btn" href="{{ page.github }}"><i class="fa fa-github"></i> Code</a>{% endif %}
 			{% if page.supplement %}<a class="pd-btn" href="{{ page.supplement }}"><i class="fa fa-paperclip"></i> Supplement</a>{% endif %}
 		</div>
