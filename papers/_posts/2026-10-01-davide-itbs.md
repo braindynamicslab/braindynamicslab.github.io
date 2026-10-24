@@ -1,15 +1,15 @@
 ---
 layout: paper
-title: Excitation-Inhibition Balance and Fronto-Limbic Connectivity Drive TMS Treatment Outcomes in Refractory Depression
+title: Excitation-Inhibition Balance and Fronto-Limbic Connectivity Distinguish TMS Treatment Outcomes in Refractory Depression
 image: /images/papers/davide-itbs.png
 authors:  Momi D., Wang Z., Oveisi M.P., Kadak K., Bastiaens S.P., Lissemore J.I., Noda Y., Downar J., Rodriguez F.V., Strafella R., Daskalakis Z.J., Zrenner C., Zomorrodi R., Rolle C.E., Saggar M., Williams N., Keller C.J., Blumberger D.M., Voineskos D., Griffiths J.D.
-year: 2025
-ref: Momi D., Wang Z., Oveisi M.P., Kadak K., Bastiaens S.P., Lissemore J.I., Noda Y., Downar J., Rodriguez F.V., Strafella R., Daskalakis Z.J., Zrenner C., Zomorrodi R., Rolle C.E., Saggar M., Williams N., Keller C.J., Blumberger D.M., Voineskos D., Griffiths J.D. (2025) BioRxiv
-journal: "BioRxiv"
-doi: 10.1101/2025.04.23.648963
+year: 2026
+ref: Momi D., Wang Z., Oveisi M.P., Kadak K., Bastiaens S.P., Lissemore J.I., Noda Y., Downar J., Rodriguez F.V., Strafella R., Daskalakis Z.J., Zrenner C., Zomorrodi R., Rolle C.E., Saggar M., Williams N., Keller C.J., Blumberger D.M., Voineskos D., Griffiths J.D. (2026) Biological Psychiatry
+journal: "Biological Psychiatry"
+doi: 10.1016/j.biopsych.2026.09.027
 github:
 pdf: /pdfs/papers/davide-itbs.pdf
-biorxiv: 
+biorxiv: https://www.biorxiv.org/content/10.1101/2025.04.23.648963v1
 tags: [depression, TMS, modeling]
 projects: [neuromod]
 ---
