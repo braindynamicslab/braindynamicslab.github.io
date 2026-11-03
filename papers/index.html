@@ -6,15 +6,22 @@ categories:
 ---
 
 <style>
-.paper-filters { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 4px; }
-.filter-pill {
-  border:1px solid #cfcfcf; background:#fff; color:#444;
-  border-radius:999px; padding:4px 14px; font-size:.85rem; cursor:pointer;
-  transition:background .15s ease, color .15s ease, border-color .15s ease; line-height:1.5;
+/* search */
+.paper-search { position:relative; max-width:470px; margin:0 0 6px; }
+.paper-search-icon { position:absolute; left:15px; top:50%; transform:translateY(-50%); color:#aaa; font-size:.9rem; pointer-events:none; }
+.paper-search-input {
+  width:100%; border:1px solid #d9d9d9; border-radius:999px;
+  padding:10px 38px 10px 38px; font-size:.9rem; color:#333; outline:none; background:#fff;
+  transition:border-color .15s ease, box-shadow .15s ease;
 }
-.filter-pill:hover { border-color:#800000; color:#800000; }
-.filter-pill.active { background:#800000; border-color:#800000; color:#fff; }
+.paper-search-input:focus { border-color:#800000; box-shadow:0 0 0 3px rgba(128,0,0,.08); }
+.paper-search-clear {
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  border:none; background:none; color:#aaa; font-size:1.35rem; line-height:1; cursor:pointer; padding:0 8px;
+}
+.paper-search-clear:hover { color:#800000; }
 .filter-count { color:#999; font-size:.8rem; margin:2px 0 18px; }
+.filter-empty { color:#888; font-style:italic; padding:10px 0 30px; display:none; }
 
 /* timeline: year node on a left rail + papers on the right */
 .year-group { display:grid; grid-template-columns:74px 1fr; column-gap:20px; }
@@ -69,22 +76,18 @@ categories:
   padding:1px 7px; margin:0 4px 0 0; transition:background .15s ease;
 }
 .paper-tag:hover { background:#e3d7e3; }
-.filter-empty { color:#888; font-style:italic; padding:10px 0 30px; display:none; }
 </style>
-
-{% capture tags_string %}{% for paper in site.categories.papers %}{% for t in paper.tags %}{{ t }},{% endfor %}{% endfor %}{% endcapture %}
-{% assign all_tags = tags_string | split: "," | uniq | sort_natural %}
 
 <div class="row">
   <div class="col-md-12">
-    <div class="paper-filters" id="paperFilters">
-      <button class="filter-pill active" data-filter="all">All papers</button>
-      {% for t in all_tags %}
-      <button class="filter-pill" data-filter="{{ t | slugify }}">{{ t }}</button>
-      {% endfor %}
+    <div class="paper-search">
+      <i class="fa fa-search paper-search-icon"></i>
+      <input type="text" id="paperSearch" class="paper-search-input" autocomplete="off"
+             placeholder="Search by title, author, journal, year, or topic…" aria-label="Search papers">
+      <button type="button" id="paperSearchClear" class="paper-search-clear" aria-label="Clear search" style="display:none">&times;</button>
     </div>
     <div class="filter-count" id="filterCount"></div>
-    <div class="filter-empty" id="filterEmpty">No papers match this theme yet.</div>
+    <div class="filter-empty" id="filterEmpty">No papers match your search.</div>
   </div>
 </div>
 
@@ -104,7 +107,8 @@ categories:
       <div class="year-papers">
       <div class="papers-grid">
   {% endif %}
-        <div class="paper-item" data-tags="{% for t in paper.tags %}{{ t | slugify }} {% endfor %}">
+        {% capture paper_search %}{{ paper.title }} {{ paper.authors }} {{ paper.journal }} {{ paper.year }}{% for t in paper.tags %} {{ t }}{% endfor %}{% endcapture %}
+        <div class="paper-item" data-search="{{ paper_search | strip_html | escape | downcase }}">
           <div class="paper-card">
             {% if paper.image %}
             <a class="paper-thumb" href="{{ paper.url }}"><img src="{{ paper.image }}" alt="{{ paper.title | escape }}" loading="lazy"></a>
@@ -113,7 +117,7 @@ categories:
               <div class="p-title"><a href="{{ paper.url }}">{{ paper.title }}</a></div>
               <div class="p-authors">{{ paper.authors }}</div>
               {% if paper.journal %}<div class="p-journal">{{ paper.journal }}</div>{% endif %}
-              {% if paper.tags %}<div class="paper-tags">{% for t in paper.tags %}<span class="paper-tag" data-tag="{{ t | slugify }}">{{ t }}</span>{% endfor %}</div>{% endif %}
+              {% if paper.tags %}<div class="paper-tags">{% for t in paper.tags %}<span class="paper-tag">{{ t }}</span>{% endfor %}</div>{% endif %}
             </div>
           </div>
         </div>
@@ -126,25 +130,25 @@ categories:
 
 <script>
 (function () {
-  var filterBar = document.getElementById('paperFilters');
-  if (!filterBar) return;
-  var pills   = filterBar.querySelectorAll('.filter-pill');
-  var items   = document.querySelectorAll('.paper-item');
-  var groups  = document.querySelectorAll('.year-group');
-  var countEl = document.getElementById('filterCount');
-  var emptyEl = document.getElementById('filterEmpty');
-
-  var active = [];  // selected theme filters (OR / union); empty = show all
+  var input = document.getElementById('paperSearch');
+  if (!input) return;
+  var clearBtn = document.getElementById('paperSearchClear');
+  var items    = Array.prototype.slice.call(document.querySelectorAll('.paper-item'));
+  var groups   = document.querySelectorAll('.year-group');
+  var countEl  = document.getElementById('filterCount');
+  var emptyEl  = document.getElementById('filterEmpty');
 
   function apply() {
+    var q = input.value.trim().toLowerCase();
+    var tokens = q ? q.split(/\s+/) : [];
     var visible = 0;
     items.forEach(function (it) {
-      var tags = (it.getAttribute('data-tags') || '').trim().split(/\s+/);
-      var show = active.length === 0 || active.some(function (f) { return tags.indexOf(f) !== -1; });
+      var hay = it.getAttribute('data-search') || '';
+      var show = tokens.every(function (t) { return hay.indexOf(t) !== -1; });
       it.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-    // hide a whole year section if none of its papers are visible
+    // hide a whole year section when none of its papers match
     groups.forEach(function (g) {
       var any = Array.prototype.some.call(
         g.querySelectorAll('.paper-item'),
@@ -153,36 +157,19 @@ categories:
       g.style.display = any ? '' : 'none';
     });
     emptyEl.style.display = visible ? 'none' : 'block';
-    countEl.textContent = (active.length === 0)
-      ? 'Showing all ' + visible + ' papers'
-      : 'Showing ' + visible + ' paper' + (visible === 1 ? '' : 's')
-        + ' in ' + active.length + ' theme' + (active.length === 1 ? '' : 's');
-    // reflect the current selection on the pills
-    pills.forEach(function (p) {
-      var f = p.getAttribute('data-filter');
-      if (f === 'all') { p.classList.toggle('active', active.length === 0); }
-      else { p.classList.toggle('active', active.indexOf(f) !== -1); }
-    });
+    countEl.textContent = q
+      ? 'Showing ' + visible + ' of ' + items.length + ' papers'
+      : 'Showing all ' + items.length + ' papers';
+    clearBtn.style.display = q ? '' : 'none';
   }
 
-  pills.forEach(function (p) {
-    p.addEventListener('click', function () {
-      var f = p.getAttribute('data-filter');
-      if (f === 'all') {
-        active = [];                          // clear all selections
-      } else {
-        var i = active.indexOf(f);
-        if (i === -1) { active.push(f); }     // toggle theme on
-        else { active.splice(i, 1); }         // toggle theme off
-      }
-      apply();
-    });
-  });
+  input.addEventListener('input', apply);
+  clearBtn.addEventListener('click', function () { input.value = ''; apply(); input.focus(); });
 
-  // clicking a tag chip on a card selects just that theme
+  // clicking a tag chip on a card searches for that term
   document.querySelectorAll('.paper-tag').forEach(function (chip) {
     chip.addEventListener('click', function () {
-      active = [chip.getAttribute('data-tag')];
+      input.value = chip.textContent.trim();
       apply();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
