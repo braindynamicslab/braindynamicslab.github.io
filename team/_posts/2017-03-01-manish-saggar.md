@@ -5,6 +5,7 @@ position: Principal investigator
 handle: saggar
 email: saggar@stanford.edu
 twitter: manishsaggar
+linkedin: https://www.linkedin.com/in/manishsaggar/
 github: manishsaggar1
 scholar: KLbpCO0AAAAJ
 image: /images/team/manish.jpg

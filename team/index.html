@@ -24,6 +24,43 @@ categories:
   .rail-body::before { display:none; }
 }
 
+/* Director / PI feature */
+.pi-feature { display:flex; gap:26px; align-items:flex-start; }
+.pi-photo { flex:0 0 190px; display:block; }
+.pi-photo img { width:190px; height:190px; object-fit:cover; border-radius:14px;
+  box-shadow:0 2px 12px rgba(0,0,0,.10); display:block; }
+.pi-info { flex:1 1 auto; min-width:0; }
+.pi-name { font-size:1.5rem; font-weight:700; color:#1f1f1f; line-height:1.15; }
+.pi-role { font-size:.95rem; font-weight:600; color:#800000; margin-top:4px; }
+.pi-aff { font-size:.84rem; color:#777; margin-top:3px; }
+.pi-bio { font-size:.92rem; color:#444; line-height:1.6; margin:13px 0 13px; max-width:620px; }
+.pi-links { display:flex; flex-wrap:wrap; gap:7px 16px; font-size:.85rem; }
+.pi-links a { color:#800000; font-weight:600; text-decoration:none; }
+.pi-links a:hover { text-decoration:underline; }
+@media (max-width:640px){
+  .pi-feature { flex-direction:column; gap:16px; }
+  .pi-photo { flex-basis:auto; }
+  .pi-photo img { width:150px; height:150px; }
+}
+
+/* current members — one row each: small photo + name/role + one-line blurb */
+.member-list { display:flex; flex-direction:column; gap:22px; }
+.member-row { display:flex; gap:18px; align-items:flex-start; }
+.member-row .m-photo { flex:0 0 96px; display:block; }
+.member-row .m-photo img { width:96px; height:96px; object-fit:cover; border-radius:12px;
+  box-shadow:0 1px 7px rgba(0,0,0,.09); display:block; transition:transform .15s ease; }
+.member-row .m-photo:hover img { transform:translateY(-2px); }
+.member-row .m-info { flex:1 1 auto; min-width:0; padding-top:2px; }
+.m-name { font-size:1.02rem; font-weight:700; line-height:1.2; }
+.m-name a { color:#222; text-decoration:none; }
+.m-name a:hover { color:#800000; }
+.m-role { font-size:.8rem; font-weight:600; color:#800000; margin-top:3px; }
+.m-desc { font-size:.86rem; color:#666; line-height:1.5; margin-top:6px; max-width:640px; }
+@media (max-width:640px){
+  .member-row .m-photo { flex-basis:76px; }
+  .member-row .m-photo img { width:76px; height:76px; }
+}
+
 /* member + collaborator grids */
 .team-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(135px, 1fr)); gap:22px; margin:2px 0 0; }
 .team-card { text-align:center; }
@@ -73,17 +110,60 @@ categories:
 @media (max-width:520px){ .lg-nav { font-size:2.2rem; padding:0 10px; } }
 </style>
 
+{% assign pi = site.categories.team | where_exp: "m", "m.pi == true" | first %}
+{% if pi %}
+<section class="rail-group">
+  <div class="rail-label"><div class="rl">Director</div></div>
+  <div class="rail-body">
+    <div class="pi-feature">
+      <a class="pi-photo" href="{{ pi.url }}"><img src="{{ pi.image }}" alt="{{ pi.title | escape }}"></a>
+      <div class="pi-info">
+        <div class="pi-name">{{ pi.title }}, PhD</div>
+        <div class="pi-role">Principal Investigator &amp; Director</div>
+        <div class="pi-aff">Associate Professor, Psychiatry &amp; Behavioral Sciences, Stanford University</div>
+        <p class="pi-bio">Computational neuroscientist developing reliable methods to characterize and model the temporal dynamics of brain activity &mdash; without averaging away space or time &mdash; toward person- and disorder-centric biomarkers for mental health.</p>
+        <div class="pi-links">
+          <a href="{{ pi.url }}">Full bio &rarr;</a>
+          {% if pi.email %}<a href="mailto:{{ pi.email }}">Email</a>{% endif %}
+          {% if pi.scholar %}<a href="https://scholar.google.com/citations?user={{ pi.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+          {% if pi.github %}<a href="https://github.com/{{ pi.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+          {% if pi.linkedin %}<a href="{{ pi.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+          {% if pi.cv %}<a href="{{ pi.cv }}" target="_blank" rel="noopener">CV</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section class="rail-group">
   <div class="rail-label"><div class="rl">Current members</div></div>
   <div class="rail-body">
-    <div class="team-grid">
-    {% for member in site.categories.team reversed %}{% if member.alumni != true %}
-      <div class="team-card">
-        <a href="{{ member.url }}"><img src="{{ member.image }}" alt="{{ member.title | escape }}" loading="lazy"></a>
-        <div class="nm"><a href="{{ member.url }}" class="off">{{ member.title }}</a></div>
-        <div class="pos">{{ member.position }}</div>
+    <div class="member-list">
+    {% for member in site.categories.team reversed %}{% if member.alumni != true and member.pi != true %}
+      <div class="member-row">
+        <a class="m-photo" href="{{ member.url }}"><img src="{{ member.image }}" alt="{{ member.title | escape }}" loading="lazy"></a>
+        <div class="m-info">
+          <div class="m-name"><a href="{{ member.url }}">{{ member.title }}</a></div>
+          <div class="m-role">{{ member.position }}</div>
+          {% if member.blurb %}<div class="m-desc">{{ member.blurb }}</div>{% endif %}
+        </div>
       </div>
     {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="rail-group">
+  <div class="rail-label"><div class="rl">Lab Life</div></div>
+  <div class="rail-body">
+    {% assign photos = site.static_files | where_exp: "f", "f.path contains '/images/gallery/lab-'" | sort: "path" | reverse %}
+    <div class="lab-gallery" id="labGallery">
+      {% for photo in photos %}
+      <button class="lg-thumb" data-full="{{ photo.path }}" aria-label="Open lab photo">
+        <img src="{{ photo.path | replace: '/gallery/lab-', '/gallery/thumbs/lab-' }}" alt="Brain Dynamics Lab" loading="lazy">
+      </button>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -101,20 +181,6 @@ categories:
         <div class="pos">{{ c.affiliation }}</div>
       </div>
     {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="rail-group">
-  <div class="rail-label"><div class="rl">Lab Life</div></div>
-  <div class="rail-body">
-    {% assign photos = site.static_files | where_exp: "f", "f.path contains '/images/gallery/lab-'" | sort: "path" %}
-    <div class="lab-gallery" id="labGallery">
-      {% for photo in photos %}
-      <button class="lg-thumb" data-full="{{ photo.path }}" aria-label="Open lab photo">
-        <img src="{{ photo.path | replace: '/gallery/lab-', '/gallery/thumbs/lab-' }}" alt="Brain Dynamics Lab" loading="lazy">
-      </button>
-      {% endfor %}
     </div>
   </div>
 </section>
